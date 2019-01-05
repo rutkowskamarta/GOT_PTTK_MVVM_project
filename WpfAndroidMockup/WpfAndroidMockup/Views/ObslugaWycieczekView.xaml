@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="WpfAndroidMockup.Views.ObslugaWycieczekView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfAndroidMockup.Views"
+             mc:Ignorable="d" 
+             Height="667" Width="375" Background="#FF2F2C2C">
+
+    <Grid>
+        <Grid Name = "AllTripsGrid" Background="#FF282828" Visibility="Visible">
+            <Rectangle Fill="#FF121212" HorizontalAlignment="Left" Height="40" Stroke="Black" VerticalAlignment="Top" Width="375"/>
+            <Label Content="Wycieczki" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="125,45,0,0" VerticalAlignment="Top" Background="#00000000" Foreground="#FFE0E0E0" FontSize="20" Width="120" Height="40"/>
+            <ListView Margin="10,95,0,10.2" Name="WycieczkiListView" PreviewMouseLeftButtonUp="ListViewItem_OnPressed" ItemsSource="{Binding Path = Wycieczki}" HorizontalAlignment="Left" Width="355">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Nazwa" Width="220" DisplayMemberBinding="{Binding Name}" />
+                        <GridViewColumn Header="Data" Width="100" DisplayMemberBinding="{Binding StartDate}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+        </Grid>
+
+        <Grid Name = "SelectedTripGrid" Background="#FF282828" Visibility="Hidden" DataContext="{Binding CurrentWycieczka}">
+            
+            <Label Content="{Binding Name}" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="133,45,120.2,0" VerticalAlignment="Top" Background="#00000000" Foreground="#FFE0E0E0" FontSize="30" Width="122" Height="45"/>
+            <Label Content="Nazwa" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Background="#00000000" Foreground="#FFE0E0E0" FontSize="30" Width="122" Height="45"/>
+
+
+            <Rectangle Fill="#FF121212" HorizontalAlignment="Left" Height="40" Stroke="Black" VerticalAlignment="Top" Width="375"/>
+            <Image HorizontalAlignment="Center" Height="170" VerticalAlignment="Top" Width="170" Margin="105,110,100.2,0" Source="/WpfAndroidMockup;component/Assets/a.png"/>
+            <Rectangle Fill="DimGray" HorizontalAlignment="Left" Height="367" Stroke="Black" VerticalAlignment="Top" Width="375" Margin="0,300,0,0"/>
+            <Label Content="Data wycieczki" HorizontalAlignment="Left" Margin="25,325,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White"/>
+            <Label Content="Czas" HorizontalAlignment="Left" Margin="25,355,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White"/>
+            <Label Content="Obszar górski" HorizontalAlignment="Left" Margin="25,385,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White"/>
+            <Label Content="Trasa" HorizontalAlignment="Left" Margin="25,415,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White" RenderTransformOrigin="0.51,-0.581"/>
+            <Label Content="Punkt początkowy" HorizontalAlignment="Left" Margin="25,445,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White"/>
+            <Label Content="Długość" HorizontalAlignment="Left" Margin="25,475,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White" RenderTransformOrigin="0.612,-0.645"/>
+            <Label Content="Wysokość" HorizontalAlignment="Left" Margin="25,505,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White" RenderTransformOrigin="0.612,-0.645"/>
+            <Label Content="Punktacja" HorizontalAlignment="Left" Margin="25,535,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White" RenderTransformOrigin="0.612,-0.645"/>
+            <Label Content="Cykl" HorizontalAlignment="Left" Margin="25,565,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White"/>
+
+            <Label Content="Data wycieczki" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Margin="213,325,25,0" VerticalAlignment="Top" FontSize="16" Foreground="White"/>
+            <Label Content="Czas" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Margin="291,354,25,0" VerticalAlignment="Top" FontSize="16" Foreground="White"/>
+            <Label Content="Obszar górski" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Margin="213,385,25,0" VerticalAlignment="Top" FontSize="16" Foreground="White"/>
+            <Label Content="Trasa" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Margin="277,415,25,0" VerticalAlignment="Top" FontSize="16" Foreground="White" RenderTransformOrigin="0.51,-0.581"/>
+            <Label Content="Punkt początkowy" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Margin="184,445,25,0" VerticalAlignment="Top" FontSize="16" Foreground="White" RenderTransformOrigin="0.216,0.631"/>
+            <Label Content="Długość" HorizontalAlignment="Right" Margin="256,475,25,0" VerticalAlignment="Top" FontSize="16" Foreground="White" RenderTransformOrigin="0.612,-0.645"/>
+            <Label Content="Wysokość" HorizontalAlignment="Right" Margin="242,507,25,0" VerticalAlignment="Top" FontSize="16" Foreground="White" RenderTransformOrigin="0.612,-0.645"/>
+            <Label Content="Punktacja" HorizontalAlignment="Right" Margin="242,535,25,0" VerticalAlignment="Top" FontSize="16" Foreground="White" RenderTransformOrigin="0.612,-0.645"/>
+            <Label Content="Cykl" HorizontalAlignment="Right" Margin="277,567,25,0" VerticalAlignment="Top" FontSize="16" Foreground="White"/>
+
+            <Label Content="NIEPOTWIERDZONA PRZEZ PRZODOWNIKA" HorizontalAlignment="Center" Margin="0,610,0,0" VerticalAlignment="Top" FontSize="18" Foreground="Red"/>
+
+
+        </Grid>
+
+    </Grid>
+
+
+</UserControl>

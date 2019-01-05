@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using WpfAndroidMockup.ViewModels;
 namespace WpfAndroidMockup
 {
     /// <summary>
@@ -20,9 +20,19 @@ namespace WpfAndroidMockup
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void TripViewControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            WycieczkaViewModel tripViewModelObject = new WycieczkaViewModel();
+            tripViewModelObject.LoadExamplaryTrips();
+            TripViewControl.DataContext = tripViewModelObject;
+            TripViewControl.WycieczkaViewModel = tripViewModelObject;
+            tripViewModelObject.CurrentView = TripViewControl;
         }
     }
 }

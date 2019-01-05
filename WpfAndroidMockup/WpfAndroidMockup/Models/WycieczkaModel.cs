@@ -7,24 +7,65 @@ using System.ComponentModel;
 
 namespace WpfAndroidMockup.Models
 {
-    class WycieczkaModel
+    public class WycieczkaModel
     {}
 
-    class Wycieczka : INotifyPropertyChanged
+    public class Wycieczka : INotifyPropertyChanged
     {
-        private int Id { get; set; }
-        private string Name { get; set; }
-        private DateTime StartDate { get; set; }
-        private DateTime FinishDate { get; set; }
-        private StatusModel Status { get; set; }
-        private ObszarGorskiModel ObszarGorski { get; set; }
-        private bool IsSeveralDays { get; set; }
+        private string name;
+        private DateTime startDate;
+
+        public int Id { get; set; }
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                if(name != value)
+                {
+                    name = value;
+                    RaisePropertyChanged("Name");
+                }
+            }
+        }
+        public DateTime StartDate {
+            get
+            {
+                return startDate;
+            }
+            set
+            {
+                if (startDate != value)
+                {
+                    startDate = value;
+                    RaisePropertyChanged("StartDate");
+                }
+            }
+        }
+        public DateTime FinishDate { get; set; }
+        public string Status { get; set; }
+        public string ObszarGorski { get; set; }
+        public bool IsSeveralDays { get; set; }
 
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public Wycieczka()
+
+        public Wycieczka(int Id, string Name)
         {
+            this.Id = Id;
+            this.Name = Name;
+            StartDate = DateTime.Now;
+            FinishDate = DateTime.Now;
+        }
+
+        public void Copy(Wycieczka wycieczka)
+        {
+            Id = wycieczka.Id;
+            Name = wycieczka.Name;
 
         }
 
