@@ -34,13 +34,13 @@ namespace WpfAndroidMockup.Views
 
         private void ListViewItem_OnPressed(object sender, MouseButtonEventArgs e)
         {
-            Console.WriteLine("klik!");
-
-            ListView listView = sender as ListView;
-            Wycieczka selectedItem = (Wycieczka) listView.SelectedItems[0];
-            Console.WriteLine(selectedItem.Name);
-            WycieczkaViewModel.SetCurrentWycieczka(selectedItem);
-            ChangeLayoutToTripLayout();
+            ListBox listView = sender as ListBox;
+            if (listView.SelectedItem != null)
+            {
+                WycieczkaModel selectedItem = (WycieczkaModel)listView.SelectedItems[0];
+                WycieczkaViewModel.SetCurrentWycieczka(selectedItem);
+                ChangeLayoutToTripLayout();
+            }
 
         }
 
@@ -48,6 +48,22 @@ namespace WpfAndroidMockup.Views
         {
             AllTripsGrid.Visibility = Visibility.Hidden;
             SelectedTripGrid.Visibility = Visibility.Visible;
+        }
+
+        private void Button_UsunWycieczkeOnClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Button_CofnijDoWyboruOnClick(object sender, RoutedEventArgs e)
+        {
+            ChangeLayoutToSelectionLayout();
+        }
+
+        private void ChangeLayoutToSelectionLayout()
+        {
+            AllTripsGrid.Visibility = Visibility.Visible;
+            SelectedTripGrid.Visibility = Visibility.Hidden;
         }
     }
 }

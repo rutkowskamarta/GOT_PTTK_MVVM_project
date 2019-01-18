@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfAndroidMockup.ViewModels;
+using WpfAndroidMockup.Models;
+
 namespace WpfAndroidMockup
 {
     /// <summary>
@@ -20,19 +22,36 @@ namespace WpfAndroidMockup
     /// </summary>
     public partial class MainWindow : Window
     {
+        private const int PRZYKLADOWY_TURYSTA = 0;
 
         public MainWindow()
         {
             InitializeComponent();
+            LoginUser(PRZYKLADOWY_TURYSTA);
         }
-
-        private void TripViewControl_Loaded(object sender, RoutedEventArgs e)
+        
+        private void LoginUser(int idTurysty)
+        {
+            DaneLogowania.IdZalogowanegoTurysty = idTurysty;
+        }
+        
+        private void Button_ObslugaWycieczek(object sender, RoutedEventArgs e)
         {
             WycieczkaViewModel tripViewModelObject = new WycieczkaViewModel();
-            tripViewModelObject.LoadExamplaryTrips();
-            TripViewControl.DataContext = tripViewModelObject;
-            TripViewControl.WycieczkaViewModel = tripViewModelObject;
-            tripViewModelObject.CurrentView = TripViewControl;
+            ObslugaWycieczekViewControl.DataContext = tripViewModelObject;
+            ObslugaWycieczekViewControl.WycieczkaViewModel = tripViewModelObject;
+            tripViewModelObject.currentView = ObslugaWycieczekViewControl;
+            ObslugaWycieczekViewControl.Visibility = Visibility.Visible;
+        }
+
+        private void Button_WyslijDoPotwierdzenia(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Button_Potwierdz(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

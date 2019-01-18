@@ -7,10 +7,21 @@
         xmlns:local="clr-namespace:WpfAndroidMockup"
         mc:Ignorable="d"
         
-        Title="MainWindow" Height="667" Width="375" Background="#FF2F2C2C"
+        Title="MainWindow" Height="667" Width="390" Background="#FF2F2C2C"
         >
     <Grid>
-        <views:ObslugaWycieczekView x:Name = "TripViewControl" Loaded = "TripViewControl_Loaded"/>
+        <Grid Name = "MainMenuGrid" Background="#FF282828" Visibility="Visible">
+            <Rectangle Fill="#FF121212" HorizontalAlignment="Left" Height="40" Stroke="Black" VerticalAlignment="Top" Width="375"/>
+            <Label Content="Menu" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="125,0,0,0" VerticalAlignment="Top" Background="#00000000" Foreground="#FFE0E0E0" FontSize="20" Width="120" Height="40"/>
+            <Button Name = "WszystkieWycieczkiButton" Click="Button_ObslugaWycieczek" Content="Wyświetl wszystkie wycieczki" FontSize="15" Foreground="White" Background="LightSlateGray" HorizontalAlignment="Center" Margin="0,120,0,0" VerticalAlignment="Top" Width="200" Height="50">
+                
+            </Button>
+            <Button Name = "WyslijDoPotwierdzeniaButton" Click="Button_WyslijDoPotwierdzenia" Content="Wyślij do potwierdzenia" FontSize="15" Foreground="White" Background="LightSlateGray" HorizontalAlignment="Center" Margin="0,200,0,0" VerticalAlignment="Top" Width="200" Height="50"/>
+            <Button Name = "PotwierdzButton" Click="Button_Potwierdz" Content="Potwierdź" FontSize="15" Foreground="White" Background="LightSlateGray" HorizontalAlignment="Center" Margin="0,280,0,0" VerticalAlignment="Top" Width="200" Height="50"/>
+            <views:ObslugaWycieczekView x:Name = "ObslugaWycieczekViewControl" Visibility="Hidden"/>
+        </Grid>
+
+        
     </Grid>
 
 </Window>

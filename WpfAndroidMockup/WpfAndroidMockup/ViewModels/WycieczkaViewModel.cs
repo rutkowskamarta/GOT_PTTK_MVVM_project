@@ -11,22 +11,33 @@ namespace WpfAndroidMockup.ViewModels
 {
     public class WycieczkaViewModel
     {
-        public ObservableCollection<Wycieczka> Wycieczki { get; set; }
-        public UserControl CurrentView;
-        public Wycieczka CurrentWycieczka { get; set; }
+        public ObservableCollection<WycieczkaModel> wycieczkiObservableCollection { get; set; }
+        public UserControl currentView;
+        public WycieczkaModel currentWycieczka { get; set; }
+        private WycieczkiContext wycieczkiContext;
 
-        public void LoadExamplaryTrips()
+        public WycieczkaViewModel()
         {
-            Wycieczki = new ObservableCollection<Wycieczka>();
-            Wycieczki.Add(new Wycieczka(1, "Dominicza Góra"));
-            Wycieczki.Add(new Wycieczka(2, "Wycieczka1"));
-            Wycieczki.Add(new Wycieczka(3, "Wycieczka2"));
-            CurrentWycieczka = new Wycieczka(0, "");
+            wycieczkiContext = WycieczkiContext.GetInstance();
+            LoadWycieczkiToObservableCollection();
+            currentWycieczka = new WycieczkaModel(new TurystaModel(0), "", StatusyPotwierdzenia.NIEPOTWIERDZONA);
+
         }
 
-        public void SetCurrentWycieczka(Wycieczka wycieczka)
+        private void LoadWycieczkiToObservableCollection()
         {
-            CurrentWycieczka.Copy(wycieczka);
+            wycieczkiObservableCollection = new ObservableCollection<WycieczkaModel>();
+            List<WycieczkaModel> wycieczki = wycieczkiContext.GetWycieczkiZalogowanegoTurysty();
+
+            foreach (var item in wycieczki)
+            {
+                wycieczkiObservableCollection.Add(item);
+            }
+        }
+
+        public void SetCurrentWycieczka(WycieczkaModel wycieczka)
+        {
+            currentWycieczka.Copy(wycieczka);
         }
     }
 }
