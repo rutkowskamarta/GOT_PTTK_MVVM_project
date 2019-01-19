@@ -15,6 +15,7 @@ namespace WpfAndroidMockup.ViewModels
         private ObservableCollection<WycieczkaModel> wycieczkiObservableCollection;
         private WycieczkaModel currentWycieczka;
         private WycieczkiContext wycieczkiContext;
+        private PrzodownicyContext przodownicyContext;
                 
         public ObservableCollection<WycieczkaModel> WycieczkiObservableCollection
         {
@@ -51,12 +52,15 @@ namespace WpfAndroidMockup.ViewModels
             }
         }
 
+
         public event PropertyChangedEventHandler PropertyChanged;
         public UserControl CurrentView;
 
         public WycieczkaViewModel()
         {
             wycieczkiContext = WycieczkiContext.GetInstance();
+            przodownicyContext = PrzodownicyContext.GetInstance();
+
             TurystaModel t = new TurystaModel();
             OdznakaModel o = new OdznakaModel(ref t);
             CurrentWycieczka = new WycieczkaModel(1, ref t, ref o, "", StatusyPotwierdzenia.NIEPOTWIERDZONA);
@@ -82,7 +86,7 @@ namespace WpfAndroidMockup.ViewModels
             }
         }
 
-        public void LoadNiepotwierdzoneWycieczkiToObservableCollection()
+        public void WyswietlListeNiepotwierdzonychWycieczek()
         {
             WycieczkiObservableCollection = new ObservableCollection<WycieczkaModel>();
             List<WycieczkaModel> wycieczki = wycieczkiContext.GetNiepotwierdzoneWycieczkiTurysty(DaneLogowania.IdZalogowanegoTurysty);
@@ -108,5 +112,17 @@ namespace WpfAndroidMockup.ViewModels
             wycieczkiContext.Usun(CurrentWycieczka.Id);
             WycieczkiObservableCollection.Remove(CurrentWycieczka);
         }
+
+        public bool CzyPrzodownikONumerzeIstnieje(long nrPrzodownika)
+        {
+            return przodownicyContext.Exists(nrPrzodownika);
+        }
+
+        public void ZmienStatus(long nrPrzodownika, StatusyPotwierdzenia status)
+        {
+            currentWycieczka.NrPrzodownika = nrPrzodownika;
+            currentWycieczka.Status = status;
+        }
+
     }
 }

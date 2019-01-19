@@ -35,8 +35,8 @@ namespace WpfAndroidMockup.Models
             OdznakaModel o1 = new OdznakaModel(ref t1);
             OdznakaModel o2 = new OdznakaModel(ref t2);
             wycieczkiDict.Add(0, new WycieczkaModel(0, ref t1, ref o1, "Wycieczka0", StatusyPotwierdzenia.POTWIERDZONA));
-            wycieczkiDict.Add(1, new WycieczkaModel(1, ref t1, ref o1, "Dominicza Góra", StatusyPotwierdzenia.POTWIERDZONA));
-            wycieczkiDict.Add(2, new WycieczkaModel(2, ref t1, ref o1, "Wycieczka1", StatusyPotwierdzenia.POTWIERDZONA));
+            wycieczkiDict.Add(1, new WycieczkaModel(1, ref t1, ref o1, "Dominicza Góra", StatusyPotwierdzenia.WTRAKCIE));
+            wycieczkiDict.Add(2, new WycieczkaModel(2, ref t1, ref o1, "Wycieczka1", StatusyPotwierdzenia.NIEPOTWIERDZONA));
             wycieczkiDict.Add(3, new WycieczkaModel(3, ref t1, ref o1, "Wycieczka2", StatusyPotwierdzenia.NIEPOTWIERDZONA));
             wycieczkiDict.Add(4, new WycieczkaModel(4, ref t2, ref o2, "WycieczkaInnegoTurysty", StatusyPotwierdzenia.WTRAKCIE));
         }

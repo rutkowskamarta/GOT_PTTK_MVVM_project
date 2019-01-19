@@ -61,6 +61,8 @@
     <Compile Include="Models\DaneLogowania.cs" />
     <Compile Include="Models\OdznakaModel.cs" />
     <Compile Include="Models\OdznakiContext.cs" />
+    <Compile Include="Models\PrzodownicyContext.cs" />
+    <Compile Include="Models\PrzodownikModel.cs" />
     <Compile Include="Models\TurysciContext.cs" />
     <Compile Include="Models\TurystaModel.cs" />
     <Compile Include="Models\WycieczkiContext.cs" />

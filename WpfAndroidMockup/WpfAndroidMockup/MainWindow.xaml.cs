@@ -23,7 +23,6 @@ namespace WpfAndroidMockup
     public partial class MainWindow : Window
     {
         private const int PRZYKLADOWY_TURYSTA = 0;
-
         public MainWindow()
         {
             InitializeComponent();
@@ -62,11 +61,13 @@ namespace WpfAndroidMockup
         private void Button_WyslijDoPotwierdzenia(object sender, RoutedEventArgs e)
         {
             WycieczkaViewModel tripViewModelObject = new WycieczkaViewModel();
-            tripViewModelObject.LoadNiepotwierdzoneWycieczkiToObservableCollection();
+            tripViewModelObject.WyswietlListeNiepotwierdzonychWycieczek();
             PrzeslijWycieczkeDoWeryfikacji.DataContext = tripViewModelObject;
             PrzeslijWycieczkeDoWeryfikacji.wycieczkaViewModel = tripViewModelObject;
             tripViewModelObject.CurrentView = PrzeslijWycieczkeDoWeryfikacji;
+            PrzeslijWycieczkeDoWeryfikacji.ZareagujGdyListaPusta();
             PrzeslijWycieczkeDoWeryfikacji.Visibility = Visibility.Visible;
         }
+               
     }
 }

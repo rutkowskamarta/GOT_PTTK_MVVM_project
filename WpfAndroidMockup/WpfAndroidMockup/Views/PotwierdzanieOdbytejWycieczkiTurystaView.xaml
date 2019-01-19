@@ -7,6 +7,95 @@
              mc:Ignorable="d" 
                 Height="667" Width="375" Background="#FF2F2C2C">
     <Grid>
+
+        <Grid Name = "AllTripsGrid" Background="#FF282828" Visibility="Visible">
+            <Rectangle Fill="#FF121212" HorizontalAlignment="Left" Height="40" Stroke="Black" VerticalAlignment="Top" Width="375"/>
+            <Label Content="Potwierdzanie wycieczek" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Background="#00000000" Foreground="#FFE0E0E0" FontSize="20" Width="250" Height="40"/>
+            <Button x:Name ="BackButtonToMainMenu" Background="Transparent"  Click="Button_CofnijDoMenuOnClick"  BorderBrush="Transparent"  HorizontalAlignment="Stretch" Height="40" VerticalAlignment="Top" Width="40" Margin="335,0,0.2,0" RenderTransformOrigin="2.255,0.5">
+                <StackPanel>
+                    <Image  Source="/WpfAndroidMockup;component/Assets/back.png" />
+                </StackPanel>
+            </Button>
+
+
+            <ListBox Margin="10,45,0,0" x:Name="WycieczkiListView" PreviewMouseLeftButtonUp="ListViewItem_OnPressed" ItemsSource="{Binding WycieczkiObservableCollection}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="355" Height="612" Background="Transparent" BorderBrush="Transparent">
+
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <DockPanel HorizontalAlignment= "Left" Width="380" LastChildFill="True" Background="#FF6E6F6F">
+                            <Image HorizontalAlignment="Stretch" Height="40" VerticalAlignment="Top" Width="40" Margin="5,5,0,0" Source="/WpfAndroidMockup;component/Assets/a.png"/>
+
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
+                                <TextBlock Text="{Binding DataWycieczki}" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0"/>
+                                <TextBlock Text="{Binding Nazwa}" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0"/>
+                                <TextBlock Text="{Binding ObszarGorski}" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="0,0,0,0">
+                                <TextBlock Text="{Binding Punktacja}" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,40,0"/>
+                                <TextBlock HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,40,0">
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Text" Value="WTRAKCIE"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Status}" Value="POTWIERDZONA">
+                                                    <Setter Property="Foreground" Value="LightGreen"/>
+                                                    <Setter Property="Text" Value="POTWIERDZONA"/>
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Status}" Value="NIEPOTWIERDZONA">
+                                                    <Setter Property="Text" Value="NIEPOTWIERDZONA"/>
+                                                    <Setter Property="Foreground" Value="#FFED2D2D"/>
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Status}" Value="WTRAKCIE">
+                                                    <Setter Property="Foreground" Value="Yellow"/>
+                                                    <Setter Property="Text"  Value="W TRAKCIE POTWIERDZANIA"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                                
+                            </StackPanel>
+                        </DockPanel>
+
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+
+            </ListBox>
+
+
+            <Grid Name="AlertPrzeslijDoPrzodownikaGrid"  Background="#66B4A4A4" Visibility="Hidden" DataContext="{Binding CurrentWycieczka}">
+                <Rectangle Fill="#FFF7F5F5" RadiusX="20" RadiusY="20" HorizontalAlignment="Center" Height="325" Margin="50,45,50.2,0" Stroke="Black" VerticalAlignment="Top" Width="275"/>
+                <TextBlock Text="{Binding Nazwa}" Foreground="Black" HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Top" Margin="0,60,0,0" FontSize="15" FontWeight="Bold"/>
+                <TextBlock Text="{Binding DataWycieczki}" Foreground="Black" HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Top" Margin="0,80,0,0" FontSize="15" />
+                <TextBlock Text="{Binding ObszarGorski}" Foreground="Black" HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Top" Margin="0,200,0,0" FontSize="15" />
+
+                <Image HorizontalAlignment="Center" Height="85" VerticalAlignment="Top" Margin="0,105,0,0" Source="/WpfAndroidMockup;component/Assets/a.png"/>
+
+                <TextBlock TextWrapping="WrapWithOverflow" Width="200" Margin="90,225,85.2,417.2" TextAlignment="Center">
+                       PODAJ NUMER PRZODOWNIKA
+                </TextBlock>
+
+                <Button Content="POWRÓT" Click="Button_powrot" FontSize="15" FontWeight="Bold" Background="LightGray" HorizontalAlignment="Right" Margin="0,300,90,0" VerticalAlignment="Top" Width="80" Height="35"/>
+                <Button Content="WYŚLIJ" Click="Button_wyslij" FontSize="15" FontWeight="Bold" Background="LightGray" HorizontalAlignment="Left" Margin="90,300,0,0" VerticalAlignment="Top" Width="80" Height="35"/>
+                <TextBox Name="NrPrzodownika_textbox" HorizontalAlignment="Center" Height="30" Margin="0,255,0,0" BorderBrush="Black" TextAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            </Grid>
             
+
+            <Grid Name="BasicKomunikatGrid"  Background="#66B4A4A4" Visibility="Hidden">
+                <Rectangle Fill="#FFF7F5F5" RadiusX="20" RadiusY="20" HorizontalAlignment="Center" Height="130" Margin="0,170,0,0" Stroke="Black" VerticalAlignment="Top" Width="275"/>
+                <TextBlock Name="Message" TextWrapping="WrapWithOverflow" Width="200" Height="50" Margin="90,190,85.2,427.2" TextAlignment="Center">
+                       BRAK WYCIECZEK DO POTWIERDZENIA
+                </TextBlock>
+                <Button Content="OK" Click="Button_ZamknijKomunikat" FontSize="15" FontWeight="Bold" Background="LightGray" HorizontalAlignment="Left" Margin="155,255,0,0" VerticalAlignment="Top" Width="60" Height="30"/>
+            </Grid>
+
+            
+
+
+
+
+        </Grid>
+
     </Grid>
 </UserControl>
