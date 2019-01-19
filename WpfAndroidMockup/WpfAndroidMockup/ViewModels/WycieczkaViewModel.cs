@@ -6,38 +6,97 @@ using System.Threading.Tasks;
 using WpfAndroidMockup.Models;
 using System.Collections.ObjectModel;
 using System.Windows.Controls;
+using System.ComponentModel;
 
 namespace WpfAndroidMockup.ViewModels
 {
-    public class WycieczkaViewModel
+    public class WycieczkaViewModel : INotifyPropertyChanged
     {
-        public ObservableCollection<WycieczkaModel> wycieczkiObservableCollection { get; set; }
-        public UserControl currentView;
-        public WycieczkaModel currentWycieczka { get; set; }
+        private ObservableCollection<WycieczkaModel> wycieczkiObservableCollection;
+        private WycieczkaModel currentWycieczka;
         private WycieczkiContext wycieczkiContext;
+                
+        public ObservableCollection<WycieczkaModel> WycieczkiObservableCollection
+        {
+            get
+            {
+                return wycieczkiObservableCollection;
+            }
+            set
+            {
+                if (wycieczkiObservableCollection != value)
+                {
+                    wycieczkiObservableCollection = value;
+                    RaisePropertyChanged("WycieczkiObservableCollection");
+                }
+
+            }
+
+        }
+        
+        public WycieczkaModel CurrentWycieczka
+        {
+            get
+            {
+                return currentWycieczka;
+            }
+            set
+            {
+                if (currentWycieczka != value)
+                {
+                    currentWycieczka = value;
+                    RaisePropertyChanged("CurrentWycieczka");
+                }
+
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        public UserControl CurrentView;
 
         public WycieczkaViewModel()
         {
             wycieczkiContext = WycieczkiContext.GetInstance();
             LoadWycieczkiToObservableCollection();
-            currentWycieczka = new WycieczkaModel(new TurystaModel(0), "", StatusyPotwierdzenia.NIEPOTWIERDZONA);
+            TurystaModel t = new TurystaModel();
+            OdznakaModel o = new OdznakaModel(ref t);
+            CurrentWycieczka = new WycieczkaModel(1, ref t, ref o, "", StatusyPotwierdzenia.NIEPOTWIERDZONA);
 
+        }
+
+        private void RaisePropertyChanged(string property)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(property));
+            }
         }
 
         private void LoadWycieczkiToObservableCollection()
         {
-            wycieczkiObservableCollection = new ObservableCollection<WycieczkaModel>();
+            WycieczkiObservableCollection = new ObservableCollection<WycieczkaModel>();
             List<WycieczkaModel> wycieczki = wycieczkiContext.GetWycieczkiZalogowanegoTurysty();
 
             foreach (var item in wycieczki)
             {
-                wycieczkiObservableCollection.Add(item);
+                WycieczkiObservableCollection.Add(item);
             }
         }
 
         public void SetCurrentWycieczka(WycieczkaModel wycieczka)
         {
-            currentWycieczka.Copy(wycieczka);
+            CurrentWycieczka = wycieczka;
+        }
+
+        public bool CzyCurrentWycieczkaPotwierdzona()
+        {
+            return CurrentWycieczka.Status == StatusyPotwierdzenia.POTWIERDZONA;
+        }
+
+        public void UsunAktualnaWycieczke()
+        {
+            wycieczkiContext.Usun(CurrentWycieczka.Id);
+            WycieczkiObservableCollection.Remove(CurrentWycieczka);
         }
     }
 }

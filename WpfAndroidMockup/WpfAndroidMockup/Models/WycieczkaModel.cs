@@ -11,19 +11,53 @@ namespace WpfAndroidMockup.Models
 
     public class WycieczkaModel : INotifyPropertyChanged
     {
+        private long id;
+        private long nrPrzodownika;
         private TurystaModel turysta;
-        private string name;
-        private DateTime startDate;
-        private DateTime finishDate;
+        private OdznakaModel odznaka;
+        private string nazwa;
+        private DateTime dataRozpoczecia;
+        private DateTime dataZakonczenia;
         private StatusyPotwierdzenia status;
         private string obszarGorski;
         private bool czyWielodniowa;
         private string trasa;
-        private long length; //w metrach
-        private long height; //w metrach
+        private long dlugosc; //w metrach
+        private long wysokosc; //w metrach
         private int punktacja;
         private string cyklOdznaki;
-        
+
+        public long Id
+        {
+            get
+            {
+                return id;
+            }
+            set
+            {
+                if (id != value)
+                {
+                    id = value;
+                    RaisePropertyChanged("Id");
+                }
+            }
+        }
+
+        public long NrPrzodownika
+        {
+            get
+            {
+                return nrPrzodownika;
+            }
+            set
+            {
+                if (nrPrzodownika != value)
+                {
+                    nrPrzodownika = value;
+                    RaisePropertyChanged("NrPrzodownika");
+                }
+            }
+        }
 
         public TurystaModel Turysta
         {
@@ -39,53 +73,67 @@ namespace WpfAndroidMockup.Models
                     RaisePropertyChanged("Turysta");
                 }
             }
-
-            // czy tu ten set jest potrzebny??? nie wiem
         }
 
-        public string Name
+        public OdznakaModel Odznaka
         {
             get
             {
-                return name;
+                return odznaka;
             }
             set
             {
-                if(name != value)
+                if (odznaka != value)
                 {
-                    name = value;
-                    RaisePropertyChanged("Name");
-                }
-            }
-        }
-        public DateTime StartDate
-        {
-            get
-            {
-                return startDate;
-            }
-            set
-            {
-                if (startDate != value)
-                {
-                    startDate = value;
-                    RaisePropertyChanged("StartDate");
+                    odznaka = value;
+                    RaisePropertyChanged("Odznaka");
                 }
             }
         }
 
-        public DateTime FinishDate
+        public string Nazwa
         {
             get
             {
-                return finishDate;
+                return nazwa;
             }
             set
             {
-                if (finishDate != value)
+                if (nazwa != value)
                 {
-                    finishDate = value;
-                    RaisePropertyChanged("FinishDate");
+                    nazwa = value;
+                    RaisePropertyChanged("Imie");
+                }
+            }
+        }
+        public DateTime DataRozpoczecia
+        {
+            get
+            {
+                return dataRozpoczecia;
+            }
+            set
+            {
+                if (dataRozpoczecia != value)
+                {
+                    dataRozpoczecia = value;
+                    RaisePropertyChanged("DataRozpoczecia");
+                }
+            }
+        }
+
+        public DateTime DataZakonczenia
+        {
+            get
+            {
+                return dataZakonczenia;
+            }
+            set
+            {
+                if (dataZakonczenia != value)
+                {
+                    dataZakonczenia = value;
+                    RaisePropertyChanged("DataZakonczenia");
                 }
             }
         }
@@ -102,6 +150,7 @@ namespace WpfAndroidMockup.Models
                 {
                     status = value;
                     RaisePropertyChanged("Status");
+                    odznaka.RaisePropertyChanged("Pkt");
                 }
             }
         }
@@ -151,33 +200,33 @@ namespace WpfAndroidMockup.Models
                 }
             }
         }
-        public long Length
+        public long Dlugosc
         {
             get
             {
-                return length;
+                return dlugosc;
             }
             set
             {
-                if (length != value)
+                if (dlugosc != value)
                 {
-                    length = value;
-                    RaisePropertyChanged("Length");
+                    dlugosc = value;
+                    RaisePropertyChanged("Dlugosc");
                 }
             }
         }
-        public long Height
+        public long Wysokosc
         {
             get
             {
-                return height;
+                return wysokosc;
             }
             set
             {
-                if (height != value)
+                if (wysokosc != value)
                 {
-                    height = value;
-                    RaisePropertyChanged("Height");
+                    wysokosc = value;
+                    RaisePropertyChanged("Wysokosc");
                 }
             }
         }
@@ -192,7 +241,7 @@ namespace WpfAndroidMockup.Models
                 if (punktacja != value)
                 {
                     punktacja = value;
-                    RaisePropertyChanged("Punkctacja");
+                    RaisePropertyChanged("Punktacja");
                 }
             }
         }
@@ -212,12 +261,12 @@ namespace WpfAndroidMockup.Models
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        public string TotalTime
+
+        public string CalkowityCzasTrwania
         {
             get
             {
-                return CalculateTotalTime();
+                return CalkowityCzasWycieczki();
             }
         }
 
@@ -225,44 +274,32 @@ namespace WpfAndroidMockup.Models
         {
             get
             {
-                return StartDate.ToString("dd.MM.yyyy");
+                return DataRozpoczecia.ToString("dd.MM.yyyy");
             }
         }
 
-        public WycieczkaModel(TurystaModel Turysta, string Name, StatusyPotwierdzenia Status)
+        public WycieczkaModel(long id, ref TurystaModel turysta, ref OdznakaModel odznaka, string Name, StatusyPotwierdzenia status)
         {
-            this.Turysta = Turysta;
-            this.Name = Name;
-            StartDate = DateTime.Now;
-            FinishDate = DateTime.Now.AddHours(13);
-            FinishDate = FinishDate.AddMinutes(32);
-            this.Status = Status;
+            this.id = id;
+            this.Turysta = turysta;
+            this.Odznaka = odznaka;
+            this.Nazwa = Name;
+            DataRozpoczecia = DateTime.Now;
+            DataZakonczenia = DateTime.Now.AddHours(13);
+            DataZakonczenia = DataZakonczenia.AddMinutes(32);
+            this.Status = status;
             obszarGorski = "Bieszczady";
             CzyWielodniowa = false;
             Trasa = "jakas trasa";
-            Length = 3457; 
-            Height = 342;
-            Punktacja = 3;
-            CyklOdznaki = "Popularna";
-
-    }
-
-        public void Copy(WycieczkaModel wycieczka)
-        {
-            Turysta = wycieczka.Turysta;
-            Name = wycieczka.Name;
-            StartDate = wycieczka.StartDate;
-            FinishDate = wycieczka.FinishDate;
-            Status = wycieczka.Status;
-            ObszarGorski = wycieczka.ObszarGorski;
-            CzyWielodniowa = wycieczka.CzyWielodniowa;
-            Trasa = wycieczka.Trasa;
-            Length = wycieczka.Length;
-            Height = wycieczka.Height;
-            Punktacja = wycieczka.Punktacja;
-            CyklOdznaki = wycieczka.CyklOdznaki;
-
+            Dlugosc = 3457;
+            Wysokosc = 342;
+            Punktacja = 30 + new Random(Guid.NewGuid().GetHashCode()).Next(10);
+            CyklOdznaki = Odznaka.Rodzaj;
+            odznaka.DodajWycieczke(this);
         }
+
+        
+        public event PropertyChangedEventHandler PropertyChanged;
 
         private void RaisePropertyChanged(string property)
         {
@@ -272,11 +309,11 @@ namespace WpfAndroidMockup.Models
             }
         }
 
-        private string CalculateTotalTime()
+        private string CalkowityCzasWycieczki()
         {
-            int hours = (int)(FinishDate - StartDate).TotalHours;
-            int minutes = (int)(FinishDate - StartDate).TotalMinutes - hours * 60;
-            string time = hours + " h " + minutes+" min ";
+            int hours = (int)(DataZakonczenia - DataRozpoczecia).TotalHours;
+            int minutes = (int)(DataZakonczenia - DataRozpoczecia).TotalMinutes - hours * 60;
+            string time = hours + " h " + minutes + " min ";
             Console.WriteLine(time);
             return time;
         }

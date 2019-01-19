@@ -37,7 +37,9 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -57,12 +59,19 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Models\DaneLogowania.cs" />
+    <Compile Include="Models\OdznakaModel.cs" />
     <Compile Include="Models\TurysciContext.cs" />
     <Compile Include="Models\TurystaModel.cs" />
     <Compile Include="Models\WycieczkiContext.cs" />
     <Compile Include="ViewModels\WycieczkaViewModel.cs" />
-    <Compile Include="Views\ObslugaWycieczekView.xaml.cs">
-      <DependentUpon>ObslugaWycieczekView.xaml</DependentUpon>
+    <Compile Include="Views\PotwierdzanieWycieczkiPrzodownikView.xaml.cs">
+      <DependentUpon>PotwierdzanieWycieczkiPrzodownikView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PotwierdzanieWycieczkiTurystaView.xaml.cs">
+      <DependentUpon>PotwierdzanieWycieczkiTurystaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PrzegladanieWycieczkiView.xaml.cs">
+      <DependentUpon>PrzegladanieWycieczkiView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -76,7 +85,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\ObslugaWycieczekView.xaml">
+    <Page Include="Views\PotwierdzanieWycieczkiPrzodownikView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PotwierdzanieWycieczkiTurystaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PrzegladanieWycieczkiView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -40,7 +40,9 @@ namespace WpfAndroidMockup
             WycieczkaViewModel tripViewModelObject = new WycieczkaViewModel();
             ObslugaWycieczekViewControl.DataContext = tripViewModelObject;
             ObslugaWycieczekViewControl.WycieczkaViewModel = tripViewModelObject;
-            tripViewModelObject.currentView = ObslugaWycieczekViewControl;
+            tripViewModelObject.CurrentView = ObslugaWycieczekViewControl;
+
+            
             ObslugaWycieczekViewControl.Visibility = Visibility.Visible;
         }
 
@@ -53,5 +55,7 @@ namespace WpfAndroidMockup
         {
             throw new NotImplementedException();
         }
+
+        
     }
 }

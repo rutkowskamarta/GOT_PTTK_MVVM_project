@@ -6,7 +6,6 @@
         xmlns:views = "clr-namespace:WpfAndroidMockup.Views"
         xmlns:local="clr-namespace:WpfAndroidMockup"
         mc:Ignorable="d"
-        
         Title="MainWindow" Height="667" Width="390" Background="#FF2F2C2C"
         >
     <Grid>
@@ -18,7 +17,7 @@
             </Button>
             <Button Name = "WyslijDoPotwierdzeniaButton" Click="Button_WyslijDoPotwierdzenia" Content="Wyślij do potwierdzenia" FontSize="15" Foreground="White" Background="LightSlateGray" HorizontalAlignment="Center" Margin="0,200,0,0" VerticalAlignment="Top" Width="200" Height="50"/>
             <Button Name = "PotwierdzButton" Click="Button_Potwierdz" Content="Potwierdź" FontSize="15" Foreground="White" Background="LightSlateGray" HorizontalAlignment="Center" Margin="0,280,0,0" VerticalAlignment="Top" Width="200" Height="50"/>
-            <views:ObslugaWycieczekView x:Name = "ObslugaWycieczekViewControl" Visibility="Hidden"/>
+            <views:PrzegladanieWycieczkiView x:Name = "ObslugaWycieczekViewControl" Visibility="Hidden"/>
         </Grid>
 
         

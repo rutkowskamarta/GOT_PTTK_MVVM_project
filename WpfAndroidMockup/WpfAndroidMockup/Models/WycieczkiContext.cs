@@ -29,11 +29,16 @@ namespace WpfAndroidMockup.Models
         {
             wycieczkiDict = new Dictionary<long, WycieczkaModel>();
             TurysciContext turysciContext = TurysciContext.GetInstance();
-            wycieczkiDict.Add(0, new WycieczkaModel(turysciContext.GetTurysta(0), "Wycieczka0", StatusyPotwierdzenia.POTWIERDZONA));
-            wycieczkiDict.Add(1, new WycieczkaModel(turysciContext.GetTurysta(0), "Dominicza Góra", StatusyPotwierdzenia.POTWIERDZONA));
-            wycieczkiDict.Add(2, new WycieczkaModel(turysciContext.GetTurysta(0), "Wycieczka1", StatusyPotwierdzenia.POTWIERDZONA));
-            wycieczkiDict.Add(3, new WycieczkaModel(turysciContext.GetTurysta(0), "Wycieczka2", StatusyPotwierdzenia.NIEPOTWIERDZONA));
-            wycieczkiDict.Add(4, new WycieczkaModel(turysciContext.GetTurysta(1), "WycieczkaInnegoTurysty", StatusyPotwierdzenia.WTRAKCIE));
+            TurystaModel t1 = turysciContext.GetTurysta(0);
+            TurystaModel t2 = turysciContext.GetTurysta(1);
+
+            OdznakaModel o1 = new OdznakaModel(ref t1);
+            OdznakaModel o2 = new OdznakaModel(ref t2);
+            wycieczkiDict.Add(0, new WycieczkaModel(0, ref t1, ref o1, "Wycieczka0", StatusyPotwierdzenia.POTWIERDZONA));
+            wycieczkiDict.Add(1, new WycieczkaModel(1, ref t1, ref o1, "Dominicza Góra", StatusyPotwierdzenia.POTWIERDZONA));
+            wycieczkiDict.Add(2, new WycieczkaModel(2, ref t1, ref o1, "Wycieczka1", StatusyPotwierdzenia.POTWIERDZONA));
+            wycieczkiDict.Add(3, new WycieczkaModel(3, ref t1, ref o1, "Wycieczka2", StatusyPotwierdzenia.NIEPOTWIERDZONA));
+            wycieczkiDict.Add(4, new WycieczkaModel(4, ref t2, ref o2, "WycieczkaInnegoTurysty", StatusyPotwierdzenia.WTRAKCIE));
         }
 
         public WycieczkaModel GetWycieczka(long id)
@@ -43,20 +48,52 @@ namespace WpfAndroidMockup.Models
             return value;
         }
 
-        public void DeleteWycieczka(long id)
+        public void Usun(long id)
+        { var wycieczkaDoUsuniecia = from wycieczka in wycieczkiDict
+                                     where wycieczka.Value.Id == id
+                                     select wycieczka.Key;
+            
+            wycieczkiDict.Remove(wycieczkaDoUsuniecia.ToList()[0]);
+        }
+
+        public List<WycieczkaModel> GetNiepotwierdzoneWycieczkiTurysty(long idTurysty)
         {
             throw new NotImplementedException();
+            List<WycieczkaModel> wycieczkiList = new List<WycieczkaModel>();
+            var wycieczki = from wycieczka in wycieczkiDict
+                            where wycieczka.Value.Turysta.Id == DaneLogowania.IdZalogowanegoTurysty
+                            select wycieczka.Value;
+
+            wycieczkiList = wycieczki.ToList();
+            return wycieczkiList;
+        }
+
+        public List<WycieczkaModel> GetWycieczkiPrzodownikaDoPotwierdzenia(long nrPrzodownika)
+        {
+            throw new NotImplementedException();
+            List<WycieczkaModel> wycieczkiList = new List<WycieczkaModel>();
+            var wycieczki = from wycieczka in wycieczkiDict
+                            where wycieczka.Value.Turysta.Id == DaneLogowania.IdZalogowanegoTurysty
+                            select wycieczka.Value;
+
+            wycieczkiList = wycieczki.ToList();
+            return wycieczkiList;
         }
 
         public List<WycieczkaModel> GetWycieczkiZalogowanegoTurysty()
         {
             List<WycieczkaModel> wycieczkiList = new List<WycieczkaModel>();
             var wycieczki = from wycieczka in wycieczkiDict
-                        where wycieczka.Value.Turysta.idTurysty == DaneLogowania.IdZalogowanegoTurysty
+                        where wycieczka.Value.Turysta.Id == DaneLogowania.IdZalogowanegoTurysty
                         select wycieczka.Value;
 
             wycieczkiList = wycieczki.ToList();
             return wycieczkiList;
         }
+
+        //public void ZmienStatus(WycieczkaModel aktualnaWycieczka, int idWycieczki, long nrPrzodownika, StatusWycieczkiEnum status)
+        //{
+
+        //}
     }
 }
