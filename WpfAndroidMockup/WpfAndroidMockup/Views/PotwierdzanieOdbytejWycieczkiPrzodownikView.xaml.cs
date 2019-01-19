@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace WpfAndroidMockup.Views
 {
     /// <summary>
-    /// Interaction logic for PotwierdzanieWycieczkiPrzodownikView.xaml
+    /// Interaction logic for PotwierdzanieOdbytejWycieczkiPrzodownikView.xaml
     /// </summary>
-    public partial class PotwierdzanieWycieczkiPrzodownikView : UserControl
+    public partial class PotwierdzanieOdbytejWycieczkiPrzodownikView : UserControl
     {
-        public PotwierdzanieWycieczkiPrzodownikView()
+        public PotwierdzanieOdbytejWycieczkiPrzodownikView()
         {
             InitializeComponent();
         }

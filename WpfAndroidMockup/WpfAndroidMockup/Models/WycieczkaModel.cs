@@ -318,5 +318,17 @@ namespace WpfAndroidMockup.Models
             return time;
         }
 
+
+
+        public bool CzyPotwierdzona()
+        {
+            return Status.Equals(StatusyPotwierdzenia.POTWIERDZONA);
+        }
+
+        public bool CzyNiepotwierdzona()
+        {
+            return Status.Equals(StatusyPotwierdzenia.NIEPOTWIERDZONA);
+        }
+
     }
 }

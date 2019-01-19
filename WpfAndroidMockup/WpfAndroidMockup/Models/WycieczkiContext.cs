@@ -58,10 +58,9 @@ namespace WpfAndroidMockup.Models
 
         public List<WycieczkaModel> GetNiepotwierdzoneWycieczkiTurysty(long idTurysty)
         {
-            throw new NotImplementedException();
             List<WycieczkaModel> wycieczkiList = new List<WycieczkaModel>();
             var wycieczki = from wycieczka in wycieczkiDict
-                            where wycieczka.Value.Turysta.Id == DaneLogowania.IdZalogowanegoTurysty
+                            where wycieczka.Value.Turysta.Id == DaneLogowania.IdZalogowanegoTurysty && wycieczka.Value.CzyNiepotwierdzona()
                             select wycieczka.Value;
 
             wycieczkiList = wycieczki.ToList();

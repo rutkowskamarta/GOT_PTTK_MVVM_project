@@ -57,7 +57,6 @@ namespace WpfAndroidMockup.ViewModels
         public WycieczkaViewModel()
         {
             wycieczkiContext = WycieczkiContext.GetInstance();
-            LoadWycieczkiToObservableCollection();
             TurystaModel t = new TurystaModel();
             OdznakaModel o = new OdznakaModel(ref t);
             CurrentWycieczka = new WycieczkaModel(1, ref t, ref o, "", StatusyPotwierdzenia.NIEPOTWIERDZONA);
@@ -72,10 +71,21 @@ namespace WpfAndroidMockup.ViewModels
             }
         }
 
-        private void LoadWycieczkiToObservableCollection()
+        public void LoadAllWycieczkiToObservableCollection()
         {
             WycieczkiObservableCollection = new ObservableCollection<WycieczkaModel>();
             List<WycieczkaModel> wycieczki = wycieczkiContext.GetWycieczkiZalogowanegoTurysty();
+
+            foreach (var item in wycieczki)
+            {
+                WycieczkiObservableCollection.Add(item);
+            }
+        }
+
+        public void LoadNiepotwierdzoneWycieczkiToObservableCollection()
+        {
+            WycieczkiObservableCollection = new ObservableCollection<WycieczkaModel>();
+            List<WycieczkaModel> wycieczki = wycieczkiContext.GetNiepotwierdzoneWycieczkiTurysty(DaneLogowania.IdZalogowanegoTurysty);
 
             foreach (var item in wycieczki)
             {
@@ -90,7 +100,7 @@ namespace WpfAndroidMockup.ViewModels
 
         public bool CzyCurrentWycieczkaPotwierdzona()
         {
-            return CurrentWycieczka.Status == StatusyPotwierdzenia.POTWIERDZONA;
+            return CurrentWycieczka.CzyPotwierdzona();
         }
 
         public void UsunAktualnaWycieczke()

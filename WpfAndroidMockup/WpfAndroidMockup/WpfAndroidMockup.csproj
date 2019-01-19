@@ -60,15 +60,20 @@
     </ApplicationDefinition>
     <Compile Include="Models\DaneLogowania.cs" />
     <Compile Include="Models\OdznakaModel.cs" />
+    <Compile Include="Models\OdznakiContext.cs" />
     <Compile Include="Models\TurysciContext.cs" />
     <Compile Include="Models\TurystaModel.cs" />
     <Compile Include="Models\WycieczkiContext.cs" />
+    <Compile Include="ViewModels\OdznakiViewModel.cs" />
     <Compile Include="ViewModels\WycieczkaViewModel.cs" />
-    <Compile Include="Views\PotwierdzanieWycieczkiPrzodownikView.xaml.cs">
-      <DependentUpon>PotwierdzanieWycieczkiPrzodownikView.xaml</DependentUpon>
+    <Compile Include="Views\PotwierdzanieOdbytejWycieczkiPrzodownikView.xaml.cs">
+      <DependentUpon>PotwierdzanieOdbytejWycieczkiPrzodownikView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\PotwierdzanieWycieczkiTurystaView.xaml.cs">
-      <DependentUpon>PotwierdzanieWycieczkiTurystaView.xaml</DependentUpon>
+    <Compile Include="Views\PotwierdzanieOdbytejWycieczkiTurystaView.xaml.cs">
+      <DependentUpon>PotwierdzanieOdbytejWycieczkiTurystaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PrzegladanieOdznakiView.xaml.cs">
+      <DependentUpon>PrzegladanieOdznakiView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PrzegladanieWycieczkiView.xaml.cs">
       <DependentUpon>PrzegladanieWycieczkiView.xaml</DependentUpon>
@@ -85,11 +90,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\PotwierdzanieWycieczkiPrzodownikView.xaml">
+    <Page Include="Views\PotwierdzanieOdbytejWycieczkiPrzodownikView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\PotwierdzanieWycieczkiTurystaView.xaml">
+    <Page Include="Views\PotwierdzanieOdbytejWycieczkiTurystaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PrzegladanieOdznakiView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -144,6 +153,15 @@
     <Resource Include="Assets\edit.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\brazowa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\zlota.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\got_pop.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

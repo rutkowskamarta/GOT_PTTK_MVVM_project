@@ -15,9 +15,18 @@
             <Button Name = "WszystkieWycieczkiButton" Click="Button_ObslugaWycieczek" Content="Wyświetl wszystkie wycieczki" FontSize="15" Foreground="White" Background="LightSlateGray" HorizontalAlignment="Center" Margin="0,120,0,0" VerticalAlignment="Top" Width="200" Height="50">
                 
             </Button>
-            <Button Name = "WyslijDoPotwierdzeniaButton" Click="Button_WyslijDoPotwierdzenia" Content="Wyślij do potwierdzenia" FontSize="15" Foreground="White" Background="LightSlateGray" HorizontalAlignment="Center" Margin="0,200,0,0" VerticalAlignment="Top" Width="200" Height="50"/>
-            <Button Name = "PotwierdzButton" Click="Button_Potwierdz" Content="Potwierdź" FontSize="15" Foreground="White" Background="LightSlateGray" HorizontalAlignment="Center" Margin="0,280,0,0" VerticalAlignment="Top" Width="200" Height="50"/>
+            <Button Name = "WyslijOdznakeDoWeryfikacji" Click="Button_WyslijDoWeryfikacji" Content="Wyślij odznakę do weryfikacji" FontSize="15" Foreground="White" Background="LightSlateGray" HorizontalAlignment="Center" Margin="0,200,0,0" VerticalAlignment="Top" Width="200" Height="50"/>
+            <Button Name = "PotwierdzButton" Click="Button_Potwierdz" Content="Potwierdź odbytą wycieczkę" FontSize="15" Foreground="White" Background="LightSlateGray" HorizontalAlignment="Center" Margin="0,280,0,0" VerticalAlignment="Top" Width="200" Height="50"/>
+            <Button Name = "WyslijWycieczkeDoPotwierdzenia" Click="Button_WyslijDoPotwierdzenia" FontSize="15" Foreground="White" Background="LightSlateGray" HorizontalAlignment="Center" Margin="92,365,92,0" VerticalAlignment="Top" Width="200" Height="65">
+                <TextBlock TextWrapping="Wrap" TextAlignment="Center">
+                    Wyślij wycieczkę do potwierdzenia
+                </TextBlock>
+            </Button>
             <views:PrzegladanieWycieczkiView x:Name = "ObslugaWycieczekViewControl" Visibility="Hidden"/>
+            <views:PrzegladanieOdznakiView x:Name = "PrzeslijOdznakeDoWeryfikacji" Visibility="Hidden"/>
+            <views:PotwierdzanieOdbytejWycieczkiTurystaView x:Name = "PrzeslijWycieczkeDoWeryfikacji" Visibility="Hidden"/>
+            <views:PotwierdzanieOdbytejWycieczkiPrzodownikView x:Name = "PotwierdzOdbyteWycieczki" Visibility="Hidden"/>
+
         </Grid>
 
         

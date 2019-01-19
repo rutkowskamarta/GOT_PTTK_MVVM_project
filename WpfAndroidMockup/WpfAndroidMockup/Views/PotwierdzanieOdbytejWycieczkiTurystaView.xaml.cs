@@ -12,15 +12,18 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfAndroidMockup.ViewModels;
 
 namespace WpfAndroidMockup.Views
 {
     /// <summary>
-    /// Interaction logic for PotwierdzanieWycieczkiTurystaView.xaml
+    /// Interaction logic for PotwierdzanieOdbytejWycieczkiTurystaView.xaml
     /// </summary>
-    public partial class PotwierdzanieWycieczkiTurystaView : UserControl
+    public partial class PotwierdzanieOdbytejWycieczkiTurystaView : UserControl
     {
-        public PotwierdzanieWycieczkiTurystaView()
+        public WycieczkaViewModel wycieczkaViewModel;
+
+        public PotwierdzanieOdbytejWycieczkiTurystaView()
         {
             InitializeComponent();
         }

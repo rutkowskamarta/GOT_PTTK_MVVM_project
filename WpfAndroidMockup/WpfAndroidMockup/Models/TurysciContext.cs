@@ -39,8 +39,5 @@ namespace WpfAndroidMockup.Models
             turysciDict.TryGetValue(id, out value);
             return value;
         }
-
-       
-
     }
 }

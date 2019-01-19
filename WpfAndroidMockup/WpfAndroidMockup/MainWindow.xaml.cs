@@ -38,17 +38,20 @@ namespace WpfAndroidMockup
         private void Button_ObslugaWycieczek(object sender, RoutedEventArgs e)
         {
             WycieczkaViewModel tripViewModelObject = new WycieczkaViewModel();
+            tripViewModelObject.LoadAllWycieczkiToObservableCollection();
             ObslugaWycieczekViewControl.DataContext = tripViewModelObject;
             ObslugaWycieczekViewControl.WycieczkaViewModel = tripViewModelObject;
             tripViewModelObject.CurrentView = ObslugaWycieczekViewControl;
-
-            
             ObslugaWycieczekViewControl.Visibility = Visibility.Visible;
         }
 
-        private void Button_WyslijDoPotwierdzenia(object sender, RoutedEventArgs e)
+        private void Button_WyslijDoWeryfikacji(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            OdznakiViewModel odznakiViewModel = new OdznakiViewModel();
+            odznakiViewModel.LoadWszystkieRozpoczeteCykle();
+            PrzeslijOdznakeDoWeryfikacji.DataContext = odznakiViewModel;
+            PrzeslijOdznakeDoWeryfikacji.odznakiViewModel = odznakiViewModel;
+            PrzeslijOdznakeDoWeryfikacji.Visibility = Visibility.Visible;
         }
 
         private void Button_Potwierdz(object sender, RoutedEventArgs e)
@@ -56,6 +59,14 @@ namespace WpfAndroidMockup
             throw new NotImplementedException();
         }
 
-        
+        private void Button_WyslijDoPotwierdzenia(object sender, RoutedEventArgs e)
+        {
+            WycieczkaViewModel tripViewModelObject = new WycieczkaViewModel();
+            tripViewModelObject.LoadNiepotwierdzoneWycieczkiToObservableCollection();
+            PrzeslijWycieczkeDoWeryfikacji.DataContext = tripViewModelObject;
+            PrzeslijWycieczkeDoWeryfikacji.wycieczkaViewModel = tripViewModelObject;
+            tripViewModelObject.CurrentView = PrzeslijWycieczkeDoWeryfikacji;
+            PrzeslijWycieczkeDoWeryfikacji.Visibility = Visibility.Visible;
+        }
     }
 }

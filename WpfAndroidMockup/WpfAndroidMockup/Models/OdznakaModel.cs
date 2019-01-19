@@ -17,6 +17,10 @@ namespace WpfAndroidMockup.Models
         private bool czyZweryfikowana;
         private string imgPath;
         private int minPkt;
+        private int pkt;
+        private DateTime dataRozpoczecia;
+        private DateTime dataZakonczenia;
+        private bool czyPrzeslanaDoWeryfikacji;
 
         public long Id
         {
@@ -102,19 +106,13 @@ namespace WpfAndroidMockup.Models
         {
             get
             {
-                int suma = 0;
-                foreach (WycieczkaModel wycieczka in wycieczki)
-                {
-                    if (wycieczka.Status == StatusyPotwierdzenia.POTWIERDZONA)
-                        suma += wycieczka.Punktacja;
-                }
-                return suma;
+                return pkt;
             }
             set
             {
-                if (minPkt != value)
+                if (pkt != value)
                 {
-                    minPkt = value;
+                    pkt = value;
                     RaisePropertyChanged("Pkt");
                 }
             }
@@ -136,9 +134,44 @@ namespace WpfAndroidMockup.Models
             }
         }
 
+        public DateTime DataRozpoczecia
+        {
+            get
+            {
+                return dataRozpoczecia;
+            }
+            set
+            {
+                if (dataRozpoczecia != value)
+                {
+                    dataRozpoczecia = value;
+                    RaisePropertyChanged("DataRozpoczecia");
+                }
+            }
+        }
+
+        public DateTime DataZakonczenia
+        {
+            get
+            {
+                return dataZakonczenia;
+            }
+            set
+            {
+                if (dataZakonczenia != value)
+                {
+                    dataZakonczenia = value;
+                    RaisePropertyChanged("DataZakonczenia");
+                }
+            }
+        }
+
         public ObservableCollection<WycieczkaModel> Wycieczki
         {
-            get;
+            get
+            {
+                return wycieczki;
+            }
         }
 
         public TurystaModel Turysta { get; }
@@ -148,6 +181,38 @@ namespace WpfAndroidMockup.Models
             Turysta = turysta;
             wycieczki = new ObservableCollection<WycieczkaModel>();
 
+        }
+
+        public string StatusString
+        {
+            get
+            {
+                if (!CzyZweryfikowana)
+                {
+                    return "NIEZWERYFIKOWANA";
+                }
+                else
+                {
+                    return "ZWERYFIKOWANA";
+                }
+            }
+            
+        }
+
+        public bool CzyPrzeslanaDoWeryfikacji
+        {
+            get
+            {
+                return czyPrzeslanaDoWeryfikacji;
+            }
+            set
+            {
+                if (czyPrzeslanaDoWeryfikacji != value)
+                {
+                    czyPrzeslanaDoWeryfikacji = value;
+                    RaisePropertyChanged("CzyPrzeslanaDoWeryfikacji");
+                }
+            }
         }
 
         public void DodajWycieczke(WycieczkaModel wycieczka)
