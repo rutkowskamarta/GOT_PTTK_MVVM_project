@@ -23,15 +23,19 @@ namespace WpfAndroidMockup
     public partial class MainWindow : Window
     {
         private const int PRZYKLADOWY_TURYSTA = 0;
+        private const long PRZYKLADOWY_PRZODOWNIK = 1;
+
         public MainWindow()
         {
             InitializeComponent();
-            LoginUser(PRZYKLADOWY_TURYSTA);
+            LoginUser(PRZYKLADOWY_TURYSTA, PRZYKLADOWY_PRZODOWNIK);
         }
         
-        private void LoginUser(int idTurysty)
+        private void LoginUser(int idTurysty, long nrPrzodownika)
         {
             DaneLogowania.IdZalogowanegoTurysty = idTurysty;
+            DaneLogowania.NrZalogowanegoPrzodownika = nrPrzodownika;
+
         }
         
         private void Button_ObslugaWycieczek(object sender, RoutedEventArgs e)
@@ -55,7 +59,13 @@ namespace WpfAndroidMockup
 
         private void Button_Potwierdz(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            WycieczkaViewModel tripViewModelObject = new WycieczkaViewModel();
+            tripViewModelObject.GetWycieczkiPrzodownikaDoPotwierdzenia(DaneLogowania.NrZalogowanegoPrzodownika);
+            PotwierdzOdbyteWycieczki.DataContext = tripViewModelObject;
+            PotwierdzOdbyteWycieczki.wycieczkaViewModel = tripViewModelObject;
+            tripViewModelObject.CurrentView = PotwierdzOdbyteWycieczki;
+            PotwierdzOdbyteWycieczki.ZareagujGdyListaPusta();
+            PotwierdzOdbyteWycieczki.Visibility = Visibility.Visible;
         }
 
         private void Button_WyslijDoPotwierdzenia(object sender, RoutedEventArgs e)

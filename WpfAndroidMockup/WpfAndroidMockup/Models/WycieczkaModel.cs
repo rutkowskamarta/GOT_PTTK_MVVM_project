@@ -278,6 +278,15 @@ namespace WpfAndroidMockup.Models
             }
         }
 
+        public string DaneTurysty
+        {
+            get
+            {
+                return turysta.Imie + " " + turysta.Nazwisko;
+            }
+        }
+
+
         public WycieczkaModel(long id, ref TurystaModel turysta, ref OdznakaModel odznaka, string Name, StatusyPotwierdzenia status)
         {
             this.id = id;

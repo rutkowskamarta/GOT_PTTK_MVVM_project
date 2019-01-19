@@ -29,8 +29,13 @@ namespace WpfAndroidMockup.Models
         {
             przodownicyDisct = new Dictionary<long, PrzodownikModel>();
             przodownicyDisct.Add(0, new PrzodownikModel(0));
-            przodownicyDisct.Add(1, new PrzodownikModel(1));
+
+            PrzodownikModel p1 = new PrzodownikModel(1);
+            p1.ObszaryUprawnien.Add("Bieszczady");
+
+            przodownicyDisct.Add(1, p1);
             przodownicyDisct.Add(2, new PrzodownikModel(2));
+            
         }
 
         public PrzodownikModel GetPrzodownik(long id)
@@ -47,6 +52,14 @@ namespace WpfAndroidMockup.Models
                               select przodownik.Value;
             return (przodownicy.ToList<PrzodownikModel>().Count != 0);
            
+        }
+
+        public bool CzyPosiadaUprawnieniaNaObszarGorski(long nrPrzodownika, WycieczkaModel wycieczka)
+        {
+            var uprawnienia = from przodownik in przodownicyDisct
+                              where przodownik.Value.NrPrzodownika == nrPrzodownika && przodownik.Value.ObszaryUprawnien.Contains(wycieczka.ObszarGorski)
+                              select przodownik.Value;
+            return (uprawnienia.ToList().Count != 0);
         }
     }
 }

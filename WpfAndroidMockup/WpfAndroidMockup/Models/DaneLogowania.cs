@@ -9,7 +9,7 @@ namespace WpfAndroidMockup.Models
     public static class DaneLogowania
     {
         public static int IdZalogowanegoTurysty;
-
+        public static long NrZalogowanegoPrzodownika;
 
     }
 }

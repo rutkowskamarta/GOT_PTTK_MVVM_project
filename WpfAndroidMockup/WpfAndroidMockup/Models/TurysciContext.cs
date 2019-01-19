@@ -28,7 +28,7 @@ namespace WpfAndroidMockup.Models
         private void LoadExamplaryTourists()
         {
             turysciDict = new Dictionary<long, TurystaModel>();
-            turysciDict.Add(0, new TurystaModel(0));
+            turysciDict.Add(0, new TurystaModel(0, "Marta", "Rutkowska"));
             turysciDict.Add(1, new TurystaModel(1));
             turysciDict.Add(2, new TurystaModel(2));
         }

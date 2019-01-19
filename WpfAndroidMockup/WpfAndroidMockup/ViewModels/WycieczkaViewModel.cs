@@ -97,6 +97,17 @@ namespace WpfAndroidMockup.ViewModels
             }
         }
 
+        public void GetWycieczkiPrzodownikaDoPotwierdzenia(long nrPrzodownika)
+        {
+            WycieczkiObservableCollection = new ObservableCollection<WycieczkaModel>();
+            List<WycieczkaModel> wycieczki = wycieczkiContext.GetWycieczkiPrzodownikaDoPotwierdzenia(DaneLogowania.NrZalogowanegoPrzodownika);
+
+            foreach (var item in wycieczki)
+            {
+                WycieczkiObservableCollection.Add(item);
+            }
+        }
+
         public void SetCurrentWycieczka(WycieczkaModel wycieczka)
         {
             CurrentWycieczka = wycieczka;
@@ -122,6 +133,26 @@ namespace WpfAndroidMockup.ViewModels
         {
             currentWycieczka.NrPrzodownika = nrPrzodownika;
             currentWycieczka.Status = status;
+        }
+
+        public void UsunObecnaWycieczkeZWyswietlania()
+        {
+            wycieczkiObservableCollection.Remove(CurrentWycieczka);
+        }
+
+        public void PotwierdzAktualnaWycieczke()
+        {
+            currentWycieczka.Status = StatusyPotwierdzenia.POTWIERDZONA;
+        }
+
+        public void OdrzucAktualnaWycieczke()
+        {
+            currentWycieczka.Status = StatusyPotwierdzenia.NIEPOTWIERDZONA;
+        }
+
+        public bool CzyZalogowanyPrzodownikPosiadaUprawnieniaNaCurrentWycieczke()
+        {
+            return przodownicyContext.CzyPosiadaUprawnieniaNaObszarGorski(DaneLogowania.NrZalogowanegoPrzodownika, CurrentWycieczka);
         }
 
     }

@@ -72,6 +72,7 @@ namespace WpfAndroidMockup.Models
             {
                 if (obszaryUprawnien != value)
                 {
+                    obszaryUprawnien = value;
                     RaisePropertyChanged("ObszaryUprawnien");
                 }
 
@@ -82,12 +83,13 @@ namespace WpfAndroidMockup.Models
 
         public PrzodownikModel()
         {
-
+            ObszaryUprawnien = new List<string>();
         }
 
         public PrzodownikModel(long id)
         {
             this.NrPrzodownika = id;
+            ObszaryUprawnien = new List<string>();
         }
 
         private void RaisePropertyChanged(string property)

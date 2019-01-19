@@ -73,6 +73,13 @@ namespace WpfAndroidMockup.Models
             this.Id = id;
         }
 
+        public TurystaModel(long id, string imie, string nazwisko)
+        {
+            Id = id;
+            Imie = imie;
+            Nazwisko = nazwisko;
+        }
+
         private void RaisePropertyChanged(string property)
         {
             if (PropertyChanged != null)
