@@ -10,6 +10,9 @@ using System.ComponentModel;
 
 namespace WpfAndroidMockup.ViewModels
 {
+    /// <summary>
+    /// View model dla wycieczek
+    /// </summary>
     public class WycieczkaViewModel : INotifyPropertyChanged
     {
         private ObservableCollection<WycieczkaModel> wycieczkiObservableCollection;
@@ -17,6 +20,9 @@ namespace WpfAndroidMockup.ViewModels
         private WycieczkiContext wycieczkiContext;
         private PrzodownicyContext przodownicyContext;
                 
+        /// <summary>
+        /// Lista wycieczek
+        /// </summary>
         public ObservableCollection<WycieczkaModel> WycieczkiObservableCollection
         {
             get
@@ -35,6 +41,9 @@ namespace WpfAndroidMockup.ViewModels
 
         }
         
+        /// <summary>
+        /// Aktualna wycieczka
+        /// </summary>
         public WycieczkaModel CurrentWycieczka
         {
             get
@@ -52,10 +61,19 @@ namespace WpfAndroidMockup.ViewModels
             }
         }
 
-
+        /// <summary>
+        /// Wydarzenie ragujące na zmianę wartości atrybutu
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// Przetrzymuje obecny widok
+        /// </summary>
         public UserControl CurrentView;
 
+        /// <summary>
+        /// Konstruktor nieparametryczny klasy <see cref="WycieczkaViewModel"/>
+        /// </summary>
         public WycieczkaViewModel()
         {
             wycieczkiContext = WycieczkiContext.GetInstance();
@@ -67,6 +85,10 @@ namespace WpfAndroidMockup.ViewModels
 
         }
 
+        /// <summary>
+        /// Reaguje na zmianę wartości atrybutu
+        /// </summary>
+        /// <param name="property">atrybut</param>
         private void RaisePropertyChanged(string property)
         {
             if (PropertyChanged != null)
@@ -75,6 +97,9 @@ namespace WpfAndroidMockup.ViewModels
             }
         }
 
+        /// <summary>
+        /// Przypisuje do listy wycieczek wszystkie wycieczki zalogowanego turysty
+        /// </summary>
         public void LoadAllWycieczkiToObservableCollection()
         {
             WycieczkiObservableCollection = new ObservableCollection<WycieczkaModel>();
@@ -86,6 +111,9 @@ namespace WpfAndroidMockup.ViewModels
             }
         }
 
+        /// <summary>
+        /// Przypisuje do listy wycieczek wszystkie niepotwierdzone wycieczki turysty
+        /// </summary>
         public void WczytajNiepotwierdzoneWycieczkiTurysty()
         {
             WycieczkiObservableCollection = new ObservableCollection<WycieczkaModel>();
@@ -97,6 +125,10 @@ namespace WpfAndroidMockup.ViewModels
             }
         }
 
+        /// <summary>
+        /// Przypisuje do listy wycieczek wycieczki porzodwnika, które czekają na potwierdzenie
+        /// </summary>
+        /// <param name="nrPrzodownika"></param>
         public void WczytajWycieczkiPrzodownikaDoPotwierdzenia(long nrPrzodownika)
         {
             WycieczkiObservableCollection = new ObservableCollection<WycieczkaModel>();
@@ -108,49 +140,81 @@ namespace WpfAndroidMockup.ViewModels
             }
         }
 
+        /// <summary>
+        /// Przypisuje aktualnej wycieczke odpowiednią wycieczkę
+        /// </summary>
+        /// <param name="wycieczka"></param>
         public void WczytajWycieczke(WycieczkaModel wycieczka)
         {
             CurrentWycieczka = wycieczka;
         }
 
+        /// <summary>
+        /// Sprawcza czy aktualna wycieczka jest potwierdzona
+        /// </summary>
+        /// <returns></returns>
         public bool CzyCurrentWycieczkaPotwierdzona()
         {
             return CurrentWycieczka.CzyPotwierdzona();
         }
 
+        /// <summary>
+        /// Usuwa aktualną wycieczkę z bazy danych i z listy wycieczek
+        /// </summary>
         public void UsunAktualnaWycieczke()
         {
             wycieczkiContext.Usun(CurrentWycieczka.Id);
             WycieczkiObservableCollection.Remove(CurrentWycieczka);
         }
 
+        /// <summary>
+        /// Sprawdza czy przodownik o podanym numerze istnieje w bazie
+        /// </summary>
+        /// <param name="nrPrzodownika"></param>
+        /// <returns></returns>
         public bool CzyPrzodownikONumerzeIstnieje(long nrPrzodownika)
         {
             return przodownicyContext.Exists(nrPrzodownika);
         }
 
-
+        /// <summary>
+        /// Wysyła przodonikowi wycieczkę do potwierdzenia
+        /// </summary>
+        /// <param name="nrPrzodownika"></param>
         public void WyslijWycieczkeDoPotwierdzenia(long nrPrzodownika)
         {
             wycieczkiContext.ZmienStatus(currentWycieczka.Id, nrPrzodownika, StatusyPotwierdzenia.WTRAKCIE);
         }
 
+        /// <summary>
+        /// usuwa aktualną wycieczkę z wyświetlania jej w list box
+        /// </summary>
         public void UsunObecnaWycieczkeZWyswietlania()
         {
             wycieczkiObservableCollection.Remove(CurrentWycieczka);
         }
 
+        /// <summary>
+        /// Zmienia w bazie status aktualnej wycieczki na potwierdzoną przez przodownika
+        /// </summary>
         public void PotwierdzAktualnaWycieczke()
         {
             wycieczkiContext.ZmienStatus(currentWycieczka.Id, DaneLogowania.NrZalogowanegoPrzodownika, StatusyPotwierdzenia.POTWIERDZONA);
             
         }
 
+        /// <summary>
+        /// Zmienia w bazie status aktualnej wycieczki na niepotwierdzoną przez przodownika
+        /// </summary>
         public void OdrzucAktualnaWycieczke()
         {
             wycieczkiContext.ZmienStatus(currentWycieczka.Id, DaneLogowania.NrZalogowanegoPrzodownika, StatusyPotwierdzenia.NIEPOTWIERDZONA);
         }
 
+        /// <summary>
+        /// Sprawdza czy zalogowany przodownika posiada uprawnienia odnośnie obszarów górskich wczytanej wycieczki
+        /// </summary>
+        /// <returns>true- posiada uprawniania</returns>
         public bool CzyZalogowanyPrzodownikPosiadaUprawnieniaNaCurrentWycieczke()
         {
             return przodownicyContext.CzyPosiadaUprawnienia(DaneLogowania.NrZalogowanegoPrzodownika, CurrentWycieczka.ObszarGorski);

@@ -18,21 +18,31 @@ using WpfAndroidMockup.Models;
 namespace WpfAndroidMockup.Views
 {
     /// <summary>
-    /// Interaction logic for PotwierdzanieOdbytejWycieczkiTurystaView.xaml
+    /// Logika widoku PotwierdzanieOdbytejWycieczkiTurystaView.xaml
     /// </summary>
     public partial class PotwierdzanieOdbytejWycieczkiTurystaView : UserControl
     {
+        /// <summary>
+        /// View model wycieczki
+        /// </summary>
         public WycieczkaViewModel wycieczkaViewModel;
         private const int WRONG_INPUT = -1;
         Grid previousGridToClose;
 
+        /// <summary>
+        /// Konstruktor ineparametryczny widoku
+        /// </summary>
         public PotwierdzanieOdbytejWycieczkiTurystaView()
         {
             InitializeComponent();
             
         }
 
-        
+        /// <summary>
+        /// Logika wybrania elementu z listy
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ListViewItem_OnPressed(object sender, MouseButtonEventArgs e)
         {
             ListBox listView = sender as ListBox;
@@ -45,16 +55,27 @@ namespace WpfAndroidMockup.Views
 
         }
 
+        /// <summary>
+        /// Wyświetla okno wyboru przodownika
+        /// </summary>
         private void WyswietlOknoWybieraniaPrzodownika()
         {
             AlertPrzeslijDoPrzodownikaGrid.Visibility = Visibility.Visible;
         }
 
+        /// <summary>
+        /// Logika przycisku nawigacji wstecznej do menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_CofnijDoMenuOnClick(object sender, RoutedEventArgs e)
         {
             this.Visibility = Visibility.Hidden;
         }
 
+        /// <summary>
+        /// Wyświetla komunikat w przypadku pustej listy
+        /// </summary>
         public void ZareagujGdyListaPusta()
         {
             if(wycieczkaViewModel.WycieczkiObservableCollection.Count == 0)
@@ -63,12 +84,21 @@ namespace WpfAndroidMockup.Views
             }
         }
 
+        /// <summary>
+        /// Wyświetla podstawowy komunikat
+        /// </summary>
+        /// <param name="wiadomosc"></param>
         private void WyswietlKomunikat(string wiadomosc)
         {
             Message.Text = wiadomosc;
             BasicKomunikatGrid.Visibility = Visibility.Visible;
         }
 
+        /// <summary>
+        /// Logika przycisku zamykającego podtawowy komunikat
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_ZamknijKomunikat(object sender, RoutedEventArgs e)
         {
             BasicKomunikatGrid.Visibility = Visibility.Hidden;
@@ -78,11 +108,21 @@ namespace WpfAndroidMockup.Views
             }
         }
 
+        /// <summary>
+        /// Logika przycisku zamykania okna wyboru przodownika
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_powrot(object sender, RoutedEventArgs e)
         {
             AlertPrzeslijDoPrzodownikaGrid.Visibility = Visibility.Hidden;
         }
 
+        /// <summary>
+        /// Logika przycisku przesyłania wycieczki do potwierdzenia porzodownikowi
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_wyslij(object sender, RoutedEventArgs e)
         {
             long nrPrzodownika = ConvertTextFromTextBox();
@@ -102,7 +142,10 @@ namespace WpfAndroidMockup.Views
             
         }
 
-
+        /// <summary>
+        /// Konwertuje tekst wprowadzony do okienka na long
+        /// </summary>
+        /// <returns>skonwerotwany tekst</returns>
         private long ConvertTextFromTextBox()
         {
             long id = WRONG_INPUT;

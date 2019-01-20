@@ -69,6 +69,10 @@ namespace WpfAndroidMockup.Models
             return value;
         }
 
+        /// <summary>
+        /// Usuwa wycieczkę o id
+        /// </summary>
+        /// <param name="idWycieczki"></param>
         public void Usun(long idWycieczki)
         { var wycieczkaDoUsuniecia = from wycieczka in wycieczkiDict
                                      where wycieczka.Value.Id == idWycieczki
@@ -77,6 +81,11 @@ namespace WpfAndroidMockup.Models
             wycieczkiDict.Remove(wycieczkaDoUsuniecia.ToList()[0]);
         }
 
+        /// <summary>
+        /// Zwraca wszystkie wycieczki turysty, które nie zostały potwierdzone
+        /// </summary>
+        /// <param name="idTurysty"></param>
+        /// <returns>lista modeli wycieczek</returns>
         public List<WycieczkaModel> GetNiepotwierdzoneWycieczkiTurysty(long idTurysty)
         {
             List<WycieczkaModel> wycieczkiList = new List<WycieczkaModel>();
@@ -88,17 +97,26 @@ namespace WpfAndroidMockup.Models
             return wycieczkiList;
         }
 
+        /// <summary>
+        /// Zwraca wszystkie wycieczki do potwierdzenia dla przodownika
+        /// </summary>
+        /// <param name="nrPrzodownika"></param>
+        /// <returns> lista modeli wycieczek</returns>
         public List<WycieczkaModel> GetWycieczkiPrzodownikaDoPotwierdzenia(long nrPrzodownika)
         {
             List<WycieczkaModel> wycieczkiList = new List<WycieczkaModel>();
             var wycieczki = from wycieczka in wycieczkiDict
-                            where wycieczka.Value.NrPrzodownika == nrPrzodownika
+                            where wycieczka.Value.NrPrzodownika == nrPrzodownika && wycieczka.Value.Status == StatusyPotwierdzenia.WTRAKCIE
                             select wycieczka.Value;
 
             wycieczkiList = wycieczki.ToList();
             return wycieczkiList;
         }
 
+        /// <summary>
+        /// Zwraca wszystkie wycieczki zalogowanego turysty
+        /// </summary>
+        /// <returns>lista modeli wycieczek</returns>
         public List<WycieczkaModel> GetWycieczkiZalogowanegoTurysty()
         {
             List<WycieczkaModel> wycieczkiList = new List<WycieczkaModel>();
@@ -110,6 +128,12 @@ namespace WpfAndroidMockup.Models
             return wycieczkiList;
         }
 
+        /// <summary>
+        /// zmienia status wycieczki
+        /// </summary>
+        /// <param name="idWycieczki"></param>
+        /// <param name="nrPrzodownika"></param>
+        /// <param name="status"></param>
         public void ZmienStatus(long idWycieczki, long nrPrzodownika, StatusyPotwierdzenia status)
         {
             WycieczkaModel w = null;

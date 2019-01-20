@@ -18,19 +18,27 @@ using WpfAndroidMockup.Models;
 namespace WpfAndroidMockup
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Logika widoku dla for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
         private const int PRZYKLADOWY_TURYSTA = 0;
         private const long PRZYKLADOWY_PRZODOWNIK = 1;
 
+        /// <summary>
+        /// Konstruktor nieparametryczny głwonego widoku
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
             LoginUser(PRZYKLADOWY_TURYSTA, PRZYKLADOWY_PRZODOWNIK);
         }
         
+        /// <summary>
+        /// Metoda odpowiedzialna za zalogowanie przykładowego turysty i przodownika do systemu
+        /// </summary>
+        /// <param name="idTurysty"></param>
+        /// <param name="nrPrzodownika"></param>
         private void LoginUser(int idTurysty, long nrPrzodownika)
         {
             DaneLogowania.IdZalogowanegoTurysty = idTurysty;
@@ -38,6 +46,11 @@ namespace WpfAndroidMockup
 
         }
         
+        /// <summary>
+        /// Logika dla przycisku odpowiedzialnego za wywołanie przypadku użycia przeglądania wycieczek
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_ObslugaWycieczek(object sender, RoutedEventArgs e)
         {
             WycieczkaViewModel tripViewModelObject = new WycieczkaViewModel();
@@ -48,6 +61,11 @@ namespace WpfAndroidMockup
             ObslugaWycieczekViewControl.Visibility = Visibility.Visible;
         }
 
+        /// <summary>
+        /// Logika dla przycisku odpowiedzialnego za wywołanie przypadku użycia przesyłania odznaki do weryfikacji i przyznania przez pracownika
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_WyslijDoWeryfikacji(object sender, RoutedEventArgs e)
         {
             OdznakiViewModel odznakiViewModel = new OdznakiViewModel();
@@ -57,6 +75,11 @@ namespace WpfAndroidMockup
             PrzeslijOdznakeDoWeryfikacji.Visibility = Visibility.Visible;
         }
 
+        /// <summary>
+        /// Logika dla przycisku odpowiedzialnego za wywołanie przypadku użycia potwierdzania jako przodownik udziału w wycieczce
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Potwierdz(object sender, RoutedEventArgs e)
         {
             WycieczkaViewModel tripViewModelObject = new WycieczkaViewModel();
@@ -68,6 +91,11 @@ namespace WpfAndroidMockup
             PotwierdzOdbyteWycieczki.Visibility = Visibility.Visible;
         }
 
+        /// <summary>
+        /// Logika dla przycisku odpowiedzialnego za wywołanie przypadku użycia wysyłania przodownikowy prośby o weryfikację wycieczki
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_WyslijDoPotwierdzenia(object sender, RoutedEventArgs e)
         {
             WycieczkaViewModel tripViewModelObject = new WycieczkaViewModel();

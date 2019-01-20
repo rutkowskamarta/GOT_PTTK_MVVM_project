@@ -246,6 +246,10 @@ namespace WpfAndroidMockup.Models
         /// </value>
         public TurystaModel Turysta { get; }
 
+        /// <summary>
+        /// Konstruktor parametryczny klasy <see cref="OdznakaModel"/>
+        /// </summary>
+        /// <param name="turysta"></param>
         public OdznakaModel(ref TurystaModel turysta)
         {
             Turysta = turysta;

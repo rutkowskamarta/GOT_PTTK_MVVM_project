@@ -18,18 +18,27 @@ using WpfAndroidMockup.Models;
 namespace WpfAndroidMockup.Views
 {
     /// <summary>
-    /// Interaction logic for PotwierdzanieOdbytejWycieczkiPrzodownikView.xaml
+    /// Logika widoku PotwierdzanieOdbytejWycieczkiPrzodownikView.xaml
     /// </summary>
     public partial class PotwierdzanieOdbytejWycieczkiPrzodownikView : UserControl
     {
+        /// <summary>
+        /// View model wycieczki
+        /// </summary>
         public WycieczkaViewModel wycieczkaViewModel;
         private Grid previousGridToClose;
 
+        /// <summary>
+        /// Konstruktor nieparametryczny widoku potwierdzania wycieczki przez przodownika
+        /// </summary>
         public PotwierdzanieOdbytejWycieczkiPrzodownikView()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Metoda wyświetlająca komunikat o pustej liście wycieczek do potwierdzenia
+        /// </summary>
         public void ZareagujGdyListaPusta()
         {
             if (wycieczkaViewModel.WycieczkiObservableCollection.Count == 0)
@@ -38,6 +47,11 @@ namespace WpfAndroidMockup.Views
             }
         }
 
+        /// <summary>
+        /// Logika przycisku na element z listy
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ListViewItem_OnPressed(object sender, MouseButtonEventArgs e)
         {
             ListBox listView = sender as ListBox;
@@ -50,17 +64,29 @@ namespace WpfAndroidMockup.Views
 
         }
 
+        /// <summary>
+        /// Wyświetla okno brania udziału w wycieczce przez przodownika
+        /// </summary>
         private void WyswietlOknoBraniaUdzialu()
         {
             AlertCzyUstestniczylPrzodownikGrid.Visibility = Visibility.Visible;
         }
 
+        /// <summary>
+        /// Wyświetla podstawowy komunika
+        /// </summary>
+        /// <param name="wiadomosc"></param>
         private void WyswietlKomunikat(string wiadomosc)
         {
             Message.Text = wiadomosc;
             BasicKomunikatGrid.Visibility = Visibility.Visible;
         }
 
+        /// <summary>
+        /// odpowiada za logikę przycisku zamykającegopodstawowy komunikat
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_ZamknijKomunikat(object sender, RoutedEventArgs e)
         {
             BasicKomunikatGrid.Visibility = Visibility.Hidden;
@@ -70,16 +96,31 @@ namespace WpfAndroidMockup.Views
             }
         }
 
+        /// <summary>
+        /// Logika przycisku, odpowiedzialnego za nawigację do menu głownego
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_CofnijDoMenuOnClick(object sender, RoutedEventArgs e)
         {
             this.Visibility = Visibility.Hidden;
         }
 
+        /// <summary>
+        /// Logika przyciski, który zamyka okno uczestnictwa 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_zamknijAlert(object sender, RoutedEventArgs e)
         {
             AlertCzyUstestniczylPrzodownikGrid.Visibility = Visibility.Hidden;
         }
 
+        /// <summary>
+        /// Logika przycisku odpowiedzialnego za potwierdzanie odbycia wycieczki
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_potwierdz(object sender, RoutedEventArgs e)
         {
             WyswietlKomunikat("POMYŚLNIE POTWIERDZONO WYCIECZKĘ");
@@ -89,6 +130,11 @@ namespace WpfAndroidMockup.Views
             wycieczkaViewModel.UsunObecnaWycieczkeZWyswietlania();
         }
 
+        /// <summary>
+        /// Wyświetla okno do potwierdzania wycieczki przez przodownika
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_wyswietlAlertPotwierdzania(object sender, RoutedEventArgs e)
         {
             if (wycieczkaViewModel.CzyZalogowanyPrzodownikPosiadaUprawnieniaNaCurrentWycieczke())
@@ -106,6 +152,12 @@ namespace WpfAndroidMockup.Views
             }
         }
 
+
+        /// <summary>
+        /// Logika przycisku odpowiedzialnego za odrzucenie wycieczki
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_odrzuc(object sender, RoutedEventArgs e)
         {
             WyswietlKomunikat("POMYŚLNIE ODRZUCONO WYCIECZKĘ");

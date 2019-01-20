@@ -18,23 +18,38 @@ using WpfAndroidMockup.ViewModels;
 namespace WpfAndroidMockup.Views
 {
     /// <summary>
-    /// Interaction logic for PrzegladanieOdznakiView.xaml
+    /// Logika widoku PrzegladanieOdznakiView.xaml
     /// </summary>
     public partial class PrzegladanieOdznakiView : UserControl
     {
+        /// <summary>
+        /// View model odznaki
+        /// </summary>
         public OdznakiViewModel odznakiViewModel;
 
+        /// <summary>
+        /// Konstruktor nieparametryczny widoku
+        /// </summary>
         public PrzegladanieOdznakiView()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Logika przycisku nawigacji wstecznej do menu głównego
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_CofnijDoMenuOnClick(object sender, RoutedEventArgs e)
         {
             this.Visibility = Visibility.Hidden;
         }
 
-
+        /// <summary>
+        /// Logika przycisku wyboru elementu z listy
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ListViewItem_OnPressed(object sender, MouseButtonEventArgs e)
         {
             ListBox listView = sender as ListBox;
@@ -50,16 +65,27 @@ namespace WpfAndroidMockup.Views
 
         }
         
+        /// <summary>
+        /// Wyświetla informacje o wybranej z listys odznace
+        /// </summary>
         private void ChangeLayoutToOdznakaLayout()
         {
             SelectedOdznakaGrid.Visibility = Visibility.Visible;
         }
 
+        /// <summary>
+        /// Logika przycisku zamykania podglądu odznaki i powrotu do listy
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_CofnijDoWyboruOnClick(object sender, RoutedEventArgs e)
         {
             SelectedOdznakaGrid.Visibility = Visibility.Hidden;
         }
 
+        /// <summary>
+        /// Ustala kolor punktów w zależności od zdobycia odpowiedniej ich liczby
+        /// </summary>
         private void SetPunktyTextColor()
         {
             if (odznakiViewModel.AktualnaOdznaka.Pkt < odznakiViewModel.AktualnaOdznaka.MinPkt)
@@ -74,6 +100,9 @@ namespace WpfAndroidMockup.Views
 
         }
 
+        /// <summary>
+        /// Przełącza pomiędzy widokiem przycisku a komuniaktu o weryfikacji
+        /// </summary>
         private void ButtonAndTextSetVisibility()
         {
             if (odznakiViewModel.AktualnaOdznaka.CzyPrzeslanaDoWeryfikacji)
@@ -101,18 +130,32 @@ namespace WpfAndroidMockup.Views
             
         }
 
+        /// <summary>
+        /// Zamyka podstawowy komunikat
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_ZamknijKomunikat(object sender, RoutedEventArgs e)
         {
             BasicKomunikatGrid.Visibility = Visibility.Hidden;
             ButtonAndTextSetVisibility();
         }
 
+        /// <summary>
+        /// Logika przycisku przesyłu odznaki do weryfikacji
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_przeslijDoWeryfikacji(object sender, RoutedEventArgs e)
         {
             WyswietlKomunikat("POMYŚLNIE PRZESŁANO DO WERYFIKACJI");
             odznakiViewModel.WyslijOdznakeDoWeryfikacji();
         }
 
+        /// <summary>
+        /// Wyświetla podstawowy komunikat
+        /// </summary>
+        /// <param name="wiadomosc"></param>
         private void WyswietlKomunikat(string wiadomosc)
         {
             BasicKomunikatGrid.Visibility = Visibility.Visible;

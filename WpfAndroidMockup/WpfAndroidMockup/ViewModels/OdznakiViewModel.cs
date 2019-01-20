@@ -9,10 +9,19 @@ using WpfAndroidMockup.Models;
 
 namespace WpfAndroidMockup.ViewModels
 {
+    /// <summary>
+    /// ViewModel dla odznaki
+    /// </summary>
     public class OdznakiViewModel : INotifyPropertyChanged
     {
+        /// <summary>
+        /// Lista modeli odznaki
+        /// </summary>
         public ObservableCollection<OdznakaModel> OdznakiObservableCollection { get; set; }
         
+        /// <summary>
+        /// Akcesor i mutator aktualnej odznaki
+        /// </summary>
         public OdznakaModel AktualnaOdznaka
         {
             get
@@ -28,6 +37,10 @@ namespace WpfAndroidMockup.ViewModels
                 }
             }
         }
+
+        /// <summary>
+        /// Akcesor i mutato aktualnej wycieczki
+        /// </summary>
         public WycieczkaModel AktualnaWycieczka
         {
             get
@@ -48,20 +61,34 @@ namespace WpfAndroidMockup.ViewModels
         private OdznakaModel aktualnaOdznaka;
         private WycieczkaModel aktualnaWycieczka;
 
+        /// <summary>
+        /// Konstruktor nieparametryczny klasy odznaka view model
+        /// </summary>
         public OdznakiViewModel()
         {
             odznakiContext = OdznakiContext.GetInstance();
             OdznakiObservableCollection = new ObservableCollection<OdznakaModel>();
         }
 
+        /// <summary>
+        /// Ładuje wszystkie rozpoczęte cykle odznaki, nieprzyznane
+        /// </summary>
         public void LoadWszystkieRozpoczeteCykle()
         {
             foreach (OdznakaModel item in odznakiContext.GetOdznakiNiezaakcpetowane())
                 OdznakiObservableCollection.Add(item);
         }
 
+        /// <summary>
+        ///Wydarzenie potrzebne do reakcju na zmianę atrybutu
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
+
+        /// <summary>
+        /// Reaguje na zmiane atrybutu
+        /// </summary>
+        /// <param name="property">atrybut</param>
         private void RaisePropertyChanged(string property)
         {
             if (PropertyChanged != null)
@@ -70,16 +97,27 @@ namespace WpfAndroidMockup.ViewModels
             }
         }
 
+        /// <summary>
+        /// Wczytuje do aktualnej odznaki wybraną odznakę
+        /// </summary>
+        /// <param name="odznaka"></param>
         public void WczytajOdznake(OdznakaModel odznaka)
         {
             AktualnaOdznaka = odznaka;
         }
 
+        /// <summary>
+        /// Wczytuje do aktualnej wycieczki wybraną wycieczkę
+        /// </summary>
+        /// <param name="wycieczka"></param>
         public void WczytajWycieczke(WycieczkaModel wycieczka)
         {
             AktualnaWycieczka = wycieczka;
         }
 
+        /// <summary>
+        /// przesyła odznakę do weryfikacji
+        /// </summary>
        public void WyslijOdznakeDoWeryfikacji()
         {
             aktualnaOdznaka.CzyPrzeslanaDoWeryfikacji = true;
