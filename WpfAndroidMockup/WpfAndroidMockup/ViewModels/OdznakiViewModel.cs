@@ -80,7 +80,7 @@ namespace WpfAndroidMockup.ViewModels
             AktualnaWycieczka = wycieczka;
         }
 
-       public void PrzeslijAktualnaOdznakeDoWeryfikacji()
+       public void WyslijOdznakeDoWeryfikacji()
         {
             aktualnaOdznaka.CzyPrzeslanaDoWeryfikacji = true;
             odznakiContext.ZmienStatus(aktualnaOdznaka.Id, StatusOdznaki.DOWERYFIKACJI);

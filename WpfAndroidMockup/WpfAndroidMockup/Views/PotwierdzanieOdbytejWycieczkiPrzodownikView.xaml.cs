@@ -44,7 +44,7 @@ namespace WpfAndroidMockup.Views
             if (listView.SelectedItem != null)
             {
                 WycieczkaModel selectedItem = (WycieczkaModel)listView.SelectedItems[0];
-                wycieczkaViewModel.SetCurrentWycieczka(selectedItem);
+                wycieczkaViewModel.WczytajWycieczke(selectedItem);
                 WyswietlOknoBraniaUdzialu();
             }
 
@@ -101,6 +101,8 @@ namespace WpfAndroidMockup.Views
             {
                 WyswietlKomunikat("NIE POSIADASZ UPRAWNIEŃ NA TEN OBSZAR GÓRSKI");
                 previousGridToClose = AlertCzyUstestniczylPrzodownikGrid;
+                wycieczkaViewModel.OdrzucAktualnaWycieczke();
+
             }
         }
 

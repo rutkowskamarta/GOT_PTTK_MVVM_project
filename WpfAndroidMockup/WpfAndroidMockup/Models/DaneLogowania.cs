@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace WpfAndroidMockup.Models
 {
+    /// <summary>
+    /// Statyczna klasa odpowiedzialna za przechowywanie danych logowania
+    /// </summary>
     public static class DaneLogowania
     {
         public static int IdZalogowanegoTurysty;

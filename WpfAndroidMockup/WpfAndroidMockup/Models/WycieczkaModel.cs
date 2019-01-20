@@ -7,8 +7,15 @@ using System.ComponentModel;
 
 namespace WpfAndroidMockup.Models
 {
+    /// <summary>
+    /// typ enumaracyjny statusów potwierdzenia dla wycieczki
+    /// </summary>
     public enum StatusyPotwierdzenia { POTWIERDZONA, NIEPOTWIERDZONA, WTRAKCIE };
 
+    /// <summary>
+    /// Model Wycieczki
+    /// </summary>
+    /// <seealso cref="System.ComponentModel.INotifyPropertyChanged" />
     public class WycieczkaModel : INotifyPropertyChanged
     {
         private long id;
@@ -26,7 +33,14 @@ namespace WpfAndroidMockup.Models
         private long wysokosc; //w metrach
         private int punktacja;
         private string cyklOdznaki;
+        private string punktPoczatkowy;
 
+        /// <summary>
+        /// Akcesor i mutator identyfikatora wycieczki
+        /// </summary>
+        /// <value>
+        /// Identyfikator wycieczki
+        /// </value>
         public long Id
         {
             get
@@ -43,6 +57,12 @@ namespace WpfAndroidMockup.Models
             }
         }
 
+        /// <summary>
+        ///  Akcesor i mutator nr przodownika, potwierdzajacego wycieczkę
+        /// </summary>
+        /// <value>
+        /// nr przodownika.
+        /// </value>
         public long NrPrzodownika
         {
             get
@@ -59,6 +79,12 @@ namespace WpfAndroidMockup.Models
             }
         }
 
+        /// <summary>
+        ///  Akcesor i mutator tursty, który przebył wycieczke
+        /// </summary>
+        /// <value>
+        /// turysta.
+        /// </value>
         public TurystaModel Turysta
         {
             get
@@ -75,6 +101,12 @@ namespace WpfAndroidMockup.Models
             }
         }
 
+        /// <summary>
+        ///  Akcesor i mutator odznaki, w ramach której wycieczka została przebyta
+        /// </summary>
+        /// <value>
+        /// odznaka.
+        /// </value>
         public OdznakaModel Odznaka
         {
             get
@@ -91,6 +123,12 @@ namespace WpfAndroidMockup.Models
             }
         }
 
+        /// <summary>
+        ///  Akcesor i mutator nazwy nadanej wycieczce przez turyste
+        /// </summary>
+        /// <value>
+        /// Nazwa wycieczki.
+        /// </value>
         public string Nazwa
         {
             get
@@ -106,6 +144,13 @@ namespace WpfAndroidMockup.Models
                 }
             }
         }
+
+        /// <summary>
+        /// Akcesor i mutator daty rozpoczęcia wycieczki.
+        /// </summary>
+        /// <value>
+        /// data rozpoczęcia wycieczki.
+        /// </value>
         public DateTime DataRozpoczecia
         {
             get
@@ -122,6 +167,12 @@ namespace WpfAndroidMockup.Models
             }
         }
 
+        /// <summary>
+        ///  Akcesor i mutator  daty zakończenia wycieczki
+        /// </summary>
+        /// <value>
+        /// data zakonczenia.
+        /// </value>
         public DateTime DataZakonczenia
         {
             get
@@ -138,6 +189,12 @@ namespace WpfAndroidMockup.Models
             }
         }
 
+        /// <summary>
+        ///  Akcesor i mutator  statusu potwierdzenia wycieczki
+        /// </summary>
+        /// <value>
+        /// Status.
+        /// </value>
         public StatusyPotwierdzenia Status
         {
             get
@@ -155,6 +212,12 @@ namespace WpfAndroidMockup.Models
             }
         }
 
+        /// <summary>
+        ///  Akcesor i mutator obszaru górskiego, na którym odbyła się wycieczka
+        /// </summary>
+        /// <value>
+        /// obszar gorski.
+        /// </value>
         public string ObszarGorski
         {
             get
@@ -170,6 +233,13 @@ namespace WpfAndroidMockup.Models
                 }
             }
         }
+
+        /// <summary>
+        ///  Akcesor i mutator wartości określającej czy wycieczka jest wycieczką wielodniową
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> wielodniowa; w przeciwnym przypadku, <c>false</c>.
+        /// </value>
         public bool CzyWielodniowa
         {
             get
@@ -185,6 +255,13 @@ namespace WpfAndroidMockup.Models
                 }
             }
         }
+
+        /// <summary>
+        ///  Akcesor i mutator trasy wycieczki
+        /// </summary>
+        /// <value>
+        /// trasa.
+        /// </value>
         public string Trasa
         {
             get
@@ -200,6 +277,13 @@ namespace WpfAndroidMockup.Models
                 }
             }
         }
+
+        /// <summary>
+        /// Akcesor i mutator długości trasy wycieczki
+        /// </summary>
+        /// <value>
+        /// dlugość.
+        /// </value>
         public long Dlugosc
         {
             get
@@ -215,6 +299,13 @@ namespace WpfAndroidMockup.Models
                 }
             }
         }
+
+        /// <summary>
+        ///  Akcesor i mutator wysokości n.p.m. wycieczki
+        /// </summary>
+        /// <value>
+        /// wysokość.
+        /// </value>
         public long Wysokosc
         {
             get
@@ -230,6 +321,13 @@ namespace WpfAndroidMockup.Models
                 }
             }
         }
+
+        /// <summary>
+        ///  Akcesor i mutator punktacji wycieczki
+        /// </summary>
+        /// <value>
+        /// punktacja.
+        /// </value>
         public int Punktacja
         {
             get
@@ -245,6 +343,13 @@ namespace WpfAndroidMockup.Models
                 }
             }
         }
+
+        /// <summary>
+        ///  Akcesor i mutator nazwy cyklu odznaki wycieczki
+        /// </summary>
+        /// <value>
+        /// cykl odznaki.
+        /// </value>
         public string CyklOdznaki
         {
             get
@@ -261,7 +366,12 @@ namespace WpfAndroidMockup.Models
             }
         }
 
-
+        /// <summary>
+        /// Akcesor całkowitgo czasu trwania wycieczki
+        /// </summary>
+        /// <value>
+        /// calkowity czas trwania.
+        /// </value>
         public string CalkowityCzasTrwania
         {
             get
@@ -270,6 +380,13 @@ namespace WpfAndroidMockup.Models
             }
         }
 
+
+        /// <summary>
+        /// Akcesor daty wycieczki skonwerowanej do odpowiedniego formatu
+        /// </summary>
+        /// <value>
+        /// data wycieczki.
+        /// </value>
         public string DataWycieczki
         {
             get
@@ -278,6 +395,12 @@ namespace WpfAndroidMockup.Models
             }
         }
 
+        /// <summary>
+        /// Akcesor danych osobowych turysty.
+        /// </summary>
+        /// <value>
+        /// dane turysty.
+        /// </value>
         public string DaneTurysty
         {
             get
@@ -286,20 +409,53 @@ namespace WpfAndroidMockup.Models
             }
         }
 
+        /// <summary>
+        ///  Akcesor i mutator punktu początkowego
+        /// </summary>
+        /// <value>
+        /// punkt poczatkowy.
+        /// </value>
+        public string PunktPoczatkowy
+        {
+            get
+            {
+                return punktPoczatkowy;
+            }
+            set
+            {
+                if (punktPoczatkowy != value)
+                {
+                    punktPoczatkowy = value;
+                    RaisePropertyChanged("PunktPoczatkowy");
+                }
+            }
+        }
 
-        public WycieczkaModel(long id, ref TurystaModel turysta, ref OdznakaModel odznaka, string Name, StatusyPotwierdzenia status)
+        /// <summary>
+        /// Konstruktor parametryczny klasy <see cref="WycieczkaModel"/>.
+        /// </summary>
+        /// <param name="id">identyfikator.</param>
+        /// <param name="turysta">turysta.</param>
+        /// <param name="odznaka">odznaka.</param>
+        /// <param name="Nazwa">nazwa.</param>
+        /// <param name="status">status.</param>
+        /// <param name="obszarGorski">obszar gorski.</param>
+        /// <param name="pktPoczatkowy">PKT poczatkowy.</param>
+        /// <param name="trasaWyc">trasa wycieczki.</param>
+        public WycieczkaModel(long id, ref TurystaModel turysta, ref OdznakaModel odznaka, string Nazwa, StatusyPotwierdzenia status, string obszarGorski, string pktPoczatkowy, string trasaWyc)
         {
             this.id = id;
             this.Turysta = turysta;
             this.Odznaka = odznaka;
-            this.Nazwa = Name;
-            DataRozpoczecia = DateTime.Now;
-            DataZakonczenia = DateTime.Now.AddHours(13);
-            DataZakonczenia = DataZakonczenia.AddMinutes(32);
+            this.Nazwa = Nazwa;
+            this.DataRozpoczecia = DateTime.Now;
+            this.DataZakonczenia = DateTime.Now.AddHours(13);
+            this.DataZakonczenia = DataZakonczenia.AddMinutes(32);
             this.Status = status;
-            obszarGorski = "Bieszczady";
+            this.ObszarGorski = obszarGorski;
+            this.PunktPoczatkowy = pktPoczatkowy;
             CzyWielodniowa = false;
-            Trasa = "jakas trasa";
+            this.Trasa = trasaWyc;
             Dlugosc = 3457;
             Wysokosc = 342;
             Punktacja = 30 + new Random(Guid.NewGuid().GetHashCode()).Next(10);
@@ -307,9 +463,15 @@ namespace WpfAndroidMockup.Models
             odznaka.DodajWycieczke(this);
         }
 
-        
+        /// <summary>
+        /// Wydarzenie- Aktywuje sie gdy wartosc atrybutu sie zmieni.
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
+        /// <summary>
+        /// Zgłasza zmiane atrybutu.
+        /// </summary>
+        /// <param name="property">atrybut</param>
         private void RaisePropertyChanged(string property)
         {
             if (PropertyChanged != null)
@@ -318,6 +480,10 @@ namespace WpfAndroidMockup.Models
             }
         }
 
+        /// <summary>
+        /// Oblicza całkowity czas trwania wycieczki i konwertuje go do odpowieddniego formatu
+        /// </summary>
+        /// <returns>napis z czasem</returns>
         private string CalkowityCzasWycieczki()
         {
             int hours = (int)(DataZakonczenia - DataRozpoczecia).TotalHours;
@@ -328,12 +494,19 @@ namespace WpfAndroidMockup.Models
         }
 
 
-
+        /// <summary>
+        /// Zwraca czy wycieczka jest potwierdzona.
+        /// </summary>
+        /// <returns>true - potwierdzona</returns>
         public bool CzyPotwierdzona()
         {
             return Status.Equals(StatusyPotwierdzenia.POTWIERDZONA);
         }
 
+        /// <summary>
+        /// Zwraca czy wycieczka jest  niepotwierdzona
+        /// </summary>
+        /// <returns>true- niepotwierdzona</returns>
         public bool CzyNiepotwierdzona()
         {
             return Status.Equals(StatusyPotwierdzenia.NIEPOTWIERDZONA);

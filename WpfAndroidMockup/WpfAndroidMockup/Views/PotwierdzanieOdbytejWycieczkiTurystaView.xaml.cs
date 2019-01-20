@@ -39,7 +39,7 @@ namespace WpfAndroidMockup.Views
             if (listView.SelectedItem != null)
             {
                 WycieczkaModel selectedItem = (WycieczkaModel)listView.SelectedItems[0];
-                wycieczkaViewModel.SetCurrentWycieczka(selectedItem);
+                wycieczkaViewModel.WczytajWycieczke(selectedItem);
                 WyswietlOknoWybieraniaPrzodownika();
             }
 
@@ -94,7 +94,7 @@ namespace WpfAndroidMockup.Views
             else
             {
                 previousGridToClose = AlertPrzeslijDoPrzodownikaGrid;
-                wycieczkaViewModel.ZmienStatus(nrPrzodownika, StatusyPotwierdzenia.WTRAKCIE);
+                wycieczkaViewModel.WyslijWycieczkeDoPotwierdzenia(nrPrzodownika);
                 WyswietlKomunikat("POMYŚLNIE WYSŁANO PROŚBĘ O POTWIERDZENIE");
 
                 
@@ -102,10 +102,6 @@ namespace WpfAndroidMockup.Views
             
         }
 
-        private void WyslijDoPrzodownikaIZmienStatus()
-        {
-            
-        }
 
         private long ConvertTextFromTextBox()
         {

@@ -110,7 +110,7 @@ namespace WpfAndroidMockup.Views
         private void Button_przeslijDoWeryfikacji(object sender, RoutedEventArgs e)
         {
             WyswietlKomunikat("POMYŚLNIE PRZESŁANO DO WERYFIKACJI");
-            odznakiViewModel.PrzeslijAktualnaOdznakeDoWeryfikacji();
+            odznakiViewModel.WyslijOdznakeDoWeryfikacji();
         }
 
         private void WyswietlKomunikat(string wiadomosc)

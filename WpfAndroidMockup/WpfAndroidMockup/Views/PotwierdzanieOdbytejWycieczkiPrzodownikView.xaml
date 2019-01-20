@@ -44,7 +44,7 @@
 
 
         <Grid Name="AlertCzyUstestniczylPrzodownikGrid"  Background="#66B4A4A4" Visibility="Hidden" DataContext="{Binding CurrentWycieczka}">
-            
+
             <Rectangle Fill="#FFF7F5F5" RadiusX="20" RadiusY="20" HorizontalAlignment="Center" Height="360" Margin="50,10,50.2,0" Stroke="Black" VerticalAlignment="Top" Width="275"/>
 
             <Button Background="Gray" BorderBrush="Transparent" Click="Button_zamknijAlert"  HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="40" Margin="57,20,0,0" RenderTransformOrigin="2.255,0.5">
@@ -74,26 +74,22 @@
         </Grid>
 
 
-        <Grid Name="BasicKomunikatGrid"  Background="#66B4A4A4" Visibility="Hidden">
-            <Rectangle Fill="#FFF7F5F5" RadiusX="20" RadiusY="20" HorizontalAlignment="Center" Height="130" Margin="0,170,0,0" Stroke="Black" VerticalAlignment="Top" Width="275"/>
-            <TextBlock Name="Message" TextWrapping="WrapWithOverflow" Width="200" Height="50" Margin="90,190,85.2,427.2" TextAlignment="Center">
-                       BRAK WYCIECZEK DO POTWIERDZENIA
-            </TextBlock>
-            <Button Content="OK" Click="Button_ZamknijKomunikat" FontSize="15" FontWeight="Bold" Background="LightGray" HorizontalAlignment="Left" Margin="155,255,0,0" VerticalAlignment="Top" Width="60" Height="30"/>
-        </Grid>
-
+      
         <Grid Name="AlertCzyPotwierdzaPrzodownikGrid"  Background="#66B4A4A4" Visibility="Hidden" DataContext="{Binding CurrentWycieczka}">
-
             <Rectangle Fill="#FFF7F5F5" RadiusX="20" RadiusY="20" HorizontalAlignment="Center" Height="360" Margin="50,10,50.2,0" Stroke="Black" VerticalAlignment="Top" Width="275"/>
+            <Button Background="Gray" BorderBrush="Transparent"  HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="40" Margin="103,20,0,0" RenderTransformOrigin="2.255,0.5">
+                <StackPanel>
+                    <Image  Source="/WpfAndroidMockup;component/Assets/info.png" />
+                </StackPanel>
+            </Button>
+            <Image HorizontalAlignment="Center" Height="85" VerticalAlignment="Top" Margin="0,105,0,0" Source="/WpfAndroidMockup;component/Assets/a.png"/>
+            <TextBlock TextWrapping="WrapWithOverflow" Margin="90,225,90.2,402.2" TextAlignment="Center"><Run Text="POSIADASZ UPRAWNIENIA NA TEN OBSZAR GÓRSKI"/></TextBlock>
+            <Button Content="POTWIERDŹ" Click="Button_potwierdz" FontSize="13" FontWeight="Bold" Background="LightGreen" HorizontalAlignment="Right" Margin="0,300,90,0" VerticalAlignment="Top" Width="80" Height="35"/>
+            <Button Content="ODRZUĆ" Click="Button_odrzuc"  FontSize="13" FontWeight="Bold" Background="LightCoral" HorizontalAlignment="Left" Margin="90,300,0,0" VerticalAlignment="Top" Width="80" Height="35"/>
 
             <Button Background="Gray" BorderBrush="Transparent" Click="Button_zamknijAlert"  HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="40" Margin="57,20,0,0" RenderTransformOrigin="2.255,0.5">
                 <StackPanel>
                     <Image  Source="/WpfAndroidMockup;component/Assets/back.png" />
-                </StackPanel>
-            </Button>
-            <Button Background="Gray" BorderBrush="Transparent"  HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="40" Margin="103,20,0,0" RenderTransformOrigin="2.255,0.5">
-                <StackPanel>
-                    <Image  Source="/WpfAndroidMockup;component/Assets/info.png" />
                 </StackPanel>
             </Button>
 
@@ -101,17 +97,15 @@
             <TextBlock Text="{Binding Nazwa}" Foreground="Black" HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Top" Margin="0,60,0,0" FontSize="15" FontWeight="Bold"/>
             <TextBlock Text="{Binding DataWycieczki}" Foreground="Black" HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Top" Margin="0,80,0,0" FontSize="15" />
             <TextBlock Text="{Binding ObszarGorski}" Foreground="Black" HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Top" Margin="0,200,0,0" FontSize="15" />
-
-            <Image HorizontalAlignment="Center" Height="85" VerticalAlignment="Top" Margin="0,105,0,0" Source="/WpfAndroidMockup;component/Assets/a.png"/>
-
-            <TextBlock TextWrapping="WrapWithOverflow" Margin="90,225,90.2,402.2" TextAlignment="Center">
-                       POSIADASZ UPRAWNIENIA NA TEN OBSZAR GÓRSKI
-            </TextBlock>
-
-            <Button Content="POTWIERDZ" Click="Button_potwierdz" FontSize="15" FontWeight="Bold" Background="LightGreen" HorizontalAlignment="Right" Margin="0,300,90,0" VerticalAlignment="Top" Width="80" Height="35"/>
-            <Button Content="ODRZUC" Click="Button_odrzuc"  FontSize="15" FontWeight="Bold" Background="LightCoral" HorizontalAlignment="Left" Margin="90,300,0,0" VerticalAlignment="Top" Width="80" Height="35"/>
         </Grid>
-        
+
+        <Grid Name="BasicKomunikatGrid"  Background="#66B4A4A4" Visibility="Hidden">
+            <Rectangle Fill="#FFF7F5F5" RadiusX="20" RadiusY="20" HorizontalAlignment="Center" Height="130" Margin="0,170,0,0" Stroke="Black" VerticalAlignment="Top" Width="275"/>
+            <TextBlock x:Name="Message" TextWrapping="WrapWithOverflow" Width="200" Height="50" Margin="90,190,85.2,427.2" TextAlignment="Center"><Run Text="BRAK WYCIECZEK DO POTWIERDZENIA"/></TextBlock>
+            <Button Content="OK" Click="Button_ZamknijKomunikat" FontSize="15" FontWeight="Bold" Background="LightGray" HorizontalAlignment="Left" Margin="155,255,0,0" VerticalAlignment="Top" Width="60" Height="30"/>
+        </Grid>
+
+
     </Grid>
 
 </UserControl>

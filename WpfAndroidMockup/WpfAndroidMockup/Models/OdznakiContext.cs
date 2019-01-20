@@ -6,13 +6,16 @@ using System.Threading.Tasks;
 
 namespace WpfAndroidMockup.Models
 {
+    /// <summary>
+    /// Typ enumeracyjny dot. statusu przyznania odznaki
+    /// </summary>
     public enum StatusOdznaki
     {
         DOWERYFIKACJI, PRZYZNANA, ODRZUCONA
     }
 
     /// <summary>
-    /// Klasa będąca DAO dla danych pracowników w bazie.
+    /// Klasa zajmująca się transformacją obiektów odznak otrzymanych z DAO do modeli odznak obsługiwanych przez ViewModel.
     /// </summary>
     public class OdznakiContext
     {
@@ -27,6 +30,9 @@ namespace WpfAndroidMockup.Models
         private Dictionary<long, OdznakaModel> odznakiDoWeryfikacjiDict;
         private Dictionary<long, OdznakaModel> odznakiZweryfikowaneDict;
 
+        /// <summary>
+        /// Konstruktor nieparametryczny dla singletonu <see cref="OdznakiContext"/>.
+        /// </summary>
         private OdznakiContext()
         {
             turysciContext = TurysciContext.GetInstance();
@@ -38,19 +44,20 @@ namespace WpfAndroidMockup.Models
             odznakiDict.Add(2, new OdznakaModel(ref turysta) { Id = 2, Rodzaj = "popularna", Stopien = "", ImgPath = OdznakiContext.POPULARNA_IMG_PATH, MinPkt = 60, DataRozpoczecia = DateTime.Now.AddDays(-100) });
 
             OdznakaModel o = null;
-
-            //ustawiam na duzo pkt, tak by móc wysłać do wer
+            
             odznakiDict.TryGetValue(2, out o);
             o.Pkt = 61;
 
             odznakiDoWeryfikacjiDict = new Dictionary<long, OdznakaModel>();
             
             odznakiZweryfikowaneDict = new Dictionary<long, OdznakaModel>();
-            //OdznakaModel odznakaZweryfikowana = new OdznakaModel(ref turysta) { Id = 4, Rodzaj = "mała", Stopien = "brązowa", ImgPath = OdznakiContext.MALA_IMG_PATH, MinPkt = 120, DataRozpoczecia = DateTime.Now.AddDays(-200) };
-            //odznakiDict.Add(4, odznakaZweryfikowana);
-            //odznakiZweryfikowaneDict.Add(4, odznakaZweryfikowana);
         }
 
+
+        /// <summary>
+        /// Zwraca instancję singletonu <see cref="OdznakiContext"/>.
+        /// </summary>
+        /// <returns>instancja singetonu</returns>
         public static OdznakiContext GetInstance()
         {
             if (instance == null)
@@ -72,11 +79,11 @@ namespace WpfAndroidMockup.Models
             return pracownik;
         }
 
-        public IEnumerable<OdznakaModel> GetOdznakiDoWeryfikacji()
-        {
-            return odznakiDoWeryfikacjiDict.Values;
-        }
 
+        /// <summary>
+        /// Zwraca listę odznak niezaakcpetowanych.
+        /// </summary>
+        /// <returns>Lista <see cref="OdznakaModel"/>.</returns>
         public List<OdznakaModel> GetOdznakiNiezaakcpetowane()
         {
             var o = from odznaka in odznakiDict
@@ -85,6 +92,11 @@ namespace WpfAndroidMockup.Models
             return o.ToList<OdznakaModel>();
         }
 
+        /// <summary>
+        /// Zmienia status.
+        /// </summary>
+        /// <param name="id">Identyfikator odznaki.</param>
+        /// <param name="status">Typ enumeracyjny status.</param>
         public void ZmienStatus(long id, StatusOdznaki status)
         {
             OdznakaModel odznaka;

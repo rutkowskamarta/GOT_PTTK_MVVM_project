@@ -63,7 +63,7 @@ namespace WpfAndroidMockup.ViewModels
 
             TurystaModel t = new TurystaModel();
             OdznakaModel o = new OdznakaModel(ref t);
-            CurrentWycieczka = new WycieczkaModel(1, ref t, ref o, "", StatusyPotwierdzenia.NIEPOTWIERDZONA);
+            CurrentWycieczka = new WycieczkaModel(1, ref t, ref o, "", StatusyPotwierdzenia.NIEPOTWIERDZONA, "", "", "");
 
         }
 
@@ -86,7 +86,7 @@ namespace WpfAndroidMockup.ViewModels
             }
         }
 
-        public void WyswietlListeNiepotwierdzonychWycieczek()
+        public void WczytajNiepotwierdzoneWycieczkiTurysty()
         {
             WycieczkiObservableCollection = new ObservableCollection<WycieczkaModel>();
             List<WycieczkaModel> wycieczki = wycieczkiContext.GetNiepotwierdzoneWycieczkiTurysty(DaneLogowania.IdZalogowanegoTurysty);
@@ -97,7 +97,7 @@ namespace WpfAndroidMockup.ViewModels
             }
         }
 
-        public void GetWycieczkiPrzodownikaDoPotwierdzenia(long nrPrzodownika)
+        public void WczytajWycieczkiPrzodownikaDoPotwierdzenia(long nrPrzodownika)
         {
             WycieczkiObservableCollection = new ObservableCollection<WycieczkaModel>();
             List<WycieczkaModel> wycieczki = wycieczkiContext.GetWycieczkiPrzodownikaDoPotwierdzenia(DaneLogowania.NrZalogowanegoPrzodownika);
@@ -108,7 +108,7 @@ namespace WpfAndroidMockup.ViewModels
             }
         }
 
-        public void SetCurrentWycieczka(WycieczkaModel wycieczka)
+        public void WczytajWycieczke(WycieczkaModel wycieczka)
         {
             CurrentWycieczka = wycieczka;
         }
@@ -129,10 +129,10 @@ namespace WpfAndroidMockup.ViewModels
             return przodownicyContext.Exists(nrPrzodownika);
         }
 
-        public void ZmienStatus(long nrPrzodownika, StatusyPotwierdzenia status)
+
+        public void WyslijWycieczkeDoPotwierdzenia(long nrPrzodownika)
         {
-            currentWycieczka.NrPrzodownika = nrPrzodownika;
-            currentWycieczka.Status = status;
+            wycieczkiContext.ZmienStatus(currentWycieczka.Id, nrPrzodownika, StatusyPotwierdzenia.WTRAKCIE);
         }
 
         public void UsunObecnaWycieczkeZWyswietlania()
@@ -142,17 +142,18 @@ namespace WpfAndroidMockup.ViewModels
 
         public void PotwierdzAktualnaWycieczke()
         {
-            currentWycieczka.Status = StatusyPotwierdzenia.POTWIERDZONA;
+            wycieczkiContext.ZmienStatus(currentWycieczka.Id, DaneLogowania.NrZalogowanegoPrzodownika, StatusyPotwierdzenia.POTWIERDZONA);
+            
         }
 
         public void OdrzucAktualnaWycieczke()
         {
-            currentWycieczka.Status = StatusyPotwierdzenia.NIEPOTWIERDZONA;
+            wycieczkiContext.ZmienStatus(currentWycieczka.Id, DaneLogowania.NrZalogowanegoPrzodownika, StatusyPotwierdzenia.NIEPOTWIERDZONA);
         }
 
         public bool CzyZalogowanyPrzodownikPosiadaUprawnieniaNaCurrentWycieczke()
         {
-            return przodownicyContext.CzyPosiadaUprawnieniaNaObszarGorski(DaneLogowania.NrZalogowanegoPrzodownika, CurrentWycieczka);
+            return przodownicyContext.CzyPosiadaUprawnienia(DaneLogowania.NrZalogowanegoPrzodownika, CurrentWycieczka.ObszarGorski);
         }
 
     }

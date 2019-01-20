@@ -7,12 +7,23 @@ using System.Threading.Tasks;
 
 namespace WpfAndroidMockup.Models
 {
+    /// <summary>
+    /// Model turysty
+    /// </summary>
+    /// <seealso cref="System.ComponentModel.INotifyPropertyChanged" />
+    /// <seealso cref="System.IComparable{WpfAndroidMockup.Models.TurystaModel}" />
     public class TurystaModel : INotifyPropertyChanged, IComparable<TurystaModel>
     {
         private long id;
         private string imie;
         private string nazwisko;
 
+        /// <summary>
+        /// Akcesor i mutator identyfikatora turysty.
+        /// </summary>
+        /// <value>
+        /// identyfikator turysty.
+        /// </value>
         public long Id
         {
             get
@@ -29,6 +40,13 @@ namespace WpfAndroidMockup.Models
             }
         }
 
+
+        /// <summary>
+        ///  Akcesor i mutator imienia turysty.
+        /// </summary>
+        /// <value>
+        /// Imie turysty
+        /// </value>
         public string Imie
         {
             get
@@ -45,6 +63,12 @@ namespace WpfAndroidMockup.Models
             }
         }
 
+        /// <summary>
+        ///  Akcesor i mutator nazwiska turysty.
+        /// </summary>
+        /// <value>
+        /// Nazwisko turysty
+        /// </value>
         public string Nazwisko
         {
             get
@@ -61,18 +85,34 @@ namespace WpfAndroidMockup.Models
             }
         }
 
+        /// <summary>
+        /// Aktywuje sie gdy wartosc atrybutu sie zmieni.
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
+        /// <summary>
+        /// Konstruktor nieparametryczny klasy <see cref="TurystaModel"/>.
+        /// </summary>
         public TurystaModel()
         {
 
         }
 
+        /// <summary>
+        /// Konstruktor parametryczny klasy <see cref="TurystaModel"/>.
+        /// </summary>
+        /// <param name="id">Identyfikator</param>
         public TurystaModel(long id)
         {
             this.Id = id;
         }
 
+        /// <summary>
+        /// Konstruktor parametryczny klasy <see cref="TurystaModel"/>.
+        /// </summary>
+        /// <param name="id">identyfikator.</param>
+        /// <param name="imie">imie.</param>
+        /// <param name="nazwisko">nazwisko.</param>
         public TurystaModel(long id, string imie, string nazwisko)
         {
             Id = id;
@@ -80,6 +120,10 @@ namespace WpfAndroidMockup.Models
             Nazwisko = nazwisko;
         }
 
+        /// <summary>
+        /// Zgłasza zmiane atrybutu.
+        /// </summary>
+        /// <param name="property">atrybut</param>
         private void RaisePropertyChanged(string property)
         {
             if (PropertyChanged != null)
@@ -88,6 +132,13 @@ namespace WpfAndroidMockup.Models
             }
         }
 
+        /// <summary>
+        /// Porownuje instancje dwóch obiektów i zwraca integer ktory identyfikuje wynik porownania
+        /// </summary>
+        /// <param name="other">Obiekt porownywany</param>
+        /// <returns>
+        /// identyfikator porownania
+        /// </returns>
         public int CompareTo(TurystaModel other)
         {
             return id.CompareTo(other.Id);

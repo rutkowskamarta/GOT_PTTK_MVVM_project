@@ -44,9 +44,9 @@
 
 
         <Grid Name = "SelectedOdznakaGrid" Background="#FF282828" Visibility="Hidden" DataContext="{Binding AktualnaOdznaka}">
-            <TextBlock Text="{Binding Rodzaj, StringFormat='Moja odznaka {0}'}" HorizontalAlignment="Left" TextAlignment="Left" Margin="8,10,0,0" VerticalAlignment="Top" Background="#00000000" Foreground="#FFE0E0E0" FontSize="14" Width="287" Height="30"/>
-
             <Rectangle Fill="#FF121212" HorizontalAlignment="Left" Height="40" Stroke="Black" VerticalAlignment="Top" Width="375"/>
+
+            <TextBlock Text="{Binding Rodzaj, StringFormat='Moja odznaka {0}'}" HorizontalAlignment="Left" TextAlignment="Left" TextWrapping="Wrap" Margin="8,4,0,0" VerticalAlignment="Top" Background="#00000000" Foreground="White" FontSize="14" Width="282" Height="40" />
 
             <TextBlock Text="Odznaka" HorizontalAlignment="Center" TextAlignment="Center" Margin="85,50,85.2,0" VerticalAlignment="Top" Background="#00000000" Foreground="#FFE0E0E0" FontSize="20" Width="205" Height="30"/>
             <TextBlock Text="{Binding Rodzaj}" HorizontalAlignment="Center" TextAlignment="Center" Margin="85,75,85.2,0" VerticalAlignment="Top" Background="#00000000" Foreground="#FFE0E0E0" FontSize="20" Width="205" Height="35"/>
@@ -55,32 +55,30 @@
 
             <Image HorizontalAlignment="Center" Height="170" VerticalAlignment="Top" Width="170" Margin="0,155,0,0" Source="{Binding ImgPath}"/>
             <Rectangle Fill="DimGray" HorizontalAlignment="Left" Height="280" Stroke="Black" VerticalAlignment="Top" Width="375" Margin="0,387,0,0"/>
-            <Label Content="Data rozpoczęcia cyklu" HorizontalAlignment="Left" Margin="25,405,0,0" VerticalAlignment="Top" FontSize="12" FontWeight="Bold" Foreground="White" Height="30"/>
-            <Label Content="Data zakończenia cyklu" HorizontalAlignment="Left" Margin="25,437,0,0" VerticalAlignment="Top" FontSize="12" FontWeight="Bold" Foreground="White" Height="30"/>
+            <TextBlock Text="Data rozpoczęcia cyklu" HorizontalAlignment="Left" Margin="25,405,0,0" VerticalAlignment="Top" FontSize="12" FontWeight="Bold" Foreground="White" Height="30"/>
+            <TextBlock Text="Data zakończenia cyklu" HorizontalAlignment="Left" Margin="25,437,0,0" VerticalAlignment="Top" FontSize="12" FontWeight="Bold" Foreground="White" Height="30"/>
 
             <TextBlock Text="{Binding DataRozpoczecia}" HorizontalAlignment="Right" TextAlignment="Right" Width="180" Margin="0,405,25.2,0" VerticalAlignment="Top" FontSize="12" Foreground="White" Height="30"/>
             <TextBlock Text="" HorizontalAlignment="Right" TextAlignment="Right" Width="180" Margin="0,437,25,0" VerticalAlignment="Top" FontSize="12" Foreground="White" Height="30"/>
 
-            <TextBlock Text="{Binding Pkt}" Name="Punkty_text" TextAlignment="Right" HorizontalAlignment="Left" Margin="120,472,0,0" VerticalAlignment="Top" FontSize="25" Foreground="LightGreen" Width="67" Height="68"/>
-            <TextBlock Text="{Binding MinPkt, StringFormat='/{0}'}" HorizontalAlignment="Right" Margin="0,472,120,0" VerticalAlignment="Top" FontSize="25" Width="63" Height="68" Foreground="White"/>
+            <TextBlock Text="{Binding Pkt}" x:Name="Punkty_text" TextAlignment="Right" HorizontalAlignment="Left" Margin="120,472,0,0" VerticalAlignment="Top" FontSize="25" Foreground="LightGreen" Width="67" Height="68"/>
+            <TextBlock Text="{Binding MinPkt, StringFormat=/\{0\}}" HorizontalAlignment="Right" Margin="0,472,120,0" VerticalAlignment="Top" FontSize="25" Width="63" Height="68" Foreground="White"/>
 
-            <TextBlock Text="{Binding StatusString}" Name="StatusTextBlock" TextAlignment="Center" HorizontalAlignment="Center" Margin="0,520,0,0" VerticalAlignment="Top" FontSize="18" Foreground="Red" Width="200" Height="40"/>
-            
-            <Button Name ="BackButton" Background="Transparent"  Click="Button_CofnijDoWyboruOnClick"  BorderBrush="Transparent"  HorizontalAlignment="Right" Height="40" VerticalAlignment="Top" Width="40" Margin="255,0,2,0" RenderTransformOrigin="2.255,0.5">
+            <TextBlock Text="{Binding StatusString}" x:Name="StatusTextBlock" TextAlignment="Center" HorizontalAlignment="Center" Margin="0,520,0,0" VerticalAlignment="Top" FontSize="18" Foreground="Red" Width="200" Height="40"/>
+
+            <Button x:Name ="BackButton" Background="Transparent"  Click="Button_CofnijDoWyboruOnClick"  BorderBrush="Transparent"  HorizontalAlignment="Right" Height="40" VerticalAlignment="Top" Width="40" Margin="255,0,2,0" RenderTransformOrigin="2.255,0.5">
                 <StackPanel>
                     <Image  Source="/WpfAndroidMockup;component/Assets/back.png" RenderTransformOrigin="2,0.65" />
                 </StackPanel>
             </Button>
-            
-            <Button Name="Weryfikuj_button" Content="WERYFIKUJ!" Click="Button_przeslijDoWeryfikacji" HorizontalAlignment="Center" Margin="0,580,0,0" VerticalAlignment="Top" Width="80" Height="40"/>
-            <Label Name ="WeryfikacjaLabel" Content="Nie można wysłać do weryfikacji" HorizontalAlignment="Center" Margin="0,580,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="Bold" Foreground="Black" Height="30"/>
+
+            <Button x:Name="Weryfikuj_button" Content="WERYFIKUJ!" Click="Button_przeslijDoWeryfikacji" Background="White" HorizontalAlignment="Center" Margin="0,580,0,0" VerticalAlignment="Top" Width="80" Height="40"/>
+            <Label x:Name ="WeryfikacjaLabel" Content="Nie można wysłać do weryfikacji" HorizontalAlignment="Center" Margin="0,580,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="Bold" Foreground="Black" Height="30"/>
 
 
-            <Grid Name="BasicKomunikatGrid"  Background="#66B4A4A4" Visibility="Hidden">
+            <Grid x:Name="BasicKomunikatGrid"  Background="#66B4A4A4" Visibility="Hidden">
                 <Rectangle Fill="#FFF7F5F5" RadiusX="20" RadiusY="20" HorizontalAlignment="Center" Height="130" Margin="0,170,0,0" Stroke="Black" VerticalAlignment="Top" Width="275"/>
-                <TextBlock Name="Message" TextWrapping="WrapWithOverflow" Width="200" Height="50" Margin="90,190,85.2,427.2" TextAlignment="Center">
-                       POMYŚLNIE PRZESŁANO CYKL DO WERYFIKACJI
-                </TextBlock>
+                <TextBlock x:Name="Message" TextWrapping="WrapWithOverflow" Width="200" Height="50" Margin="90,190,85.2,427.2" TextAlignment="Center"><Run Text="POMYŚLNIE PRZESŁANO CYKL DO WERYFIKACJI"/></TextBlock>
                 <Button Content="OK" Click="Button_ZamknijKomunikat" FontSize="15" FontWeight="Bold" Background="LightGray" HorizontalAlignment="Left" Margin="155,255,0,0" VerticalAlignment="Top" Width="60" Height="30"/>
             </Grid>
 

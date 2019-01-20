@@ -7,13 +7,24 @@ using System.Threading.Tasks;
 
 namespace WpfAndroidMockup.Models
 {
-    class PrzodownikModel : INotifyPropertyChanged, IComparable<TurystaModel>
+    /// <summary>
+    /// Model Przodownika
+    /// </summary>
+    /// <seealso cref="System.ComponentModel.INotifyPropertyChanged" />
+    /// <seealso cref="System.IComparable{WpfAndroidMockup.Models.TurystaModel}" />
+    class PrzodownikModel : INotifyPropertyChanged, IComparable<PrzodownikModel>
     {
         private long nrPrzodownika;
         private string imie;
         private string nazwisko;
         private List<string> obszaryUprawnien;
 
+        /// <summary>
+        /// Akcesor i mutator nr przodownika.
+        /// </summary>
+        /// <value>
+        /// nr przodownika.
+        /// </value>
         public long NrPrzodownika
         {
             get
@@ -30,6 +41,12 @@ namespace WpfAndroidMockup.Models
             }
         }
 
+        /// <summary>
+        ///  Akcesor i mutator imienia przodownika.
+        /// </summary>
+        /// <value>
+        /// Imie przodownika
+        /// </value>
         public string Imie
         {
             get
@@ -46,6 +63,12 @@ namespace WpfAndroidMockup.Models
             }
         }
 
+        /// <summary>
+        ///  Akcesor i mutator nazwiska przodownika.
+        /// </summary>
+        /// <value>
+        /// Nazwisko przodownika
+        /// </value>
         public string Nazwisko
         {
             get
@@ -62,6 +85,12 @@ namespace WpfAndroidMockup.Models
             }
         }
 
+        /// <summary>
+        ///  Akcesor i mutator obszarów uprawnien.
+        /// </summary>
+        /// <value>
+        /// Lista obszarow uprawnien przodownika.
+        /// </value>
         public List<string> ObszaryUprawnien
         {
             get
@@ -79,19 +108,34 @@ namespace WpfAndroidMockup.Models
             }
         }
 
+
+        /// <summary>
+        /// Aktywuje sie gdy wartosc atrybutu sie zmieni.
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
+        /// <summary>
+        /// Kostryktor klasy <see cref="PrzodownikModel"/>.
+        /// </summary>
         public PrzodownikModel()
         {
             ObszaryUprawnien = new List<string>();
         }
 
+        /// <summary>
+        /// Konstruktor parametryczny klasy <see cref="PrzodownikModel"/>.
+        /// </summary>
+        /// <param name="id">Identyfikator</param>
         public PrzodownikModel(long id)
         {
             this.NrPrzodownika = id;
             ObszaryUprawnien = new List<string>();
         }
 
+        /// <summary>
+        /// Zgłasza zmiane atrybutu.
+        /// </summary>
+        /// <param name="property">atrybut</param>
         private void RaisePropertyChanged(string property)
         {
             if (PropertyChanged != null)
@@ -100,9 +144,16 @@ namespace WpfAndroidMockup.Models
             }
         }
 
-        public int CompareTo(TurystaModel other)
+        /// <summary>
+        /// Porownuje instancje dwóch obiektów i zwraca integer ktory identyfikuje wynik porownania
+        /// </summary>
+        /// <param name="other">Obiekt porownywany</param>
+        /// <returns>
+        /// identyfikator porownania
+        /// </returns>
+        public int CompareTo(PrzodownikModel other)
         {
-            return nrPrzodownika.CompareTo(other.Id);
+            return nrPrzodownika.CompareTo(other.nrPrzodownika);
         }
 
     }

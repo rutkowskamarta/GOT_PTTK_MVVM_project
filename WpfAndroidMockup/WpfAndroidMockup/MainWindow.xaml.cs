@@ -60,7 +60,7 @@ namespace WpfAndroidMockup
         private void Button_Potwierdz(object sender, RoutedEventArgs e)
         {
             WycieczkaViewModel tripViewModelObject = new WycieczkaViewModel();
-            tripViewModelObject.GetWycieczkiPrzodownikaDoPotwierdzenia(DaneLogowania.NrZalogowanegoPrzodownika);
+            tripViewModelObject.WczytajWycieczkiPrzodownikaDoPotwierdzenia(DaneLogowania.NrZalogowanegoPrzodownika);
             PotwierdzOdbyteWycieczki.DataContext = tripViewModelObject;
             PotwierdzOdbyteWycieczki.wycieczkaViewModel = tripViewModelObject;
             tripViewModelObject.CurrentView = PotwierdzOdbyteWycieczki;
@@ -71,7 +71,7 @@ namespace WpfAndroidMockup
         private void Button_WyslijDoPotwierdzenia(object sender, RoutedEventArgs e)
         {
             WycieczkaViewModel tripViewModelObject = new WycieczkaViewModel();
-            tripViewModelObject.WyswietlListeNiepotwierdzonychWycieczek();
+            tripViewModelObject.WczytajNiepotwierdzoneWycieczkiTurysty();
             PrzeslijWycieczkeDoWeryfikacji.DataContext = tripViewModelObject;
             PrzeslijWycieczkeDoWeryfikacji.wycieczkaViewModel = tripViewModelObject;
             tripViewModelObject.CurrentView = PrzeslijWycieczkeDoWeryfikacji;

@@ -35,7 +35,27 @@
 
                             <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="0,0,0,0">
                                 <TextBlock Text="{Binding Punktacja}" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,40,0"/>
-                                <TextBlock Text="{Binding Status}" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,40,0"/>
+                                <TextBlock HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,40,0">
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Text" Value="WTRAKCIE"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Status}" Value="POTWIERDZONA">
+                                                    <Setter Property="Foreground" Value="LightGreen"/>
+                                                    <Setter Property="Text" Value="POTWIERDZONA"/>
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Status}" Value="NIEPOTWIERDZONA">
+                                                    <Setter Property="Text" Value="NIEPOTWIERDZONA"/>
+                                                    <Setter Property="Foreground" Value="#FFED2D2D"/>
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Status}" Value="WTRAKCIE">
+                                                    <Setter Property="Foreground" Value="Yellow"/>
+                                                    <Setter Property="Text"  Value="W TRAKCIE POTWIERDZANIA"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
                             </StackPanel>
                         </DockPanel>
 
@@ -48,31 +68,55 @@
         <Grid Name = "SelectedTripGrid" Background="#FF282828" Visibility="Hidden" DataContext="{Binding CurrentWycieczka}">
             <Rectangle Fill="#FF121212" HorizontalAlignment="Left" Height="40" Stroke="Black" VerticalAlignment="Top" Width="375"/>
 
-            <TextBlock Text="{Binding Nazwa}" HorizontalAlignment="Center"
+            <TextBlock Text="{Binding Nazwa}" HorizontalAlignment="Stretch" TextAlignment="Center"
                        Margin="10,45,10.2,0" VerticalAlignment="Top" Background="#00000000" Foreground="#FFE0E0E0" FontSize="20" Width="355" Height="45"/>
             <Image HorizontalAlignment="Center" Height="170" VerticalAlignment="Top" Width="170" Margin="105,110,100.2,0" Source="/WpfAndroidMockup;component/Assets/a.png"/>
             <Rectangle Fill="DimGray" HorizontalAlignment="Left" Height="367" Stroke="Black" VerticalAlignment="Top" Width="375" Margin="0,300,0,0"/>
-            <Label Content="Data wycieczki" HorizontalAlignment="Left" Margin="25,325,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White"/>
-            <Label Content="Czas" HorizontalAlignment="Left" Margin="25,355,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White"/>
-            <Label Content="Obszar górski" HorizontalAlignment="Left" Margin="25,385,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White"/>
-            <Label Content="Trasa" HorizontalAlignment="Left" Margin="25,415,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White" RenderTransformOrigin="0.51,-0.581"/>
-            <Label Content="Punkt początkowy" HorizontalAlignment="Left" Margin="25,445,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White"/>
-            <Label Content="Długość" HorizontalAlignment="Left" Margin="25,475,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White" RenderTransformOrigin="0.612,-0.645"/>
-            <Label Content="Wysokość" HorizontalAlignment="Left" Margin="25,505,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White" RenderTransformOrigin="0.612,-0.645"/>
-            <Label Content="Punktacja" HorizontalAlignment="Left" Margin="25,535,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White" RenderTransformOrigin="0.612,-0.645"/>
-            <Label Content="Cykl" HorizontalAlignment="Left" Margin="25,565,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White"/>
 
-            <TextBlock Text="{Binding DataWycieczki}" HorizontalAlignment="Right" TextAlignment="Right" Width="180" Margin="213,325,25,0" VerticalAlignment="Top" FontSize="16" Foreground="White"/>
-            <TextBlock Text="{Binding CalkowityCzasTrwania}" HorizontalAlignment="Right" TextAlignment="Right" Width="180" Margin="0,354,25.2,0" VerticalAlignment="Top" FontSize="16" Foreground="White"/>
-            <TextBlock Text="{Binding ObszarGorski}" HorizontalAlignment="Right" TextAlignment="Right" Width="180" Margin="213,385,25,0" VerticalAlignment="Top" FontSize="16" Foreground="White"/>
-            <TextBlock Text="{Binding Trasa}" HorizontalAlignment="Right" TextAlignment="Right" Width="180" Margin="277,415,25,0" VerticalAlignment="Top" FontSize="16" Foreground="White" RenderTransformOrigin="0.51,-0.581"/>
-            <TextBlock Text="{Binding PunktPoczatkowy}" HorizontalAlignment="Right" Width="180" TextAlignment="Right" Margin="184,445,25,0" VerticalAlignment="Top" FontSize="16" Foreground="White" RenderTransformOrigin="0.216,0.631"/>
-            <TextBlock Text="{Binding Dlugosc}" HorizontalAlignment="Right" TextAlignment="Right" Width="180" Margin="256,475,25,0" VerticalAlignment="Top" FontSize="16" Foreground="White" RenderTransformOrigin="0.612,-0.645"/>
-            <TextBlock Text ="{Binding Wysokosc, StringFormat=' {0} m n.p.m.'}" HorizontalAlignment="Right" Width="180" TextAlignment="Right" Margin="242,507,25,0" VerticalAlignment="Top" FontSize="16" Foreground="White" RenderTransformOrigin="0.612,-0.645"/>
-            <TextBlock Text="{Binding Punktacja}" HorizontalAlignment="Right" Width="180" TextAlignment="Right" Margin="242,535,25,0" VerticalAlignment="Top" FontSize="16" Foreground="White" RenderTransformOrigin="0.612,-0.645"/>
-            <TextBlock Text="{Binding CyklOdznaki}" HorizontalAlignment="Right" Width="180" TextAlignment="Right" Margin="277,567,25,0" VerticalAlignment="Top" FontSize="16" Foreground="White"/>
+            <TextBlock Text="Data wycieczki" HorizontalAlignment="Left" Margin="25,325,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White" Height="22"/>
+            <TextBlock Text="Czas" HorizontalAlignment="Left" Margin="25,355,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White" Height="22"/>
+            <TextBlock Text="Obszar górski" HorizontalAlignment="Left" Margin="25,385,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White" Height="22"/>
+            <TextBlock Text="Trasa" HorizontalAlignment="Left" Margin="25,415,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White" Width="60" RenderTransformOrigin="0.51,-0.581" Height="22"/>
+            <TextBlock Text="Punkt początkowy" HorizontalAlignment="Left" Margin="25,445,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White" Height="22"/>
+            <TextBlock Text="Długość" HorizontalAlignment="Left" Margin="25,475,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White" RenderTransformOrigin="0.612,-0.645" Height="22"/>
+            <TextBlock Text="Wysokość" HorizontalAlignment="Left" Margin="25,505,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White" RenderTransformOrigin="0.612,-0.645" Height="22"/>
+            <TextBlock Text="Punktacja" HorizontalAlignment="Left" Margin="25,535,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White" RenderTransformOrigin="0.612,-0.645" Height="22"/>
+            <TextBlock Text="Cykl" HorizontalAlignment="Left" Margin="25,565,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White" Height="22"/>
 
-            <TextBlock Text="{Binding Status}" Name="StatusTextBlock" HorizontalAlignment="Center" Margin="58,602,55.2,0" VerticalAlignment="Top" FontSize="16" Foreground="Red"/>
+            <TextBlock Text="{Binding DataWycieczki}" HorizontalAlignment="Right" TextAlignment="Right" Width="180" Margin="213,325,25,0" VerticalAlignment="Top" FontSize="16" Foreground="White" Height="22"/>
+            <TextBlock Text="{Binding CalkowityCzasTrwania}" HorizontalAlignment="Right" TextAlignment="Right" Width="180" Margin="0,355,25.2,0" VerticalAlignment="Top" FontSize="16" Foreground="White"  Height="22"/>
+            <TextBlock Text="{Binding ObszarGorski}" HorizontalAlignment="Right" TextAlignment="Right" Width="180" Margin="213,385,25,0" VerticalAlignment="Top" FontSize="16" Foreground="White"  Height="22"/>
+            <TextBlock Text="{Binding Trasa}" HorizontalAlignment="Right" TextAlignment="Right" Width="280" Margin="277,415,25,0" VerticalAlignment="Top" FontSize="16" Foreground="White" Height="22"/>
+            <TextBlock Text="{Binding PunktPoczatkowy}" HorizontalAlignment="Right" Width="280" TextAlignment="Right" Margin="184,445,25,0" VerticalAlignment="Top" FontSize="16" Foreground="White" RenderTransformOrigin="0.216,0.631" Height="22"/>
+            <TextBlock Text="{Binding Dlugosc}" HorizontalAlignment="Right" TextAlignment="Right" Width="180" Margin="256,475,25,0" VerticalAlignment="Top" FontSize="16" Foreground="White" RenderTransformOrigin="0.612,-0.645" Height="22"/>
+            <TextBlock Text="{Binding Wysokosc, StringFormat=' {0} m n.p.m.'}" HorizontalAlignment="Right" Width="180" TextAlignment="Right" Margin="242,505,25,0" VerticalAlignment="Top" FontSize="16" Foreground="White" RenderTransformOrigin="0.612,-0.645" Height="22"/>
+            <TextBlock Text="{Binding Punktacja}" HorizontalAlignment="Right" Width="180" TextAlignment="Right" Margin="242,535,25,0" VerticalAlignment="Top" FontSize="16" Foreground="White" RenderTransformOrigin="0.612,-0.645" Height="22"/>
+            <TextBlock Text="{Binding CyklOdznaki}" HorizontalAlignment="Right" Width="180" TextAlignment="Right" Margin="277,565,25,0" VerticalAlignment="Top" FontSize="16" Foreground="White" Height="22"/>
+
+            <TextBlock Name="StatusTextBlock" TextAlignment="Center" HorizontalAlignment="Stretch" Margin="0,602,0,0" VerticalAlignment="Top" FontSize="16" Foreground="Red">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Text" Value="WTRAKCIE"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Status}" Value="POTWIERDZONA">
+                                <Setter Property="Foreground" Value="LightGreen"/>
+                                <Setter Property="Text" Value="POTWIERDZONA PRZEZ PRZODOWNIKA"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Status}" Value="NIEPOTWIERDZONA">
+                                <Setter Property="Text" Value="NIEPOTWIERDZONA PRZEZ PRZODOWNIKA"/>
+                                <Setter Property="Foreground" Value="#FFED2D2D"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Status}" Value="WTRAKCIE">
+                                <Setter Property="Foreground" Value="Yellow"/>
+                                <Setter Property="Text"  Value="W TRAKCIE POTWIERDZANIA"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+
+
+
             <TextBlock Text="{Binding Nazwa}" HorizontalAlignment="Left" TextAlignment="Left" Margin="8,10,0,0" VerticalAlignment="Top" Background="#00000000" Foreground="#FFE0E0E0" FontSize="14" Width="287" Height="30"/>
 
             <Button Name ="DeleteButton" Background="Transparent" Click="Button_UsunWycieczkeOnClick"  BorderBrush="Transparent" HorizontalAlignment="Stretch" Height="40" VerticalAlignment="Top" Width="40" Margin="335,0,0.2,0" RenderTransformOrigin="2.255,0.5">
@@ -94,13 +138,13 @@
 
 
 
-            <Grid Name="CzyNaPewnoChceszUsunacWycieczkeGrid"  Background="#66B4A4A4" Visibility="Hidden" DataContext="{Binding CurrentWycieczka}">
+            <Grid Name="CzyNaPewnoChceszUsunacWycieczkeGrid"  Background="#66B4A4A4" Visibility="Hidden" >
                 <Rectangle Fill="#FFF7F5F5" RadiusX="20" RadiusY="20" HorizontalAlignment="Center" Height="130" Margin="0,170,0,0" Stroke="Black" VerticalAlignment="Top" Width="275"/>
-                <TextBlock TextWrapping="WrapWithOverflow" Width="200" Height="50" Margin="90,190,85.2,427.2" TextAlignment="Center">
-                        CZY NA PEWNO CHCESZ SKASOWAĆ WYCIECZKĘ?
+                <TextBlock TextWrapping="WrapWithOverflow" Width="200" Height="30" Margin="90,190,85.2,447.2" TextAlignment="Center">
+                        CZY NA PEWNO CHCESZ SKASOWAĆ WYCIECZKĘ
                 </TextBlock>
                 <TextBlock Text="{Binding Nazwa}" HorizontalAlignment="Center"
-                       Margin="125,225,130.2,0" VerticalAlignment="Top" Background="#00000000" Foreground="Black" FontSize="20" Width="120" Height="30"/>
+                       Margin="125,225,130.2,0" VerticalAlignment="Top" TextAlignment="Center" Background="#00000000" Foreground="Black" FontSize="14" Width="120" Height="30"/>
                 <Label FontSize="15" Content="?" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="179,255,180.2,386.2"></Label>
                 <Button Content="NIE" Click ="Button_ZamknijKomunikatUsuwania" FontSize="15" FontWeight="Bold" Background="LightCoral" HorizontalAlignment="Left" Margin="220,260,0,0" VerticalAlignment="Top" Width="60" Height="30"/>
                 <Button Content="TAK" Click ="Button_Usun" FontSize="15" FontWeight="Bold" Background="LightGreen" HorizontalAlignment="Left" Margin="90,260,0,0" VerticalAlignment="Top" Width="60" Height="30"/>

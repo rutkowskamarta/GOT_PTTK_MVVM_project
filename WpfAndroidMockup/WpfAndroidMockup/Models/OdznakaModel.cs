@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 
 namespace WpfAndroidMockup.Models
 {
+    /// <summary>
+    /// Model odznaki
+    /// </summary>
+    /// <seealso cref="System.ComponentModel.INotifyPropertyChanged" />
     public class OdznakaModel : INotifyPropertyChanged
     {
         private long id;
@@ -22,6 +26,12 @@ namespace WpfAndroidMockup.Models
         private DateTime dataZakonczenia;
         private bool czyPrzeslanaDoWeryfikacji;
 
+        /// <summary>
+        /// akcesor i mutator dla identyfikatora.
+        /// </summary>
+        /// <value>
+        /// identyfikator odznaki.
+        /// </value>
         public long Id
         {
             get
@@ -38,6 +48,12 @@ namespace WpfAndroidMockup.Models
             }
         }
 
+        /// <summary>
+        /// Akcesor i mutator stopnia odznaki.
+        /// </summary>
+        /// <value>
+        /// Stopien odznaki.
+        /// </value>
         public string Stopien
         {
             get
@@ -54,6 +70,12 @@ namespace WpfAndroidMockup.Models
             }
         }
 
+        /// <summary>
+        /// Akcesor i mutator rodzaju.
+        /// </summary>
+        /// <value>
+        /// Rodzaj odznaki.
+        /// </value>
         public string Rodzaj
         {
             get
@@ -70,6 +92,12 @@ namespace WpfAndroidMockup.Models
             }
         }
 
+        /// <summary>
+        /// Akcesor i mutator wskazujący czy odznaka została zweryfikowana.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> jeśli [zweryfikowana]; w przeciwnym wypadku, <c>false</c>.
+        /// </value>
         public bool CzyZweryfikowana
         {
             get
@@ -86,6 +114,12 @@ namespace WpfAndroidMockup.Models
             }
         }
 
+        /// <summary>
+        /// Akcesor i mutator ścieżki do obrazku odznaki.
+        /// </summary>
+        /// <value>
+        /// ścieżka do pliku.
+        /// </value>
         public string ImgPath
         {
             get
@@ -102,6 +136,12 @@ namespace WpfAndroidMockup.Models
             }
         }
 
+        /// <summary>
+        /// Akcesor i mutator punktów zdobytych w ramach odznaki.
+        /// </summary>
+        /// <value>
+        /// PKT.
+        /// </value>
         public int Pkt
         {
             get
@@ -118,6 +158,12 @@ namespace WpfAndroidMockup.Models
             }
         }
 
+        /// <summary>
+        /// Akcesor i mutator liczby punktów potrzebnych do zdobycia odznaki
+        /// </summary>
+        /// <value>
+        /// Punkty potrzebne do przyznania odznaki.
+        /// </value>
         public int MinPkt
         {
             get
@@ -134,6 +180,12 @@ namespace WpfAndroidMockup.Models
             }
         }
 
+        /// <summary>
+        /// Akcesor i mutator daty rozpoczecia cyklu odznaki
+        /// </summary>
+        /// <value>
+        /// Data rozpoczecia cyklu odznaki
+        /// </value>
         public DateTime DataRozpoczecia
         {
             get
@@ -150,6 +202,12 @@ namespace WpfAndroidMockup.Models
             }
         }
 
+        /// <summary>
+        /// Akcesor i mutator daty zakończenia cyklu odznaki
+        /// </summary>
+        /// <value>
+        /// Data zakonczenia cyklu odznaki
+        /// </value>
         public DateTime DataZakonczenia
         {
             get
@@ -166,6 +224,12 @@ namespace WpfAndroidMockup.Models
             }
         }
 
+        /// <summary>
+        /// Akcesor wycieczek w ramach odznaki
+        /// </summary>
+        /// <value>
+        /// Wycieczki w ramach odznaki.
+        /// </value>
         public ObservableCollection<WycieczkaModel> Wycieczki
         {
             get
@@ -174,6 +238,12 @@ namespace WpfAndroidMockup.Models
             }
         }
 
+        /// <summary>
+        /// Akcesor turysty, posiadacza odznaki.
+        /// </summary>
+        /// <value>
+        /// Turysta, posiadach odznaki
+        /// </value>
         public TurystaModel Turysta { get; }
 
         public OdznakaModel(ref TurystaModel turysta)
@@ -183,6 +253,12 @@ namespace WpfAndroidMockup.Models
 
         }
 
+        /// <summary>
+        /// Akcesor i mutator statusu odznaki
+        /// </summary>
+        /// <value>
+        /// status odznaki jako napis
+        /// </value>
         public string StatusString
         {
             get
@@ -199,6 +275,12 @@ namespace WpfAndroidMockup.Models
             
         }
 
+        /// <summary>
+        /// ustala i odczytuje czy odznaka została przesłana do weryfikacji.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> jeśli przeslana do weryfikacji; w przeciwnym przypadku, <c>false</c>.
+        /// </value>
         public bool CzyPrzeslanaDoWeryfikacji
         {
             get
@@ -215,18 +297,33 @@ namespace WpfAndroidMockup.Models
             }
         }
 
+        /// <summary>
+        /// Dodaje wycieczke.
+        /// </summary>
+        /// <param name="wycieczka">Wycieczka.</param>
         public void DodajWycieczke(WycieczkaModel wycieczka)
         {
             wycieczki.Add(wycieczka);
         }
 
+        /// <summary>
+        /// Usuwa wycieczke.
+        /// </summary>
+        /// <param name="wycieczka">wycieczka.</param>
         public void UsunWycieczke(WycieczkaModel wycieczka)
         {
             wycieczki.Remove(wycieczka);
         }
 
+        /// <summary>
+        /// Aktywuje sie gdy wartosc atrybutu sie zmieni.
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
+        /// <summary>
+        /// Zgłasza zmiane atrybutu.
+        /// </summary>
+        /// <param name="property">atrybut</param>
         public void RaisePropertyChanged(string property)
         {
             if (PropertyChanged != null)
@@ -235,6 +332,10 @@ namespace WpfAndroidMockup.Models
             }
         }
 
+        /// <summary>
+        /// Sprawdza czy warunki są spełnione
+        /// </summary>
+        /// <returns>prawda- spelnione</returns>
         private bool CzyWarunkiSpelnione()
         {
             return Pkt >= MinPkt;

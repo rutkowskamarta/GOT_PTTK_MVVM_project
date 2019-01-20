@@ -6,16 +6,26 @@ using System.Threading.Tasks;
 
 namespace WpfAndroidMockup.Models
 {
+    /// <summary>
+    /// Klasa zajmująca się transformacją obiektów turystow otrzymanych z DAO do modeli turystów obsługiwanych przez ViewModel.
+    /// </summary>
     public class TurysciContext
     {
         private static TurysciContext instance;
         private Dictionary<long, TurystaModel> turysciDict;
 
+        /// <summary>
+        /// Konstruktor nieparametryczny dla <see cref="PrzodownicyContext"/>.
+        /// </summary>
         private TurysciContext()
         {
             LoadExamplaryTourists();
         }
 
+        /// <summary>
+        /// Zwraca instancje singletonu.
+        /// </summary>
+        /// <returns><see cref="TurysciContext"/> singleton </returns>
         public static TurysciContext GetInstance()
         {
             if (instance == null)
@@ -25,6 +35,9 @@ namespace WpfAndroidMockup.Models
             return instance;
         }
 
+        /// <summary>
+        /// Wypelnia baze danych przykladowymi turystami
+        /// </summary>
         private void LoadExamplaryTourists()
         {
             turysciDict = new Dictionary<long, TurystaModel>();
@@ -33,6 +46,11 @@ namespace WpfAndroidMockup.Models
             turysciDict.Add(2, new TurystaModel(2));
         }
 
+        /// <summary>
+        /// Akcesor dla turysty.
+        /// </summary>
+        /// <param name="id">Identyfikator turysty.</param>
+        /// <returns></returns>
         public TurystaModel GetTurysta(long id)
         {
             TurystaModel value = null;

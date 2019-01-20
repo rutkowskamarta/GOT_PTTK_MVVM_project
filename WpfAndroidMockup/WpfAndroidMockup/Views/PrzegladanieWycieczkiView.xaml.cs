@@ -39,7 +39,7 @@ namespace WpfAndroidMockup.Views
             if (listView.SelectedItem != null)
             {
                 WycieczkaModel selectedItem = (WycieczkaModel)listView.SelectedItems[0];
-                WycieczkaViewModel.SetCurrentWycieczka(selectedItem);
+                WycieczkaViewModel.WczytajWycieczke(selectedItem);
                 ChangeLayoutToTripLayout();
             }
 
