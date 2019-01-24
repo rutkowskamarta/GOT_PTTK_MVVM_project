@@ -1,0 +1,54 @@
+digraph "WpfAndroidMockup.ViewModels.OdznakiViewModel"
+{
+ // INTERACTIVE_SVG=YES
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node2 [label="WpfAndroidMockup.ViewModels.\lOdznakiViewModel",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="INotifyPropertyChanged",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_notify_property_changed.html"];
+  Node4 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" aktualnaWycieczka" ,fontname="Helvetica"];
+  Node4 [label="WpfAndroidMockup.Models.\lWycieczkaModel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_models_1_1_wycieczka_model.html",tooltip="Model Wycieczki "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" nazwa\ntrasa\ncyklOdznaki\nobszarGorski\npunktPoczatkowy" ,fontname="Helvetica"];
+  Node5 [label="string",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node6 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" status" ,fontname="Helvetica"];
+  Node6 [label="StatusyPotwierdzenia",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node7 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" dataRozpoczecia\ndataZakonczenia" ,fontname="Helvetica"];
+  Node7 [label="DateTime",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node8 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" turysta" ,fontname="Helvetica"];
+  Node8 [label="WpfAndroidMockup.Models.\lTurystaModel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_models_1_1_turysta_model.html",tooltip="Model turysty "];
+  Node3 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="IComparable\< TurystaModel \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_comparable.html"];
+  Node5 -> Node8 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" imie\nnazwisko" ,fontname="Helvetica"];
+  Node10 -> Node8 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" id" ,fontname="Helvetica"];
+  Node10 [label="long",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node11 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" punktacja" ,fontname="Helvetica"];
+  Node11 [label="int",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node12 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" czyWielodniowa" ,fontname="Helvetica"];
+  Node12 [label="bool",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node13 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" odznaka" ,fontname="Helvetica"];
+  Node13 [label="WpfAndroidMockup.Models.\lOdznakaModel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_models_1_1_odznaka_model.html",tooltip="Model odznaki "];
+  Node3 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 -> Node13 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" imgPath\nrodzaj\nstopien" ,fontname="Helvetica"];
+  Node7 -> Node13 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" dataRozpoczecia\ndataZakonczenia" ,fontname="Helvetica"];
+  Node14 -> Node13 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" wycieczki" ,fontname="Helvetica"];
+  Node14 [label="ObservableCollection\l\< WpfAndroidMockup.Models.Wycieczka\lModel \>",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node11 -> Node13 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" pkt\nminPkt" ,fontname="Helvetica"];
+  Node12 -> Node13 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" czyPrzeslanaDoWeryfikacji\nczyZweryfikowana" ,fontname="Helvetica"];
+  Node10 -> Node13 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" id" ,fontname="Helvetica"];
+  Node10 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" wysokosc\nnrPrzodownika\nid\ndlugosc" ,fontname="Helvetica"];
+  Node13 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" aktualnaOdznaka" ,fontname="Helvetica"];
+  Node15 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" odznakiContext" ,fontname="Helvetica"];
+  Node15 [label="WpfAndroidMockup.Models.\lOdznakiContext",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html",tooltip="Klasa zajmująca się transformacją obiektów odznak otrzymanych z DAO do modeli odznak obsługiwanych pr..."];
+  Node16 -> Node15 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" turysciContext" ,fontname="Helvetica"];
+  Node16 [label="WpfAndroidMockup.Models.\lTurysciContext",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_models_1_1_turysci_context.html",tooltip="Klasa zajmująca się transformacją obiektów turystow otrzymanych z DAO do modeli turystów obsługiwanyc..."];
+  Node17 -> Node16 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" turysciDict" ,fontname="Helvetica"];
+  Node17 [label="Dictionary\< long, WpfAndroid\lMockup.Models.TurystaModel \>",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node16 -> Node16 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" instance" ,fontname="Helvetica"];
+  Node5 -> Node15 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" BRAZOWA_IMG_PATH\nPOPULARNA_IMG_PATH\nZLOTA_IMG_PATH" ,fontname="Helvetica"];
+  Node18 -> Node15 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" odznakiDoWeryfikacjiDict\nodznakiDict\nodznakiZweryfikowaneDict" ,fontname="Helvetica"];
+  Node18 [label="Dictionary\< long, WpfAndroid\lMockup.Models.OdznakaModel \>",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node15 -> Node15 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" instance" ,fontname="Helvetica"];
+}

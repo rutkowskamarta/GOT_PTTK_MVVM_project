@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Moja Gorska Odznaka Turystyczna PTTK: Plik źródłowy WpfAndroidMockup/DAO/DatabaseObjects/Wycieczka.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Moja Gorska Odznaka Turystyczna PTTK
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_eacfe7264d79a0992aabd22e047da298.html">WpfAndroidMockup</a></li><li class="navelem"><a class="el" href="dir_90c40c495e52074d5defbef29f1fa3f1.html">DAO</a></li><li class="navelem"><a class="el" href="dir_cc2283ba3faac13ccf109e70e15d50be.html">DatabaseObjects</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Wycieczka.cs</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_wycieczka_8cs.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_g_o_t___p_t_t_k.html">GOT_PTTK</a>.<a class="code" href="namespace_g_o_t___p_t_t_k_1_1_models.html">Models</a>;</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>;</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>.Collections.Generic;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>.Linq;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>.Text;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>.Threading.Tasks;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_g_o_t___p_t_t_k.html">GOT_PTTK</a>.DAO</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div><div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html">   10</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html">Wycieczka</a></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    {</div><div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#ad7b8e1bc2079aeb482317a627c384f6d">   12</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">long</span> <a class="code" href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#ad7b8e1bc2079aeb482317a627c384f6d">Id</a>;</div><div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#a236de40cf3ccc81557bdc7026bd62cd1">   13</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">long</span> <a class="code" href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#a236de40cf3ccc81557bdc7026bd62cd1">NrPrzodownika</a>;</div><div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#ad36eb326154adfda777c38ba8e591f2e">   14</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">long</span> <a class="code" href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#ad36eb326154adfda777c38ba8e591f2e">IdCyklu</a>;</div><div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#ac575031ceb7fb615fc7c4e45fc41a214">   15</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code" href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#ac575031ceb7fb615fc7c4e45fc41a214">Nazwa</a>;</div><div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#a5a0a903b4a7cd2142b1e4f26adbb1952">   16</a></span>&#160;        <span class="keyword">public</span> DateTime <a class="code" href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#a5a0a903b4a7cd2142b1e4f26adbb1952">DataRozpoczecia</a>;</div><div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#a24cf89143e551c80d2599a4775587ac4">   17</a></span>&#160;        <span class="keyword">public</span> DateTime <a class="code" href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#a24cf89143e551c80d2599a4775587ac4">DataZakonczenia</a>;</div><div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#a85cfc38c34c0e8f03d090b5a9527003b">   18</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code" href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#a85cfc38c34c0e8f03d090b5a9527003b">Status</a>;</div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#a7b5641c6580741887d614a026c9ebb59">   19</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code" href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#a7b5641c6580741887d614a026c9ebb59">ObszarGorski</a>;</div><div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#ac635c36815761dcf83d691132121f38d">   20</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code" href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#ac635c36815761dcf83d691132121f38d">Trasa</a>;</div><div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#a80aa47eff564b977830d56553a86520f">   21</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code" href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#a80aa47eff564b977830d56553a86520f">PunktPoczatkowy</a>;</div><div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#ac149aa2558a2be4200b7294210527fee">   22</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">long</span> <a class="code" href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#ac149aa2558a2be4200b7294210527fee">Wysokosc</a>;</div><div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#a48f484db1a2c5773342cc62ffa639d94">   23</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">long</span> <a class="code" href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#a48f484db1a2c5773342cc62ffa639d94">Dlugosc</a>;</div><div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#ae3f9848dc7b0f290c71368dc60da6066">   24</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code" href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#ae3f9848dc7b0f290c71368dc60da6066">Punktacja</a>;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div><div class="ttc" id="namespace_system_html"><div class="ttname"><a href="namespace_system.html">System</a></div></div>
+<div class="ttc" id="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka_html_a24cf89143e551c80d2599a4775587ac4"><div class="ttname"><a href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#a24cf89143e551c80d2599a4775587ac4">GOT_PTTK.DAO.Wycieczka.DataZakonczenia</a></div><div class="ttdeci">DateTime DataZakonczenia</div><div class="ttdef"><b>Definition:</b> <a href="_wycieczka_8cs_source.html#l00017">Wycieczka.cs:17</a></div></div>
+<div class="ttc" id="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka_html_ac575031ceb7fb615fc7c4e45fc41a214"><div class="ttname"><a href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#ac575031ceb7fb615fc7c4e45fc41a214">GOT_PTTK.DAO.Wycieczka.Nazwa</a></div><div class="ttdeci">string Nazwa</div><div class="ttdef"><b>Definition:</b> <a href="_wycieczka_8cs_source.html#l00015">Wycieczka.cs:15</a></div></div>
+<div class="ttc" id="namespace_g_o_t___p_t_t_k_1_1_models_html"><div class="ttname"><a href="namespace_g_o_t___p_t_t_k_1_1_models.html">GOT_PTTK.Models</a></div><div class="ttdef"><b>Definition:</b> <a href="_odznaki_context_8cs_source.html#l00006">OdznakiContext.cs:6</a></div></div>
+<div class="ttc" id="namespace_g_o_t___p_t_t_k_html"><div class="ttname"><a href="namespace_g_o_t___p_t_t_k.html">GOT_PTTK</a></div></div>
+<div class="ttc" id="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka_html_ac635c36815761dcf83d691132121f38d"><div class="ttname"><a href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#ac635c36815761dcf83d691132121f38d">GOT_PTTK.DAO.Wycieczka.Trasa</a></div><div class="ttdeci">string Trasa</div><div class="ttdef"><b>Definition:</b> <a href="_wycieczka_8cs_source.html#l00020">Wycieczka.cs:20</a></div></div>
+<div class="ttc" id="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka_html_a236de40cf3ccc81557bdc7026bd62cd1"><div class="ttname"><a href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#a236de40cf3ccc81557bdc7026bd62cd1">GOT_PTTK.DAO.Wycieczka.NrPrzodownika</a></div><div class="ttdeci">long NrPrzodownika</div><div class="ttdef"><b>Definition:</b> <a href="_wycieczka_8cs_source.html#l00013">Wycieczka.cs:13</a></div></div>
+<div class="ttc" id="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka_html_ad36eb326154adfda777c38ba8e591f2e"><div class="ttname"><a href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#ad36eb326154adfda777c38ba8e591f2e">GOT_PTTK.DAO.Wycieczka.IdCyklu</a></div><div class="ttdeci">long IdCyklu</div><div class="ttdef"><b>Definition:</b> <a href="_wycieczka_8cs_source.html#l00014">Wycieczka.cs:14</a></div></div>
+<div class="ttc" id="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka_html_a7b5641c6580741887d614a026c9ebb59"><div class="ttname"><a href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#a7b5641c6580741887d614a026c9ebb59">GOT_PTTK.DAO.Wycieczka.ObszarGorski</a></div><div class="ttdeci">string ObszarGorski</div><div class="ttdef"><b>Definition:</b> <a href="_wycieczka_8cs_source.html#l00019">Wycieczka.cs:19</a></div></div>
+<div class="ttc" id="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka_html_a80aa47eff564b977830d56553a86520f"><div class="ttname"><a href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#a80aa47eff564b977830d56553a86520f">GOT_PTTK.DAO.Wycieczka.PunktPoczatkowy</a></div><div class="ttdeci">string PunktPoczatkowy</div><div class="ttdef"><b>Definition:</b> <a href="_wycieczka_8cs_source.html#l00021">Wycieczka.cs:21</a></div></div>
+<div class="ttc" id="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka_html_a5a0a903b4a7cd2142b1e4f26adbb1952"><div class="ttname"><a href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#a5a0a903b4a7cd2142b1e4f26adbb1952">GOT_PTTK.DAO.Wycieczka.DataRozpoczecia</a></div><div class="ttdeci">DateTime DataRozpoczecia</div><div class="ttdef"><b>Definition:</b> <a href="_wycieczka_8cs_source.html#l00016">Wycieczka.cs:16</a></div></div>
+<div class="ttc" id="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka_html_ac149aa2558a2be4200b7294210527fee"><div class="ttname"><a href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#ac149aa2558a2be4200b7294210527fee">GOT_PTTK.DAO.Wycieczka.Wysokosc</a></div><div class="ttdeci">long Wysokosc</div><div class="ttdef"><b>Definition:</b> <a href="_wycieczka_8cs_source.html#l00022">Wycieczka.cs:22</a></div></div>
+<div class="ttc" id="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka_html_a85cfc38c34c0e8f03d090b5a9527003b"><div class="ttname"><a href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#a85cfc38c34c0e8f03d090b5a9527003b">GOT_PTTK.DAO.Wycieczka.Status</a></div><div class="ttdeci">string Status</div><div class="ttdef"><b>Definition:</b> <a href="_wycieczka_8cs_source.html#l00018">Wycieczka.cs:18</a></div></div>
+<div class="ttc" id="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka_html_ad7b8e1bc2079aeb482317a627c384f6d"><div class="ttname"><a href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#ad7b8e1bc2079aeb482317a627c384f6d">GOT_PTTK.DAO.Wycieczka.Id</a></div><div class="ttdeci">long Id</div><div class="ttdef"><b>Definition:</b> <a href="_wycieczka_8cs_source.html#l00012">Wycieczka.cs:12</a></div></div>
+<div class="ttc" id="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka_html_ae3f9848dc7b0f290c71368dc60da6066"><div class="ttname"><a href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#ae3f9848dc7b0f290c71368dc60da6066">GOT_PTTK.DAO.Wycieczka.Punktacja</a></div><div class="ttdeci">int Punktacja</div><div class="ttdef"><b>Definition:</b> <a href="_wycieczka_8cs_source.html#l00024">Wycieczka.cs:24</a></div></div>
+<div class="ttc" id="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka_html_a48f484db1a2c5773342cc62ffa639d94"><div class="ttname"><a href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html#a48f484db1a2c5773342cc62ffa639d94">GOT_PTTK.DAO.Wycieczka.Dlugosc</a></div><div class="ttdeci">long Dlugosc</div><div class="ttdef"><b>Definition:</b> <a href="_wycieczka_8cs_source.html#l00023">Wycieczka.cs:23</a></div></div>
+<div class="ttc" id="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka_html"><div class="ttname"><a href="class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka.html">GOT_PTTK.DAO.Wycieczka</a></div><div class="ttdef"><b>Definition:</b> <a href="_wycieczka_8cs_source.html#l00010">Wycieczka.cs:10</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano Pn, 21 sty 2019 11:44:23 dla Moja Gorska Odznaka Turystyczna PTTK programem &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

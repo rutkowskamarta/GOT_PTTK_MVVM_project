@@ -1,0 +1,10 @@
+digraph "WpfAndroidMockup.ViewModels.WycieczkaViewModel.WczytajWycieczkiPrzodownikaDoPotwierdzenia"
+{
+ // INTERACTIVE_SVG=YES
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node49 [label="WpfAndroidMockup.ViewModels.\lWycieczkaViewModel.WczytajWycieczki\lPrzodownikaDoPotwierdzenia",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node49 -> Node50 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node50 [label="WpfAndroidMockup.Models.\lWycieczkiContext.GetWycieczki\lPrzodownikaDoPotwierdzenia",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_models_1_1_wycieczki_context.html#a2d737567ba70f69487fd8320d3e389c4",tooltip="Zwraca wszystkie wycieczki do potwierdzenia dla przodownika "];
+}

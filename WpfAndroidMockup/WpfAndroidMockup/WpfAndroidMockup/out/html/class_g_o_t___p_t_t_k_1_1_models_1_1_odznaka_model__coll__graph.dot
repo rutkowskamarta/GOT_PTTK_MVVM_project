@@ -1,0 +1,31 @@
+digraph "GOT_PTTK.Models.OdznakaModel"
+{
+ // INTERACTIVE_SVG=YES
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node3 [label="GOT_PTTK.Models.OdznakaModel",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="INotifyPropertyChanged",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_notify_property_changed.html"];
+  Node5 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="IComparable\< OdznakaModel \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_comparable.html"];
+  Node6 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" PUNKTY_PROPERTY\nTURYSTA_PROPERTY\nimgPath\nRODZAJ_PROPERTY\nIMG_PATH_PROPERTY\nSTOPIEN_PROPERTY\nrodzaj\nNR_PRACOWNIKA_PROPERTY\nDATA_ROZPOCZECIA\l_PROPERTY\nCZY_WYSLANA_DO_WERYFIKACJI\l_PROPERTY\n..." ,fontname="Helvetica"];
+  Node6 [label="string",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node7 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" dataRozpoczecia" ,fontname="Helvetica"];
+  Node7 [label="DateTime",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node8 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" turysta" ,fontname="Helvetica"];
+  Node8 [label="GOT_PTTK.Models.TurystaModel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_o_t___p_t_t_k_1_1_models_1_1_turysta_model.html",tooltip="Model turysty "];
+  Node4 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="IComparable\< TurystaModel \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_comparable.html"];
+  Node6 -> Node8 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" imie\nNAZWISKO_PROPERTY\nnazwisko\nIMIE_PROPERTY\nID_PROPERTY" ,fontname="Helvetica"];
+  Node10 -> Node8 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" id" ,fontname="Helvetica"];
+  Node10 [label="long",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node11 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" NR_PRACOWNIKA_DO_WERYFIKACJI\nNR_PRACOWNIKA_BEZ_WERYFIKACJI" ,fontname="Helvetica"];
+  Node11 [label="const long",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node12 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" minPkt" ,fontname="Helvetica"];
+  Node12 [label="int",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node13 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" wycieczki" ,fontname="Helvetica"];
+  Node13 [label="ObservableCollection\l\< GOT_PTTK.Models.Wycieczka\lModel \>",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node10 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" nrPracownika\nid" ,fontname="Helvetica"];
+}

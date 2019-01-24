@@ -1,0 +1,18 @@
+digraph "GOT_PTTK.Models.OdznakiContext.GetInstance"
+{
+ // INTERACTIVE_SVG=YES
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node6 [label="GOT_PTTK.Models.OdznakiContext.\lGetInstance",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="GOT_PTTK.Models.Wycieczki\lContext.GetModel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_o_t___p_t_t_k_1_1_models_1_1_wycieczki_context.html#ab72605f16d0df68febc966d70efb95c5",tooltip="Funkcja zwracają model wycieczke, o identyfikatorze podanym w parametrze. Zwraca null jeżeli wycieczk..."];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="WpfAndroidMockup.ViewModels.\lWycieczkaViewModel.WycieczkaViewModel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_view_models_1_1_wycieczka_view_model.html#a6ab218c1cebb0f5f33f15fa2c1431034",tooltip="Konstruktor nieparametryczny klasy WycieczkaViewModel "];
+  Node6 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="GOT_PTTK.Models.Wycieczki\lContext.GetWszystkie",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_o_t___p_t_t_k_1_1_models_1_1_wycieczki_context.html#a6c24283d1e42db1d67ac2ba904b2180b"];
+  Node6 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="WpfAndroidMockup.ViewModels.\lOdznakiViewModel.OdznakiViewModel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_view_models_1_1_odznaki_view_model.html#ae31c04453bac01d4735737b6ff142b93",tooltip="Konstruktor nieparametryczny klasy odznaka view model "];
+  Node6 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="GOT_PTTK.Models.Pracownicy\lContext.PracownicyContext",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_o_t___p_t_t_k_1_1_models_1_1_pracownicy_context.html#a0f7db745059fd0828a06f2b7aab9d208"];
+}

@@ -1,0 +1,10 @@
+digraph "GOT_PTTK.DAO.PracownikDAO.Delete"
+{
+ // INTERACTIVE_SVG=YES
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node3 [label="GOT_PTTK.DAO.PracownikDAO.\lDelete",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="GOT_PTTK.Models.Pracownicy\lContext.DeletePracownik",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_o_t___p_t_t_k_1_1_models_1_1_pracownicy_context.html#a10b8608be421001d481fb511ef1c3b97",tooltip="Usunięcie pracownika, o podanym numerze, w bazie "];
+}

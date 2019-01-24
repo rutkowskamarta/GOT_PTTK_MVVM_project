@@ -1,0 +1,14 @@
+digraph "GOT_PTTK.Models.OdznakiContext.GetOdznakiNieDoWeryfikacji"
+{
+ // INTERACTIVE_SVG=YES
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node34 [label="GOT_PTTK.Models.OdznakiContext.\lGetOdznakiNieDoWeryfikacji",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node34 -> Node35 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node35 [label="WpfAndroidMockup.ViewModels.\lOdznakiViewModel.LoadWszystkieRozpoczeteCykle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_view_models_1_1_odznaki_view_model.html#a139c6acab1699ab23a281aebca4b6d9b",tooltip="Ładuje wszystkie rozpoczęte cykle odznaki, nieprzyznane "];
+  Node35 -> Node36 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node36 [label="WpfAndroidMockup.MainWindow.\lButton_WyslijDoWeryfikacji",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_main_window.html#a9fe5f943ff1a9c8260c562c4ff130316",tooltip="Logika dla przycisku odpowiedzialnego za wywołanie przypadku użycia przesyłania odznaki do weryfikacj..."];
+  Node36 -> Node37 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node37 [label="WpfAndroidMockup.MainWindow.\lConnect",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_main_window.html#adcfba8fb3f0c36593aed929c6aefa4dd"];
+}

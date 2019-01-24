@@ -1,0 +1,24 @@
+digraph "GOT_PTTK.Models.WycieczkiContext.GetModel"
+{
+ // INTERACTIVE_SVG=YES
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node15 [label="GOT_PTTK.Models.Wycieczki\lContext.GetModel",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node15 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="GOT_PTTK.DAO.WycieczkaDAO.Find",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_wycieczka_d_a_o.html#a646bde61e8cedffe2ee9f203c9558474"];
+  Node15 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="GOT_PTTK.Models.OdznakiContext.\lGetInstance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_o_t___p_t_t_k_1_1_models_1_1_odznaki_context.html#ab3431ede520f3827bf66732a5f411a38",tooltip="Zwraca instancję singletonu OdznakiContext. "];
+  Node15 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="GOT_PTTK.Models.OdznakiContext.\lGetModel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_o_t___p_t_t_k_1_1_models_1_1_odznaki_context.html#a4c492c7ac450040a6e4c474c05a67b09",tooltip="Funkcja zwracają model pracownika, o numerze podanym w parametrze, z bazy. Zwraca null jeżeli pracown..."];
+  Node18 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="GOT_PTTK.DAO.OdznakaDAO.Find",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_odznaka_d_a_o.html#a91f0703d3d0dc7b23851362360f1a546"];
+  Node18 -> Node20 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 [label="GOT_PTTK.Models.TurysciContext.\lGetInstance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_o_t___p_t_t_k_1_1_models_1_1_turysci_context.html#a976ee508a91989eedc550079534415a9",tooltip="Zwraca instancję klasy - singletonu TurysciContext "];
+  Node18 -> Node21 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node21 [label="GOT_PTTK.Models.Wycieczki\lContext.GetInstance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_o_t___p_t_t_k_1_1_models_1_1_wycieczki_context.html#a66d90717d032d1800ff3309405421704",tooltip="Zwraca instancję klasy - singletonu WycieczkiContext "];
+  Node18 -> Node22 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node22 [label="GOT_PTTK.Models.TurysciContext.\lGetModel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_o_t___p_t_t_k_1_1_models_1_1_turysci_context.html#acd7c72c467dfb5a8c74eb68aab22f0fd",tooltip="Zwraca model turysty o podanym identyfikatorze "];
+  Node22 -> Node23 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node23 [label="GOT_PTTK.DAO.TurystaDAO.Find",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_turysta_d_a_o.html#ac7050b893194eef19739977d5ef5997c"];
+}

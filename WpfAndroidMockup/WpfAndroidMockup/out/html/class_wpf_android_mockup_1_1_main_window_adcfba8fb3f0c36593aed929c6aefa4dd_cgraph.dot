@@ -1,0 +1,32 @@
+digraph "WpfAndroidMockup.MainWindow.Connect"
+{
+ // INTERACTIVE_SVG=YES
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node40 [label="WpfAndroidMockup.MainWindow.\lConnect",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node40 -> Node41 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node41 [label="WpfAndroidMockup.MainWindow.\lButton_ObslugaWycieczek",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_main_window.html#a8acad6f48918fa5d645486c69ce01fb8",tooltip="Logika dla przycisku odpowiedzialnego za wywołanie przypadku użycia przeglądania wycieczek ..."];
+  Node41 -> Node42 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node42 [label="WpfAndroidMockup.ViewModels.\lWycieczkaViewModel.LoadAllWycieczki\lToObservableCollection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_view_models_1_1_wycieczka_view_model.html#af32641c98b0bea34160e71f7b8d92ebf",tooltip="Przypisuje do listy wycieczek wszystkie wycieczki zalogowanego turysty "];
+  Node42 -> Node43 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node43 [label="WpfAndroidMockup.Models.\lWycieczkiContext.GetWycieczki\lZalogowanegoTurysty",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_models_1_1_wycieczki_context.html#a31d2a2c5ed33a622540cd213e50a5228",tooltip="Zwraca wszystkie wycieczki zalogowanego turysty "];
+  Node40 -> Node44 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node44 [label="WpfAndroidMockup.MainWindow.\lButton_Potwierdz",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_main_window.html#a0315b4a69e850a01a7478af6c68ffd10",tooltip="Logika dla przycisku odpowiedzialnego za wywołanie przypadku użycia potwierdzania jako przodownik udz..."];
+  Node44 -> Node45 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node45 [label="WpfAndroidMockup.ViewModels.\lWycieczkaViewModel.WczytajWycieczki\lPrzodownikaDoPotwierdzenia",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_view_models_1_1_wycieczka_view_model.html#ab56637d93864cbc49ad0efa4cd470608",tooltip="Przypisuje do listy wycieczek wycieczki porzodwnika, które czekają na potwierdzenie ..."];
+  Node45 -> Node46 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node46 [label="WpfAndroidMockup.Models.\lWycieczkiContext.GetWycieczki\lPrzodownikaDoPotwierdzenia",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_models_1_1_wycieczki_context.html#a2d737567ba70f69487fd8320d3e389c4",tooltip="Zwraca wszystkie wycieczki do potwierdzenia dla przodownika "];
+  Node40 -> Node47 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node47 [label="WpfAndroidMockup.MainWindow.\lButton_WyslijDoPotwierdzenia",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_main_window.html#a3a4bdd6795c2f75a3ae0df3b858268a3",tooltip="Logika dla przycisku odpowiedzialnego za wywołanie przypadku użycia wysyłania przodownikowy prośby o ..."];
+  Node47 -> Node48 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node48 [label="WpfAndroidMockup.ViewModels.\lWycieczkaViewModel.WczytajNiepotwierdzone\lWycieczkiTurysty",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_view_models_1_1_wycieczka_view_model.html#a1e35edac1319bf120e0fd86e095392b0",tooltip="Przypisuje do listy wycieczek wszystkie niepotwierdzone wycieczki turysty "];
+  Node48 -> Node49 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node49 [label="WpfAndroidMockup.Models.\lWycieczkiContext.GetNiepotwierdzone\lWycieczkiTurysty",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_models_1_1_wycieczki_context.html#a081ed70ce016aeaeab63fbc21d62ab48",tooltip="Zwraca wszystkie wycieczki turysty, które nie zostały potwierdzone "];
+  Node40 -> Node50 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node50 [label="WpfAndroidMockup.MainWindow.\lButton_WyslijDoWeryfikacji",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_main_window.html#a9fe5f943ff1a9c8260c562c4ff130316",tooltip="Logika dla przycisku odpowiedzialnego za wywołanie przypadku użycia przesyłania odznaki do weryfikacj..."];
+  Node50 -> Node51 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node51 [label="WpfAndroidMockup.ViewModels.\lOdznakiViewModel.LoadWszystkieRozpoczeteCykle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_view_models_1_1_odznaki_view_model.html#a139c6acab1699ab23a281aebca4b6d9b",tooltip="Ładuje wszystkie rozpoczęte cykle odznaki, nieprzyznane "];
+  Node51 -> Node52 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node52 [label="WpfAndroidMockup.Models.\lOdznakiContext.GetOdznakiNiezaakcpetowane",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a515b26353856854047ebdf85afc31273",tooltip="Zwraca listę odznak niezaakcpetowanych. "];
+}

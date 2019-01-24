@@ -1,0 +1,32 @@
+digraph "GOT_PTTK.IDAO.TurystaDAO.Find"
+{
+ // INTERACTIVE_SVG=YES
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node7 [label="GOT_PTTK.IDAO.TurystaDAO.Find",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="GOT_PTTK.Models.TurysciContext.\lGetModel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_o_t___p_t_t_k_1_1_models_1_1_turysci_context.html#acd7c72c467dfb5a8c74eb68aab22f0fd",tooltip="Zwraca model turysty o podanym identyfikatorze "];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="GOT_PTTK.Models.OdznakiContext.\lGetModel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_o_t___p_t_t_k_1_1_models_1_1_odznaki_context.html#a4c492c7ac450040a6e4c474c05a67b09",tooltip="Funkcja zwracają model pracownika, o numerze podanym w parametrze, z bazy. Zwraca null jeżeli pracown..."];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="GOT_PTTK.Models.Wycieczki\lContext.GetModel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_o_t___p_t_t_k_1_1_models_1_1_wycieczki_context.html#ab72605f16d0df68febc966d70efb95c5",tooltip="Funkcja zwracają model wycieczke, o identyfikatorze podanym w parametrze. Zwraca null jeżeli wycieczk..."];
+  Node10 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="WpfAndroidMockup.ViewModels.\lWycieczkaViewModel.WycieczkaViewModel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_view_models_1_1_wycieczka_view_model.html#a6ab218c1cebb0f5f33f15fa2c1431034",tooltip="Konstruktor nieparametryczny klasy WycieczkaViewModel "];
+  Node8 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="GOT_PTTK.Models.OdznakiContext.\lGetOdznakiNieDoWeryfikacji",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_o_t___p_t_t_k_1_1_models_1_1_odznaki_context.html#a67dc6e676f3aa70f2c84d9efeb55875f",tooltip="Zwraca wszystkie odznaki, które nie zostały wysłane do weryfikacji "];
+  Node12 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="WpfAndroidMockup.ViewModels.\lOdznakiViewModel.LoadWszystkieRozpoczeteCykle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_view_models_1_1_odznaki_view_model.html#a139c6acab1699ab23a281aebca4b6d9b",tooltip="Ładuje wszystkie rozpoczęte cykle odznaki, nieprzyznane "];
+  Node13 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="WpfAndroidMockup.MainWindow.\lButton_WyslijDoWeryfikacji",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_main_window.html#a9fe5f943ff1a9c8260c562c4ff130316",tooltip="Logika dla przycisku odpowiedzialnego za wywołanie przypadku użycia przesyłania odznaki do weryfikacj..."];
+  Node14 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="WpfAndroidMockup.MainWindow.\lConnect",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_main_window.html#adcfba8fb3f0c36593aed929c6aefa4dd"];
+  Node8 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="GOT_PTTK.Models.OdznakiContext.\lGetWszystkieOdznaki",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_o_t___p_t_t_k_1_1_models_1_1_odznaki_context.html#aa580c2000a0a4b062489b34a08340af1",tooltip="Zwraca wszystkie odznaki "];
+  Node8 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="GOT_PTTK.Models.OdznakiContext.\lGetOdznakiZweryfikowane",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_o_t___p_t_t_k_1_1_models_1_1_odznaki_context.html#aa0831c993bc5932b2cabbbff5ed60a37",tooltip="Zwraca wszystkie zweryfikowane odznaki "];
+  Node17 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="GOT_PTTK.Models.Pracownicy\lContext.GetModel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_o_t___p_t_t_k_1_1_models_1_1_pracownicy_context.html#ae3a1b483e062dd21d5b9b0ee58958c1e",tooltip="Funkcja zwracają model pracownika, o numerze podanym w parametrze, z bazy. Zwraca null jeżeli pracown..."];
+  Node8 -> Node19 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="GOT_PTTK.Models.OdznakiContext.\lGetOdznakiDoWeryfikacji",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_o_t___p_t_t_k_1_1_models_1_1_odznaki_context.html#a2ac2f2f811d0ad2cda3a9a14231001c4",tooltip="Zwraca wszystkie odznaki, które mogą być przekazane do weryfikacji "];
+}

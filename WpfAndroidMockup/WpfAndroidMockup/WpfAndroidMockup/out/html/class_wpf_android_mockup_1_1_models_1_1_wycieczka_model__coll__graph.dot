@@ -1,0 +1,39 @@
+digraph "WpfAndroidMockup.Models.WycieczkaModel"
+{
+ // INTERACTIVE_SVG=YES
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node2 [label="WpfAndroidMockup.Models.\lWycieczkaModel",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="INotifyPropertyChanged",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_notify_property_changed.html"];
+  Node4 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" nazwa\ntrasa\ncyklOdznaki\nobszarGorski\npunktPoczatkowy" ,fontname="Helvetica"];
+  Node4 [label="string",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node5 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" status" ,fontname="Helvetica"];
+  Node5 [label="StatusyPotwierdzenia",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node6 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" dataRozpoczecia\ndataZakonczenia" ,fontname="Helvetica"];
+  Node6 [label="DateTime",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node7 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" turysta" ,fontname="Helvetica"];
+  Node7 [label="WpfAndroidMockup.Models.\lTurystaModel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_models_1_1_turysta_model.html",tooltip="Model turysty "];
+  Node3 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="IComparable\< TurystaModel \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_comparable.html"];
+  Node4 -> Node7 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" imie\nnazwisko" ,fontname="Helvetica"];
+  Node9 -> Node7 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" id" ,fontname="Helvetica"];
+  Node9 [label="long",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node10 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" punktacja" ,fontname="Helvetica"];
+  Node10 [label="int",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node11 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" czyWielodniowa" ,fontname="Helvetica"];
+  Node11 [label="bool",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node12 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" odznaka" ,fontname="Helvetica"];
+  Node12 [label="WpfAndroidMockup.Models.\lOdznakaModel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_models_1_1_odznaka_model.html",tooltip="Model odznaki "];
+  Node3 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 -> Node12 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" imgPath\nrodzaj\nstopien" ,fontname="Helvetica"];
+  Node6 -> Node12 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" dataRozpoczecia\ndataZakonczenia" ,fontname="Helvetica"];
+  Node13 -> Node12 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" wycieczki" ,fontname="Helvetica"];
+  Node13 [label="ObservableCollection\l\< WpfAndroidMockup.Models.Wycieczka\lModel \>",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node10 -> Node12 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" pkt\nminPkt" ,fontname="Helvetica"];
+  Node11 -> Node12 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" czyPrzeslanaDoWeryfikacji\nczyZweryfikowana" ,fontname="Helvetica"];
+  Node9 -> Node12 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" id" ,fontname="Helvetica"];
+  Node9 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" wysokosc\nnrPrzodownika\nid\ndlugosc" ,fontname="Helvetica"];
+}

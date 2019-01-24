@@ -1,0 +1,12 @@
+digraph "GOT_PTTK.Models.OdznakiContext.ZmienStatus"
+{
+ // INTERACTIVE_SVG=YES
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node58 [label="GOT_PTTK.Models.OdznakiContext.\lZmienStatus",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node58 -> Node59 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node59 [label="WpfAndroidMockup.ViewModels.\lOdznakiViewModel.WyslijAktualna\lOdznakeDoWeryfikacji",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_view_models_1_1_odznaki_view_model.html#a748c48a3f3b24e61b4a0e5b30a49db65",tooltip="przesyła odznakę do weryfikacji "];
+  Node59 -> Node60 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node60 [label="WpfAndroidMockup.Views.Przegladanie\lOdznakiView.Button_przeslijDoWeryfikacji",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_views_1_1_przegladanie_odznaki_view.html#a6517a3d6e7c1c0a1d9fc2dcdae956c47",tooltip="Logika przycisku przesyłu odznaki do weryfikacji "];
+}

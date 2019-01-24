@@ -1,0 +1,564 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Moja G�rska Odznaka Turystyczna PTTK: Dokumentacja klasy WpfAndroidMockup.Models.OdznakiContext</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Moja G�rska Odznaka Turystyczna PTTK
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespace_wpf_android_mockup.html">WpfAndroidMockup</a></li><li class="navelem"><a class="el" href="namespace_wpf_android_mockup_1_1_models.html">Models</a></li><li class="navelem"><a class="el" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html">OdznakiContext</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Metody publiczne</a> &#124;
+<a href="#pub-static-methods">Statyczne metody publiczne</a> &#124;
+<a href="#pub-attribs">Pola danych</a> &#124;
+<a href="#pri-methods">Metody prywatne</a> &#124;
+<a href="#pri-attribs">Atrybuty prywatne</a> &#124;
+<a href="#pri-static-attribs">Statyczne atrybuty prywatne</a>  </div>
+  <div class="headertitle">
+<div class="title">Dokumentacja klasy WpfAndroidMockup.Models.OdznakiContext</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Klasa zajmująca się transformacją obiektów odznak otrzymanych z DAO do modeli odznak obsługiwanych przez ViewModel.  
+ <a href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#details">Więcej...</a></p>
+<div class="dynheader">
+Diagram współpracy dla WpfAndroidMockup.Models.OdznakiContext:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_wpf_android_mockup_1_1_models_1_1_odznaki_context__coll__graph.png" border="0" usemap="#_wpf_android_mockup_8_models_8_odznaki_context_coll__map" alt="Collaboration graph"/></div>
+<map name="_wpf_android_mockup_8_models_8_odznaki_context_coll__map" id="_wpf_android_mockup_8_models_8_odznaki_context_coll__map">
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legenda</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:ab74b61df39cf13212a305e676801a748"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_wpf_android_mockup_1_1_models_1_1_odznaka_model.html">OdznakaModel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#ab74b61df39cf13212a305e676801a748">GetOdznaka</a> (long Id)</td></tr>
+<tr class="memdesc:ab74b61df39cf13212a305e676801a748"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja zwracają model pracownika, o numerze podanym w parametrze, z bazy. Zwraca null jeżeli pracownik o podanym numerze nie istnieje.  <a href="#ab74b61df39cf13212a305e676801a748">Więcej...</a><br /></td></tr>
+<tr class="separator:ab74b61df39cf13212a305e676801a748"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a515b26353856854047ebdf85afc31273"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="class_wpf_android_mockup_1_1_models_1_1_odznaka_model.html">OdznakaModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a515b26353856854047ebdf85afc31273">GetOdznakiNiezaakcpetowane</a> ()</td></tr>
+<tr class="memdesc:a515b26353856854047ebdf85afc31273"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwraca listę odznak niezaakcpetowanych.  <a href="#a515b26353856854047ebdf85afc31273">Więcej...</a><br /></td></tr>
+<tr class="separator:a515b26353856854047ebdf85afc31273"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3353ea5a50ff8e4577810bcd447b376c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a3353ea5a50ff8e4577810bcd447b376c">ZmienStatus</a> (long id, <a class="el" href="namespace_wpf_android_mockup_1_1_models.html#a0565ded97e9b54ba5d074f38214643f4">StatusOdznaki</a> status)</td></tr>
+<tr class="memdesc:a3353ea5a50ff8e4577810bcd447b376c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zmienia status.  <a href="#a3353ea5a50ff8e4577810bcd447b376c">Więcej...</a><br /></td></tr>
+<tr class="separator:a3353ea5a50ff8e4577810bcd447b376c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Statyczne metody publiczne</h2></td></tr>
+<tr class="memitem:a0328bf76f946868f953c65dc5703d6b3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html">OdznakiContext</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a0328bf76f946868f953c65dc5703d6b3">GetInstance</a> ()</td></tr>
+<tr class="memdesc:a0328bf76f946868f953c65dc5703d6b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwraca instancję singletonu <a class="el" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html" title="Klasa zajmująca się transformacją obiektów odznak otrzymanych z DAO do modeli odznak obsługiwanych pr...">OdznakiContext</a>.  <a href="#a0328bf76f946868f953c65dc5703d6b3">Więcej...</a><br /></td></tr>
+<tr class="separator:a0328bf76f946868f953c65dc5703d6b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Pola danych</h2></td></tr>
+<tr class="memitem:a1e00ddee275bad404a31fdcd2f9faa74"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a1e00ddee275bad404a31fdcd2f9faa74">BRAZOWA_IMG_PATH</a> = &quot;/WpfAndroidMockup;component/Assets/brazowa.png&quot;</td></tr>
+<tr class="separator:a1e00ddee275bad404a31fdcd2f9faa74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafc3d15497ab7f06077fd3ef8cc5474d"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#aafc3d15497ab7f06077fd3ef8cc5474d">POPULARNA_IMG_PATH</a> = &quot;/WpfAndroidMockup;component/Assets/got_pop.png&quot;</td></tr>
+<tr class="separator:aafc3d15497ab7f06077fd3ef8cc5474d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c4ad5eb27b69ea3f8fda3e0c77d85fd"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a2c4ad5eb27b69ea3f8fda3e0c77d85fd">ZLOTA_IMG_PATH</a> = &quot;/WpfAndroidMockup;component/Assets/zlota.png&quot;</td></tr>
+<tr class="separator:a2c4ad5eb27b69ea3f8fda3e0c77d85fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Metody prywatne</h2></td></tr>
+<tr class="memitem:a260ad31864ff7ef84ac556a29a5b75bb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a260ad31864ff7ef84ac556a29a5b75bb">OdznakiContext</a> ()</td></tr>
+<tr class="memdesc:a260ad31864ff7ef84ac556a29a5b75bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor nieparametryczny dla singletonu <a class="el" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html" title="Klasa zajmująca się transformacją obiektów odznak otrzymanych z DAO do modeli odznak obsługiwanych pr...">OdznakiContext</a>.  <a href="#a260ad31864ff7ef84ac556a29a5b75bb">Więcej...</a><br /></td></tr>
+<tr class="separator:a260ad31864ff7ef84ac556a29a5b75bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Atrybuty prywatne</h2></td></tr>
+<tr class="memitem:a7593125cb6838eeec872ee0401c504f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_wpf_android_mockup_1_1_models_1_1_turysci_context.html">TurysciContext</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a7593125cb6838eeec872ee0401c504f6">turysciContext</a></td></tr>
+<tr class="separator:a7593125cb6838eeec872ee0401c504f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70d2bd9ad8c32478541490e84589ab17"><td class="memItemLeft" align="right" valign="top">Dictionary&lt; long, <a class="el" href="class_wpf_android_mockup_1_1_models_1_1_odznaka_model.html">OdznakaModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a70d2bd9ad8c32478541490e84589ab17">odznakiDict</a></td></tr>
+<tr class="separator:a70d2bd9ad8c32478541490e84589ab17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cafa608ac4d69f188b24ce1481b702a"><td class="memItemLeft" align="right" valign="top">Dictionary&lt; long, <a class="el" href="class_wpf_android_mockup_1_1_models_1_1_odznaka_model.html">OdznakaModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a2cafa608ac4d69f188b24ce1481b702a">odznakiDoWeryfikacjiDict</a></td></tr>
+<tr class="separator:a2cafa608ac4d69f188b24ce1481b702a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd66f58b7ef036a9a0b93f9282adae37"><td class="memItemLeft" align="right" valign="top">Dictionary&lt; long, <a class="el" href="class_wpf_android_mockup_1_1_models_1_1_odznaka_model.html">OdznakaModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#acd66f58b7ef036a9a0b93f9282adae37">odznakiZweryfikowaneDict</a></td></tr>
+<tr class="separator:acd66f58b7ef036a9a0b93f9282adae37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Statyczne atrybuty prywatne</h2></td></tr>
+<tr class="memitem:a603792740b9bda293c6e2dcbef3823af"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html">OdznakiContext</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a603792740b9bda293c6e2dcbef3823af">instance</a></td></tr>
+<tr class="separator:a603792740b9bda293c6e2dcbef3823af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Klasa zajmująca się transformacją obiektów odznak otrzymanych z DAO do modeli odznak obsługiwanych przez ViewModel. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_odznaki_context_8cs_source.html#l00020">20</a> pliku <a class="el" href="_odznaki_context_8cs_source.html">OdznakiContext.cs</a>.</p>
+</div><h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a id="a260ad31864ff7ef84ac556a29a5b75bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a260ad31864ff7ef84ac556a29a5b75bb">&#9670;&nbsp;</a></span>OdznakiContext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">WpfAndroidMockup.Models.OdznakiContext.OdznakiContext </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Konstruktor nieparametryczny dla singletonu <a class="el" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html" title="Klasa zajmująca się transformacją obiektów odznak otrzymanych z DAO do modeli odznak obsługiwanych pr...">OdznakiContext</a>. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_odznaki_context_8cs_source.html#l00036">36</a> pliku <a class="el" href="_odznaki_context_8cs_source.html">OdznakiContext.cs</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_odznaki_context_8cs_source.html#l00022">WpfAndroidMockup.Models.OdznakiContext.BRAZOWA_IMG_PATH</a>, <a class="el" href="_turysci_context_8cs_source.html#l00029">WpfAndroidMockup.Models.TurysciContext.GetInstance()</a>, <a class="el" href="_turysci_context_8cs_source.html#l00054">WpfAndroidMockup.Models.TurysciContext.GetTurysta()</a>, <a class="el" href="_odznaka_model_8cs_source.html#l00146">WpfAndroidMockup.Models.OdznakaModel.Pkt</a>, <a class="el" href="_odznaki_context_8cs_source.html#l00023">WpfAndroidMockup.Models.OdznakiContext.POPULARNA_IMG_PATH</a> i <a class="el" href="_odznaki_context_8cs_source.html#l00024">WpfAndroidMockup.Models.OdznakiContext.ZLOTA_IMG_PATH</a>.</p>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        {</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <a class="code" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a7593125cb6838eeec872ee0401c504f6">turysciContext</a> = TurysciContext.<a class="code" href="class_wpf_android_mockup_1_1_models_1_1_turysci_context.html#acc2d2768cbb9feafe27df5bc76a1b40e">GetInstance</a>();</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            TurystaModel turysta = <a class="code" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a7593125cb6838eeec872ee0401c504f6">turysciContext</a>.<a class="code" href="class_wpf_android_mockup_1_1_models_1_1_turysci_context.html#a4a7cb87b071af7368611f241f09ce79b">GetTurysta</a>(0);</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <a class="code" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a70d2bd9ad8c32478541490e84589ab17">odznakiDict</a> = <span class="keyword">new</span> Dictionary&lt;long, OdznakaModel&gt;();</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <a class="code" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a70d2bd9ad8c32478541490e84589ab17">odznakiDict</a>.Add(0, <span class="keyword">new</span> OdznakaModel(ref turysta) { Id = 0, Rodzaj = <span class="stringliteral">&quot;mała&quot;</span>, Stopien = <span class="stringliteral">&quot;złota&quot;</span>, ImgPath = <a class="code" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a260ad31864ff7ef84ac556a29a5b75bb">OdznakiContext</a>.ZLOTA_IMG_PATH, MinPkt = 120, DataRozpoczecia = DateTime.Now.AddDays(-100) });</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <a class="code" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a70d2bd9ad8c32478541490e84589ab17">odznakiDict</a>.Add(1, <span class="keyword">new</span> OdznakaModel(ref turysta) { Id = 1, Rodzaj = <span class="stringliteral">&quot;mała&quot;</span>, Stopien = <span class="stringliteral">&quot;brązowa&quot;</span>, ImgPath = <a class="code" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a260ad31864ff7ef84ac556a29a5b75bb">OdznakiContext</a>.BRAZOWA_IMG_PATH, MinPkt = 60, DataRozpoczecia = DateTime.Now.AddDays(-100) });</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <a class="code" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a70d2bd9ad8c32478541490e84589ab17">odznakiDict</a>.Add(2, <span class="keyword">new</span> OdznakaModel(ref turysta) { Id = 2, Rodzaj = <span class="stringliteral">&quot;popularna&quot;</span>, Stopien = <span class="stringliteral">&quot;&quot;</span>, ImgPath = <a class="code" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a260ad31864ff7ef84ac556a29a5b75bb">OdznakiContext</a>.POPULARNA_IMG_PATH, MinPkt = 60, DataRozpoczecia = DateTime.Now.AddDays(-100) });</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            OdznakaModel o = null;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            </div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <a class="code" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a70d2bd9ad8c32478541490e84589ab17">odznakiDict</a>.TryGetValue(2, out o);</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            o.Pkt = 61;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a2cafa608ac4d69f188b24ce1481b702a">odznakiDoWeryfikacjiDict</a> = <span class="keyword">new</span> Dictionary&lt;long, OdznakaModel&gt;();</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            </div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <a class="code" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#acd66f58b7ef036a9a0b93f9282adae37">odznakiZweryfikowaneDict</a> = <span class="keyword">new</span> Dictionary&lt;long, OdznakaModel&gt;();</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div><div class="ttc" id="class_wpf_android_mockup_1_1_models_1_1_turysci_context_html_acc2d2768cbb9feafe27df5bc76a1b40e"><div class="ttname"><a href="class_wpf_android_mockup_1_1_models_1_1_turysci_context.html#acc2d2768cbb9feafe27df5bc76a1b40e">WpfAndroidMockup.Models.TurysciContext.GetInstance</a></div><div class="ttdeci">static TurysciContext GetInstance()</div><div class="ttdoc">Zwraca instancje singletonu. </div><div class="ttdef"><b>Definition:</b> <a href="_turysci_context_8cs_source.html#l00029">TurysciContext.cs:29</a></div></div>
+<div class="ttc" id="class_wpf_android_mockup_1_1_models_1_1_odznaki_context_html_acd66f58b7ef036a9a0b93f9282adae37"><div class="ttname"><a href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#acd66f58b7ef036a9a0b93f9282adae37">WpfAndroidMockup.Models.OdznakiContext.odznakiZweryfikowaneDict</a></div><div class="ttdeci">Dictionary&lt; long, OdznakaModel &gt; odznakiZweryfikowaneDict</div><div class="ttdef"><b>Definition:</b> <a href="_odznaki_context_8cs_source.html#l00031">OdznakiContext.cs:31</a></div></div>
+<div class="ttc" id="class_wpf_android_mockup_1_1_models_1_1_odznaki_context_html_a7593125cb6838eeec872ee0401c504f6"><div class="ttname"><a href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a7593125cb6838eeec872ee0401c504f6">WpfAndroidMockup.Models.OdznakiContext.turysciContext</a></div><div class="ttdeci">TurysciContext turysciContext</div><div class="ttdef"><b>Definition:</b> <a href="_odznaki_context_8cs_source.html#l00028">OdznakiContext.cs:28</a></div></div>
+<div class="ttc" id="class_wpf_android_mockup_1_1_models_1_1_turysci_context_html_a4a7cb87b071af7368611f241f09ce79b"><div class="ttname"><a href="class_wpf_android_mockup_1_1_models_1_1_turysci_context.html#a4a7cb87b071af7368611f241f09ce79b">WpfAndroidMockup.Models.TurysciContext.GetTurysta</a></div><div class="ttdeci">TurystaModel GetTurysta(long id)</div><div class="ttdoc">Akcesor dla turysty. </div><div class="ttdef"><b>Definition:</b> <a href="_turysci_context_8cs_source.html#l00054">TurysciContext.cs:54</a></div></div>
+<div class="ttc" id="class_wpf_android_mockup_1_1_models_1_1_odznaki_context_html_a70d2bd9ad8c32478541490e84589ab17"><div class="ttname"><a href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a70d2bd9ad8c32478541490e84589ab17">WpfAndroidMockup.Models.OdznakiContext.odznakiDict</a></div><div class="ttdeci">Dictionary&lt; long, OdznakaModel &gt; odznakiDict</div><div class="ttdef"><b>Definition:</b> <a href="_odznaki_context_8cs_source.html#l00029">OdznakiContext.cs:29</a></div></div>
+<div class="ttc" id="class_wpf_android_mockup_1_1_models_1_1_odznaki_context_html_a260ad31864ff7ef84ac556a29a5b75bb"><div class="ttname"><a href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a260ad31864ff7ef84ac556a29a5b75bb">WpfAndroidMockup.Models.OdznakiContext.OdznakiContext</a></div><div class="ttdeci">OdznakiContext()</div><div class="ttdoc">Konstruktor nieparametryczny dla singletonu OdznakiContext. </div><div class="ttdef"><b>Definition:</b> <a href="_odznaki_context_8cs_source.html#l00036">OdznakiContext.cs:36</a></div></div>
+<div class="ttc" id="class_wpf_android_mockup_1_1_models_1_1_odznaki_context_html_a2cafa608ac4d69f188b24ce1481b702a"><div class="ttname"><a href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a2cafa608ac4d69f188b24ce1481b702a">WpfAndroidMockup.Models.OdznakiContext.odznakiDoWeryfikacjiDict</a></div><div class="ttdeci">Dictionary&lt; long, OdznakaModel &gt; odznakiDoWeryfikacjiDict</div><div class="ttdef"><b>Definition:</b> <a href="_odznaki_context_8cs_source.html#l00030">OdznakiContext.cs:30</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_wpf_android_mockup_1_1_models_1_1_odznaki_context_a260ad31864ff7ef84ac556a29a5b75bb_cgraph.png" border="0" usemap="#class_wpf_android_mockup_1_1_models_1_1_odznaki_context_a260ad31864ff7ef84ac556a29a5b75bb_cgraph" alt=""/></div>
+<map name="class_wpf_android_mockup_1_1_models_1_1_odznaki_context_a260ad31864ff7ef84ac556a29a5b75bb_cgraph" id="class_wpf_android_mockup_1_1_models_1_1_odznaki_context_a260ad31864ff7ef84ac556a29a5b75bb_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="a0328bf76f946868f953c65dc5703d6b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0328bf76f946868f953c65dc5703d6b3">&#9670;&nbsp;</a></span>GetInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html">OdznakiContext</a> WpfAndroidMockup.Models.OdznakiContext.GetInstance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zwraca instancję singletonu <a class="el" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html" title="Klasa zajmująca się transformacją obiektów odznak otrzymanych z DAO do modeli odznak obsługiwanych pr...">OdznakiContext</a>. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>instancja singetonu</dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_odznaki_context_8cs_source.html#l00061">61</a> pliku <a class="el" href="_odznaki_context_8cs_source.html">OdznakiContext.cs</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_wycieczki_context_8cs_source.html#l00042">WpfAndroidMockup.Models.WycieczkiContext.LoadExamplaryTrips()</a> i <a class="el" href="_odznaki_view_model_8cs_source.html#l00067">WpfAndroidMockup.ViewModels.OdznakiViewModel.OdznakiViewModel()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        {</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a603792740b9bda293c6e2dcbef3823af">instance</a> == null)</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <a class="code" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a603792740b9bda293c6e2dcbef3823af">instance</a> = <span class="keyword">new</span> <a class="code" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a260ad31864ff7ef84ac556a29a5b75bb">OdznakiContext</a>();</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a603792740b9bda293c6e2dcbef3823af">instance</a>;</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div><div class="ttc" id="class_wpf_android_mockup_1_1_models_1_1_odznaki_context_html_a603792740b9bda293c6e2dcbef3823af"><div class="ttname"><a href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a603792740b9bda293c6e2dcbef3823af">WpfAndroidMockup.Models.OdznakiContext.instance</a></div><div class="ttdeci">static OdznakiContext instance</div><div class="ttdef"><b>Definition:</b> <a href="_odznaki_context_8cs_source.html#l00026">OdznakiContext.cs:26</a></div></div>
+<div class="ttc" id="class_wpf_android_mockup_1_1_models_1_1_odznaki_context_html_a260ad31864ff7ef84ac556a29a5b75bb"><div class="ttname"><a href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a260ad31864ff7ef84ac556a29a5b75bb">WpfAndroidMockup.Models.OdznakiContext.OdznakiContext</a></div><div class="ttdeci">OdznakiContext()</div><div class="ttdoc">Konstruktor nieparametryczny dla singletonu OdznakiContext. </div><div class="ttdef"><b>Definition:</b> <a href="_odznaki_context_8cs_source.html#l00036">OdznakiContext.cs:36</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_wpf_android_mockup_1_1_models_1_1_odznaki_context_a0328bf76f946868f953c65dc5703d6b3_icgraph.png" border="0" usemap="#class_wpf_android_mockup_1_1_models_1_1_odznaki_context_a0328bf76f946868f953c65dc5703d6b3_icgraph" alt=""/></div>
+<map name="class_wpf_android_mockup_1_1_models_1_1_odznaki_context_a0328bf76f946868f953c65dc5703d6b3_icgraph" id="class_wpf_android_mockup_1_1_models_1_1_odznaki_context_a0328bf76f946868f953c65dc5703d6b3_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab74b61df39cf13212a305e676801a748"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab74b61df39cf13212a305e676801a748">&#9670;&nbsp;</a></span>GetOdznaka()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_wpf_android_mockup_1_1_models_1_1_odznaka_model.html">OdznakaModel</a> WpfAndroidMockup.Models.OdznakiContext.GetOdznaka </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>Id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Funkcja zwracają model pracownika, o numerze podanym w parametrze, z bazy. Zwraca null jeżeli pracownik o podanym numerze nie istnieje. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">numer</td><td>Numer pracownika identyfikujący pracaownika w bazie</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd></dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_odznaki_context_8cs_source.html#l00075">75</a> pliku <a class="el" href="_odznaki_context_8cs_source.html">OdznakiContext.cs</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_wycieczki_context_8cs_source.html#l00042">WpfAndroidMockup.Models.WycieczkiContext.LoadExamplaryTrips()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        {</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <a class="code" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a70d2bd9ad8c32478541490e84589ab17">odznakiDict</a>.TryGetValue(Id, out OdznakaModel pracownik);</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">return</span> pracownik;</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div><div class="ttc" id="class_wpf_android_mockup_1_1_models_1_1_odznaki_context_html_a70d2bd9ad8c32478541490e84589ab17"><div class="ttname"><a href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a70d2bd9ad8c32478541490e84589ab17">WpfAndroidMockup.Models.OdznakiContext.odznakiDict</a></div><div class="ttdeci">Dictionary&lt; long, OdznakaModel &gt; odznakiDict</div><div class="ttdef"><b>Definition:</b> <a href="_odznaki_context_8cs_source.html#l00029">OdznakiContext.cs:29</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_wpf_android_mockup_1_1_models_1_1_odznaki_context_ab74b61df39cf13212a305e676801a748_icgraph.png" border="0" usemap="#class_wpf_android_mockup_1_1_models_1_1_odznaki_context_ab74b61df39cf13212a305e676801a748_icgraph" alt=""/></div>
+<map name="class_wpf_android_mockup_1_1_models_1_1_odznaki_context_ab74b61df39cf13212a305e676801a748_icgraph" id="class_wpf_android_mockup_1_1_models_1_1_odznaki_context_ab74b61df39cf13212a305e676801a748_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a515b26353856854047ebdf85afc31273"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a515b26353856854047ebdf85afc31273">&#9670;&nbsp;</a></span>GetOdznakiNiezaakcpetowane()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;<a class="el" href="class_wpf_android_mockup_1_1_models_1_1_odznaka_model.html">OdznakaModel</a>&gt; WpfAndroidMockup.Models.OdznakiContext.GetOdznakiNiezaakcpetowane </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zwraca listę odznak niezaakcpetowanych. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>Lista <a class="el" href="class_wpf_android_mockup_1_1_models_1_1_odznaka_model.html" title="Model odznaki ">OdznakaModel</a>.</dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_odznaki_context_8cs_source.html#l00087">87</a> pliku <a class="el" href="_odznaki_context_8cs_source.html">OdznakiContext.cs</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_odznaki_view_model_8cs_source.html#l00076">WpfAndroidMockup.ViewModels.OdznakiViewModel.LoadWszystkieRozpoczeteCykle()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        {</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            var o = from odznaka in <a class="code" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a70d2bd9ad8c32478541490e84589ab17">odznakiDict</a></div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                    where odznaka.Value.CzyZweryfikowana == <span class="keyword">false</span></div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                    select odznaka.Value;</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">return</span> o.ToList&lt;OdznakaModel&gt;();</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div><div class="ttc" id="class_wpf_android_mockup_1_1_models_1_1_odznaki_context_html_a70d2bd9ad8c32478541490e84589ab17"><div class="ttname"><a href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a70d2bd9ad8c32478541490e84589ab17">WpfAndroidMockup.Models.OdznakiContext.odznakiDict</a></div><div class="ttdeci">Dictionary&lt; long, OdznakaModel &gt; odznakiDict</div><div class="ttdef"><b>Definition:</b> <a href="_odznaki_context_8cs_source.html#l00029">OdznakiContext.cs:29</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_wpf_android_mockup_1_1_models_1_1_odznaki_context_a515b26353856854047ebdf85afc31273_icgraph.png" border="0" usemap="#class_wpf_android_mockup_1_1_models_1_1_odznaki_context_a515b26353856854047ebdf85afc31273_icgraph" alt=""/></div>
+<map name="class_wpf_android_mockup_1_1_models_1_1_odznaki_context_a515b26353856854047ebdf85afc31273_icgraph" id="class_wpf_android_mockup_1_1_models_1_1_odznaki_context_a515b26353856854047ebdf85afc31273_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3353ea5a50ff8e4577810bcd447b376c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3353ea5a50ff8e4577810bcd447b376c">&#9670;&nbsp;</a></span>ZmienStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WpfAndroidMockup.Models.OdznakiContext.ZmienStatus </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_wpf_android_mockup_1_1_models.html#a0565ded97e9b54ba5d074f38214643f4">StatusOdznaki</a>&#160;</td>
+          <td class="paramname"><em>status</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zmienia status. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Identyfikator odznaki.</td></tr>
+    <tr><td class="paramname">status</td><td>Typ enumeracyjny status.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_odznaki_context_8cs_source.html#l00100">100</a> pliku <a class="el" href="_odznaki_context_8cs_source.html">OdznakiContext.cs</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_odznaki_view_model_8cs_source.html#l00121">WpfAndroidMockup.ViewModels.OdznakiViewModel.WyslijOdznakeDoWeryfikacji()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        {</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            OdznakaModel odznaka;</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordflow">switch</span> (status)</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            {</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="namespace_wpf_android_mockup_1_1_models.html#a0565ded97e9b54ba5d074f38214643f4">StatusOdznaki</a>.DOWERYFIKACJI:</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                    <a class="code" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a70d2bd9ad8c32478541490e84589ab17">odznakiDict</a>.TryGetValue(<span class="keywordtype">id</span>, out odznaka);</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                    <span class="keywordflow">if</span> (odznaka != null)</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                    {</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                        <a class="code" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#acd66f58b7ef036a9a0b93f9282adae37">odznakiZweryfikowaneDict</a>.Remove(<span class="keywordtype">id</span>);</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                        <a class="code" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a2cafa608ac4d69f188b24ce1481b702a">odznakiDoWeryfikacjiDict</a>.Add(<span class="keywordtype">id</span>, odznaka);</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                    }</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                    <span class="keywordflow">break</span>;</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="namespace_wpf_android_mockup_1_1_models.html#a0565ded97e9b54ba5d074f38214643f4">StatusOdznaki</a>.ODRZUCONA:</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                    <a class="code" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a2cafa608ac4d69f188b24ce1481b702a">odznakiDoWeryfikacjiDict</a>.Remove(<span class="keywordtype">id</span>);</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                    <a class="code" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#acd66f58b7ef036a9a0b93f9282adae37">odznakiZweryfikowaneDict</a>.Remove(<span class="keywordtype">id</span>);</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                    <span class="keywordflow">break</span>;</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="namespace_wpf_android_mockup_1_1_models.html#a0565ded97e9b54ba5d074f38214643f4">StatusOdznaki</a>.PRZYZNANA:</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                    <a class="code" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a70d2bd9ad8c32478541490e84589ab17">odznakiDict</a>.TryGetValue(<span class="keywordtype">id</span>, out odznaka);</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                    <span class="keywordflow">if</span> (odznaka != null)</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                    {</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                        <a class="code" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#acd66f58b7ef036a9a0b93f9282adae37">odznakiZweryfikowaneDict</a>.Add(<span class="keywordtype">id</span>, odznaka);</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                        <a class="code" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a2cafa608ac4d69f188b24ce1481b702a">odznakiDoWeryfikacjiDict</a>.Remove(<span class="keywordtype">id</span>);</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                    }</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                    <span class="keywordflow">break</span>;</div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            }</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        }</div><div class="ttc" id="class_wpf_android_mockup_1_1_models_1_1_odznaki_context_html_acd66f58b7ef036a9a0b93f9282adae37"><div class="ttname"><a href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#acd66f58b7ef036a9a0b93f9282adae37">WpfAndroidMockup.Models.OdznakiContext.odznakiZweryfikowaneDict</a></div><div class="ttdeci">Dictionary&lt; long, OdznakaModel &gt; odznakiZweryfikowaneDict</div><div class="ttdef"><b>Definition:</b> <a href="_odznaki_context_8cs_source.html#l00031">OdznakiContext.cs:31</a></div></div>
+<div class="ttc" id="class_wpf_android_mockup_1_1_models_1_1_odznaki_context_html_a70d2bd9ad8c32478541490e84589ab17"><div class="ttname"><a href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a70d2bd9ad8c32478541490e84589ab17">WpfAndroidMockup.Models.OdznakiContext.odznakiDict</a></div><div class="ttdeci">Dictionary&lt; long, OdznakaModel &gt; odznakiDict</div><div class="ttdef"><b>Definition:</b> <a href="_odznaki_context_8cs_source.html#l00029">OdznakiContext.cs:29</a></div></div>
+<div class="ttc" id="namespace_wpf_android_mockup_1_1_models_html_a0565ded97e9b54ba5d074f38214643f4"><div class="ttname"><a href="namespace_wpf_android_mockup_1_1_models.html#a0565ded97e9b54ba5d074f38214643f4">WpfAndroidMockup.Models.StatusOdznaki</a></div><div class="ttdeci">StatusOdznaki</div><div class="ttdoc">Typ enumeracyjny dot. statusu przyznania odznaki </div><div class="ttdef"><b>Definition:</b> <a href="_odznaki_context_8cs_source.html#l00012">OdznakiContext.cs:12</a></div></div>
+<div class="ttc" id="class_wpf_android_mockup_1_1_models_1_1_odznaki_context_html_a2cafa608ac4d69f188b24ce1481b702a"><div class="ttname"><a href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a2cafa608ac4d69f188b24ce1481b702a">WpfAndroidMockup.Models.OdznakiContext.odznakiDoWeryfikacjiDict</a></div><div class="ttdeci">Dictionary&lt; long, OdznakaModel &gt; odznakiDoWeryfikacjiDict</div><div class="ttdef"><b>Definition:</b> <a href="_odznaki_context_8cs_source.html#l00030">OdznakiContext.cs:30</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_wpf_android_mockup_1_1_models_1_1_odznaki_context_a3353ea5a50ff8e4577810bcd447b376c_icgraph.png" border="0" usemap="#class_wpf_android_mockup_1_1_models_1_1_odznaki_context_a3353ea5a50ff8e4577810bcd447b376c_icgraph" alt=""/></div>
+<map name="class_wpf_android_mockup_1_1_models_1_1_odznaki_context_a3353ea5a50ff8e4577810bcd447b376c_icgraph" id="class_wpf_android_mockup_1_1_models_1_1_odznaki_context_a3353ea5a50ff8e4577810bcd447b376c_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja pól</h2>
+<a id="a1e00ddee275bad404a31fdcd2f9faa74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e00ddee275bad404a31fdcd2f9faa74">&#9670;&nbsp;</a></span>BRAZOWA_IMG_PATH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string WpfAndroidMockup.Models.OdznakiContext.BRAZOWA_IMG_PATH = &quot;/WpfAndroidMockup;component/Assets/brazowa.png&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_odznaki_context_8cs_source.html#l00022">22</a> pliku <a class="el" href="_odznaki_context_8cs_source.html">OdznakiContext.cs</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_odznaki_context_8cs_source.html#l00036">WpfAndroidMockup.Models.OdznakiContext.OdznakiContext()</a>.</p>
+
+</div>
+</div>
+<a id="a603792740b9bda293c6e2dcbef3823af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a603792740b9bda293c6e2dcbef3823af">&#9670;&nbsp;</a></span>instance</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html">OdznakiContext</a> WpfAndroidMockup.Models.OdznakiContext.instance</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_odznaki_context_8cs_source.html#l00026">26</a> pliku <a class="el" href="_odznaki_context_8cs_source.html">OdznakiContext.cs</a>.</p>
+
+</div>
+</div>
+<a id="a70d2bd9ad8c32478541490e84589ab17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70d2bd9ad8c32478541490e84589ab17">&#9670;&nbsp;</a></span>odznakiDict</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Dictionary&lt;long, <a class="el" href="class_wpf_android_mockup_1_1_models_1_1_odznaka_model.html">OdznakaModel</a>&gt; WpfAndroidMockup.Models.OdznakiContext.odznakiDict</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_odznaki_context_8cs_source.html#l00029">29</a> pliku <a class="el" href="_odznaki_context_8cs_source.html">OdznakiContext.cs</a>.</p>
+
+</div>
+</div>
+<a id="a2cafa608ac4d69f188b24ce1481b702a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cafa608ac4d69f188b24ce1481b702a">&#9670;&nbsp;</a></span>odznakiDoWeryfikacjiDict</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Dictionary&lt;long, <a class="el" href="class_wpf_android_mockup_1_1_models_1_1_odznaka_model.html">OdznakaModel</a>&gt; WpfAndroidMockup.Models.OdznakiContext.odznakiDoWeryfikacjiDict</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_odznaki_context_8cs_source.html#l00030">30</a> pliku <a class="el" href="_odznaki_context_8cs_source.html">OdznakiContext.cs</a>.</p>
+
+</div>
+</div>
+<a id="acd66f58b7ef036a9a0b93f9282adae37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd66f58b7ef036a9a0b93f9282adae37">&#9670;&nbsp;</a></span>odznakiZweryfikowaneDict</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Dictionary&lt;long, <a class="el" href="class_wpf_android_mockup_1_1_models_1_1_odznaka_model.html">OdznakaModel</a>&gt; WpfAndroidMockup.Models.OdznakiContext.odznakiZweryfikowaneDict</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_odznaki_context_8cs_source.html#l00031">31</a> pliku <a class="el" href="_odznaki_context_8cs_source.html">OdznakiContext.cs</a>.</p>
+
+</div>
+</div>
+<a id="aafc3d15497ab7f06077fd3ef8cc5474d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafc3d15497ab7f06077fd3ef8cc5474d">&#9670;&nbsp;</a></span>POPULARNA_IMG_PATH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string WpfAndroidMockup.Models.OdznakiContext.POPULARNA_IMG_PATH = &quot;/WpfAndroidMockup;component/Assets/got_pop.png&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_odznaki_context_8cs_source.html#l00023">23</a> pliku <a class="el" href="_odznaki_context_8cs_source.html">OdznakiContext.cs</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_odznaki_context_8cs_source.html#l00036">WpfAndroidMockup.Models.OdznakiContext.OdznakiContext()</a>.</p>
+
+</div>
+</div>
+<a id="a7593125cb6838eeec872ee0401c504f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7593125cb6838eeec872ee0401c504f6">&#9670;&nbsp;</a></span>turysciContext</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_wpf_android_mockup_1_1_models_1_1_turysci_context.html">TurysciContext</a> WpfAndroidMockup.Models.OdznakiContext.turysciContext</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_odznaki_context_8cs_source.html#l00028">28</a> pliku <a class="el" href="_odznaki_context_8cs_source.html">OdznakiContext.cs</a>.</p>
+
+</div>
+</div>
+<a id="a2c4ad5eb27b69ea3f8fda3e0c77d85fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c4ad5eb27b69ea3f8fda3e0c77d85fd">&#9670;&nbsp;</a></span>ZLOTA_IMG_PATH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string WpfAndroidMockup.Models.OdznakiContext.ZLOTA_IMG_PATH = &quot;/WpfAndroidMockup;component/Assets/zlota.png&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_odznaki_context_8cs_source.html#l00024">24</a> pliku <a class="el" href="_odznaki_context_8cs_source.html">OdznakiContext.cs</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_odznaki_context_8cs_source.html#l00036">WpfAndroidMockup.Models.OdznakiContext.OdznakiContext()</a>.</p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z pliku:<ul>
+<li>WpfAndroidMockup/Models/<a class="el" href="_odznaki_context_8cs_source.html">OdznakiContext.cs</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano N, 20 sty 2019 14:11:18 dla Moja G�rska Odznaka Turystyczna PTTK programem &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

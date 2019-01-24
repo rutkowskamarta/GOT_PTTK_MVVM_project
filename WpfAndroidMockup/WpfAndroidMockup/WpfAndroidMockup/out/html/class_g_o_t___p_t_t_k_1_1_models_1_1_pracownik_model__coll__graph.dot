@@ -1,0 +1,19 @@
+digraph "GOT_PTTK.Models.PracownikModel"
+{
+ // INTERACTIVE_SVG=YES
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node3 [label="GOT_PTTK.Models.Pracownik\lModel",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="INotifyPropertyChanged",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_notify_property_changed.html"];
+  Node5 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="IComparable\< PracownikModel \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_comparable.html"];
+  Node6 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" imie\nNAZWISKO_PROPERTY\nODZNAKI_ZWERYFIKOWANE\l_PROPERTY\nTYP_PRACOWNIKA_PROPERTY\nTYP_CRW_STRING\nNR_PRACOWNIKA_PROPERTY\nnazwisko\nTYP_TRW_STRING\nmiastoTRW\nMIASTO_TRW_PROPERTY\n..." ,fontname="Helvetica"];
+  Node6 [label="string",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node7 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" dataZatrudnienia" ,fontname="Helvetica"];
+  Node7 [label="DateTime",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node8 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" odznakiZweryfikowane" ,fontname="Helvetica"];
+  Node8 [label="int",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node9 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" numer" ,fontname="Helvetica"];
+  Node9 [label="long",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+}
