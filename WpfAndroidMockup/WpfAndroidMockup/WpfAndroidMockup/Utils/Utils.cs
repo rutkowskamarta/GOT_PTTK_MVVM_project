@@ -17,7 +17,7 @@
 
         public const string CZAS_WYCIECZKI_FORMAT = "{0} h {1} m";
 
-        public static string BAZA_DANYCH_PATH = @"C:\Users\Dell\Documents\GOT_PTTK\BazaDanych\";
+        public static string BAZA_DANYCH_PATH = @"C:\Users\marta\Desktop\GitHub\GOT_PTTK_rest_project\BazaDanych\";
         public static string TURYSCI_FILE = "Turysci.txt";
         public static string CYKLE_FILE = "Cykle.txt";
         public static string NORMY_FILE = "Normy.txt";

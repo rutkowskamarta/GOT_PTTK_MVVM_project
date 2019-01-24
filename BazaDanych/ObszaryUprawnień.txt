@@ -1,0 +1,11 @@
+﻿//ID przodownika
+//Obszar górski
+
+ID 0
+Tatry Wysokie
+
+ID 1
+Beskid Śląski
+
+ID 1
+Tatry Wysokie

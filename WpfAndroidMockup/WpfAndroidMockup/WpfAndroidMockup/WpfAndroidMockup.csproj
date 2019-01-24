@@ -171,9 +171,6 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\brazowa.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Assets\zlota.png" />
   </ItemGroup>
   <ItemGroup>
@@ -181,6 +178,14 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\brazowa.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\w_gory_brazowa.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -134,7 +134,7 @@
                         CZY NA PEWNO CHCESZ SKASOWAĆ WYCIECZKĘ
                 </TextBlock>
                 <TextBlock Text="{Binding Nazwa}" HorizontalAlignment="Center"
-                       Margin="125,225,130.2,0" VerticalAlignment="Top" TextAlignment="Center" Background="#00000000" Foreground="Black" FontSize="14" Width="120" Height="30"/>
+                       Margin="70,225,65,0" VerticalAlignment="Top" TextAlignment="Center" TextWrapping="Wrap" Background="#00000000" Foreground="Black" FontSize="14" Width="240" Height="30"/>
                 <Label FontSize="15" Content="?" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="179,255,180.2,386.2"></Label>
                 <Button Content="NIE" Click ="Button_ZamknijKomunikatUsuwania" FontSize="15" FontWeight="Bold" Background="LightCoral" HorizontalAlignment="Left" Margin="220,260,0,0" VerticalAlignment="Top" Width="60" Height="30"/>
                 <Button Content="TAK" Click ="Button_Usun" FontSize="15" FontWeight="Bold" Background="LightGreen" HorizontalAlignment="Left" Margin="90,260,0,0" VerticalAlignment="Top" Width="60" Height="30"/>

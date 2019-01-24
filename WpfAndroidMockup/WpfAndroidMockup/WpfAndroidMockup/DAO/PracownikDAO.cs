@@ -32,7 +32,7 @@ namespace GOT_PTTK.DAO
                     pracownik.Numer = long.Parse(temp[1]);
                     pracownik.Imie = lines[i + 1];
                     pracownik.Nazwisko = lines[i + 2];
-                    pracownik.DataZatrudnienia = DateTime.Parse(lines[i + 3]);
+                    pracownik.DataZatrudnienia = DateTime.ParseExact(lines[i + 3], Utils.DATE_FORMAT, null);
                     pracownik.MiastoTRW = lines[i + 4];
                     pracownik.RodzajPracownika = lines[i + 5];
                     return pracownik;
@@ -55,7 +55,7 @@ namespace GOT_PTTK.DAO
                     pracownik.Numer = long.Parse(temp[1]);
                     pracownik.Imie = lines[i + 1];
                     pracownik.Nazwisko = lines[i + 2];
-                    pracownik.DataZatrudnienia = DateTime.Parse(lines[i + 3]);
+                    pracownik.DataZatrudnienia = DateTime.ParseExact(lines[i + 3], Utils.DATE_FORMAT, null);
                     pracownik.MiastoTRW = lines[i + 4];
                     pracownik.RodzajPracownika = lines[i + 5];
                     pracownicy.Add(pracownik);

@@ -30,7 +30,7 @@ namespace WpfAndroidMockup.Views
         private const string POMYSLNE_WYSLANIE_PROSBY_STRING = "POMYŚLNIE WYSŁANO PROŚBĘ O POTWIERDZENIE";
         private const string NIEPOPRAWNY_PRZODOWNIK_STRING_FORMAT = "PRZODOWNIK NR {0} NIE ISTNIEJE W BAZIE";
         public WycieczkaViewModel wycieczkaViewModel;
-
+        private long nrPrzodownika;
         Grid previousGridToClose;
 
         /// <summary>
@@ -108,6 +108,7 @@ namespace WpfAndroidMockup.Views
         private void Button_ZamknijKomunikat(object sender, RoutedEventArgs e)
         {
             BasicKomunikatGrid.Visibility = Visibility.Hidden;
+            AlertDanePrzodownikaGrid.Visibility = Visibility.Hidden;
             if (previousGridToClose != null)
             {
                 previousGridToClose.Visibility = Visibility.Hidden;
@@ -119,19 +120,25 @@ namespace WpfAndroidMockup.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Button_powrot(object sender, RoutedEventArgs e)
+        private void Button_PowrotAlertWyslij(object sender, RoutedEventArgs e)
         {
             AlertPrzeslijDoPrzodownikaGrid.Visibility = Visibility.Hidden;
         }
 
+        private void Button_PowrotAlertDane(object sender, RoutedEventArgs e)
+        {
+            AlertDanePrzodownikaGrid.Visibility = Visibility.Hidden;
+        }
+
+
         /// <summary>
-        /// Logika przycisku przesyłania wycieczki do potwierdzenia porzodownikowi
+        /// Logika przycisku przesyłania wycieczki do wyświetlania okna z danymi przodownika
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Button_wyslij(object sender, RoutedEventArgs e)
+        private void Button_WybierzPrzodownika(object sender, RoutedEventArgs e)
         {
-            long nrPrzodownika = ConvertTextFromTextBox();
+            nrPrzodownika = ConvertTextFromTextBox();
 
             if(nrPrzodownika == WRONG_INPUT || !wycieczkaViewModel.CzyPrzodownikONumerzeIstnieje(nrPrzodownika))
             {
@@ -139,11 +146,24 @@ namespace WpfAndroidMockup.Views
             }
             else
             {
+                wycieczkaViewModel.SetCurrentPrzodownik(nrPrzodownika);
+                AlertDanePrzodownikaGrid.Visibility = Visibility.Visible;
                 previousGridToClose = AlertPrzeslijDoPrzodownikaGrid;
-                wycieczkaViewModel.WyslijWycieczkeDoPotwierdzenia(nrPrzodownika);
-                WyswietlKomunikat(POMYSLNE_WYSLANIE_PROSBY_STRING);
             }
             
+        }
+
+        /// <summary>
+        /// Logika przycisku przesyłania wycieczki do potwierdzenia porzodownikowi
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_Wyslij(object sender, RoutedEventArgs e)
+        {
+            wycieczkaViewModel.WyslijWycieczkeDoPotwierdzenia(nrPrzodownika);
+            WyswietlKomunikat(POMYSLNE_WYSLANIE_PROSBY_STRING);
+
+            NrPrzodownika_textbox.Clear();
         }
 
         /// <summary>
@@ -164,7 +184,7 @@ namespace WpfAndroidMockup.Views
             }
             return id;
         }
-        
 
+       
     }
 }

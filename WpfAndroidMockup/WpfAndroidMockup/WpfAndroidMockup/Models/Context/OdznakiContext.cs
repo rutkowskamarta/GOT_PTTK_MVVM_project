@@ -2,6 +2,7 @@
 using GOT_PTTK.Utilities;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace GOT_PTTK.Models
 {
@@ -18,9 +19,9 @@ namespace GOT_PTTK.Models
     /// </summary>
     public class OdznakiContext
     {
-        public const string DUZA_BRAZOWA_IMG_PATH = "/WpfAndroidMockup;component/Assets/brazowa.png";
-        public const string POPULARNA_IMG_PATH = "/WpfAndroidMockup;component/Assets/zlota.png";
         public const string MALA_BRAZOWA_IMG_PATH = "/WpfAndroidMockup;component/Assets/brazowa.png";
+        public const string POPULARNA_IMG_PATH = "/WpfAndroidMockup;component/Assets/popularna.png";
+        public const string W_GORY_BRAZOWA_IMG_PATH = "/WpfAndroidMockup;component/Assets/w_gory_brazowa.png";
 
         private static OdznakiContext instance;
 
@@ -52,19 +53,20 @@ namespace GOT_PTTK.Models
         private void SetImage(ref OdznakaModel o)
         {
             string typ = o.Stopien + " " + o.Rodzaj;
+            Console.WriteLine(typ);
             switch (typ)
             {
-                case "mala brazowa":
+                case "brazowa mala":
                     o.ImgPath = MALA_BRAZOWA_IMG_PATH;
                     break;
-                case "duza brazowa":
-                    o.ImgPath = DUZA_BRAZOWA_IMG_PATH;
+                case "brazowy w gory":
+                    o.ImgPath = W_GORY_BRAZOWA_IMG_PATH;
                     break;
                 case "popularna":
                     o.ImgPath = POPULARNA_IMG_PATH;
                     break;
                 default:
-                    o.ImgPath = MALA_BRAZOWA_IMG_PATH;
+                    o.ImgPath = POPULARNA_IMG_PATH;
                     break;
             }
         }

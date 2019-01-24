@@ -14,11 +14,13 @@ namespace WpfAndroidMockup.ViewModels
     {
         private const string WYCIECZKI_PROPERTY = "WycieczkiObservableCollection";
         private const string CURRENT_WYCIECZKA_PROPERTY = "CurrentWycieczka";
+        private const string CURRENT_PRZODOWNIK_PROPERTY = "CurrentPrzodownik";
 
         private ObservableCollection<WycieczkaModel> wycieczkiObservableCollection;
         private WycieczkaModel currentWycieczka;
         private WycieczkiContext wycieczkiContext;
         private PrzodownicyContext przodownicyContext;
+        private PrzodownikModel currentPrzodownik;
 
         #region Properties
 
@@ -58,6 +60,26 @@ namespace WpfAndroidMockup.ViewModels
                 {
                     currentWycieczka = value;
                     RaisePropertyChanged(CURRENT_WYCIECZKA_PROPERTY);
+                }
+
+            }
+        }
+
+        /// <summary>
+        /// Aktualny przodownik
+        /// </summary>
+        public PrzodownikModel CurrentPrzodownik
+        {
+            get
+            {
+                return currentPrzodownik;
+            }
+            set
+            {
+                if (currentPrzodownik != value)
+                {
+                    currentPrzodownik = value;
+                    RaisePropertyChanged(CURRENT_PRZODOWNIK_PROPERTY);
                 }
 
             }
@@ -177,6 +199,11 @@ namespace WpfAndroidMockup.ViewModels
         public bool CzyPrzodownikONumerzeIstnieje(long nrPrzodownika)
         {
             return przodownicyContext.Exists(nrPrzodownika);
+        }
+
+        public void SetCurrentPrzodownik(long nrPrzodownika)
+        {
+            CurrentPrzodownik = przodownicyContext.GetModel(nrPrzodownika);
         }
 
         /// <summary>

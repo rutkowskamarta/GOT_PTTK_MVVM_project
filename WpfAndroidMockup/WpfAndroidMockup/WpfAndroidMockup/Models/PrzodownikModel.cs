@@ -9,7 +9,7 @@ namespace GOT_PTTK.Models
     /// </summary>
     /// <seealso cref="System.ComponentModel.INotifyPropertyChanged" />
     /// <seealso cref="System.IComparable{GOT_PTTK.Models.TurystaModel}" />
-    class PrzodownikModel : INotifyPropertyChanged, IComparable<PrzodownikModel>
+    public class PrzodownikModel : INotifyPropertyChanged, IComparable<PrzodownikModel>
     {
         private const string NR_PRZODOWNIKA_PROPERTY = "NrPrzodownika";
         private const string IMIE_PROPERTY = "Imie";
@@ -122,6 +122,20 @@ namespace GOT_PTTK.Models
             ObszaryUprawnien = new List<string>();
         }
 
+        public string ObszaryUprawnienToString
+        {
+            get
+            {
+                string obszary= "";
+                foreach(string o in ObszaryUprawnien)
+                {
+                    obszary += o + ", ";
+                }
+                return obszary;
+            }
+
+        }
+
         /// <summary>
         /// Konstruktor parametryczny klasy <see cref="PrzodownikModel"/>.
         /// </summary>
@@ -143,6 +157,8 @@ namespace GOT_PTTK.Models
         {
             return nrPrzodownika.CompareTo(other.nrPrzodownika);
         }
+
+
 
         /// <summary>
         /// Aktywuje sie gdy wartosc atrybutu sie zmieni.

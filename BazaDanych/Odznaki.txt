@@ -1,0 +1,19 @@
+//ID
+//ID Normy
+//Stopieñ
+//Rodzaj
+
+ID 0
+0
+brazowy
+w gory
+
+ID 1
+1
+NULL
+popularna
+
+ID 2
+2
+mala
+brazowa

@@ -37,8 +37,8 @@ namespace GOT_PTTK.DAO
                     wycieczka.Nazwa = lines[i + 2];
                     wycieczka.Trasa = lines[i + 3];
                     wycieczka.PunktPoczatkowy = lines[i + 4];
-                    wycieczka.DataRozpoczecia = DateTime.Parse(lines[i + 5]);
-                    wycieczka.DataZakonczenia = DateTime.Parse(lines[i + 6]);
+                    wycieczka.DataRozpoczecia = DateTime.ParseExact(lines[i + 5], Utils.DATE_FORMAT, null);
+                    wycieczka.DataZakonczenia = DateTime.ParseExact(lines[i + 6], Utils.DATE_FORMAT, null);
                     wycieczka.Status = lines[i + 7];
                     wycieczka.ObszarGorski = lines[i + 8];
                     wycieczka.Wysokosc = long.Parse(lines[i + 9]);
@@ -78,8 +78,8 @@ namespace GOT_PTTK.DAO
                     wycieczka.Nazwa = lines[i + 2];
                     wycieczka.Trasa = lines[i + 3];
                     wycieczka.PunktPoczatkowy = lines[i + 4];
-                    wycieczka.DataRozpoczecia = DateTime.Parse(lines[i + 5]);
-                    wycieczka.DataZakonczenia = DateTime.Parse(lines[i + 6]);
+                    wycieczka.DataRozpoczecia = DateTime.ParseExact(lines[i + 5], Utils.DATE_FORMAT, null);
+                    wycieczka.DataZakonczenia = DateTime.ParseExact(lines[i + 6], Utils.DATE_FORMAT, null);
                     wycieczka.Status = lines[i + 7];
                     wycieczka.ObszarGorski = lines[i + 8];
                     wycieczka.Wysokosc = long.Parse(lines[i + 9]);

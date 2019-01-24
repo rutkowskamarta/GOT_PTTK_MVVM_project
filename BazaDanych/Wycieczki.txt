@@ -1,0 +1,343 @@
+//ID
+//ID cyklu
+//Nazwa wycieczki
+//Trasa
+//Punkt początkowy
+//Data rozpoczęcia
+//Data zakończenia
+//Status wycieczki
+//Obszar górski
+//Wysokosc
+//Dlugosc
+//Punktacja
+
+ID 0
+0
+Moja wycieczka w lipcu
+Rusinowa Polana
+Dolina Filipka
+21.07.2018
+21.07.2018
+POTWIERDZONA
+Tatry Wysokie
+1300
+2320
+16
+
+ID 1
+0
+Moja wycieczka w sierpniu
+Łysa Polana
+Palenica Białczańska
+13.08.2018
+13.08.2018
+POTWIERDZONA
+Sudety
+500
+4080
+20
+
+ID 2
+0
+Moja wycieczka w lipcu2
+Rusinowa Polana
+Palenica Białczańska
+25.07.2018
+25.07.2018
+POTWIERDZONA
+Tatry Wysokie
+1300
+2320
+16
+
+ID 3
+0
+Moja wycieczka w lipcu
+Rusinowa Polana
+Dolina Filipka
+21.07.2018
+21.07.2018
+POTWIERDZONA
+Tatry Wysokie
+1300
+2320
+16
+
+ID 4
+0
+Moja wycieczka w lipcu
+Rusinowa Polana
+Dolina Filipka
+21.07.2018
+21.07.2018
+POTWIERDZONA
+Tatry Wysokie
+1300
+2320
+32
+
+ID 5
+0
+Moja wycieczka w lipcu
+Rusinowa Polana
+Dolina Filipka
+21.07.2018
+21.07.2018
+POTWIERDZONA
+Tatry Wysokie
+1300
+2320
+16
+
+ID 6
+0
+Moja wycieczka w sierpniu
+Łysa Polana
+Palenica Białczańska
+13.08.2018
+13.08.2018
+POTWIERDZONA
+Tatry Wysokie
+500
+4080
+20
+
+ID 7
+0
+Moja wycieczka w lipcu2
+Rusinowa Polana
+Palenica Białczańska
+25.07.2018
+25.07.2018
+POTWIERDZONA
+Tatry Wysokie
+1300
+2320
+16
+
+
+ID 9
+1
+Moja wycieczka w lipcu
+Rusinowa Polana
+Dolina Filipka
+21.07.2018
+21.07.2018
+POTWIERDZONA
+Tatry Wysokie
+1300
+2320
+32
+
+ID 10
+1
+Moja wycieczka w lipcu
+Rusinowa Polana
+Dolina Filipka
+21.07.2018
+21.07.2018
+W TRAKCIE
+Tatry Wysokie
+1300
+2320
+16
+
+ID 11
+1
+Moja wycieczka w sierpniu
+Łysa Polana
+Palenica Białczańska
+13.08.2018
+13.08.2018
+POTWIERDZONA
+Tatry Wysokie
+500
+4080
+20
+
+ID 12
+1
+Moja wycieczka w lipcu2
+Rusinowa Polana
+Palenica Białczańska
+25.07.2018
+25.07.2018
+POTWIERDZONA
+Tatry Wysokie
+1300
+2320
+16
+
+ID 13
+1
+Moja wycieczka w lipcu
+Rusinowa Polana
+Dolina Filipka
+21.07.2018
+21.07.2018
+POTWIERDZONA
+Tatry Wysokie
+1300
+2320
+16
+
+ID 14
+2
+Moja wycieczka w lipcu
+Rusinowa Polana
+Dolina Filipka
+21.07.2018
+21.07.2018
+W TRAKCIE
+Tatry Wysokie
+1300
+2320
+32
+
+ID 15
+2
+Moja wycieczka w lipcu
+Rusinowa Polana
+Dolina Filipka
+21.07.2018
+21.07.2018
+W TRAKCIE
+Tatry Wysokie
+1300
+2320
+16
+
+ID 16
+2
+Moja wycieczka w sierpniu
+Łysa Polana
+Palenica Białczańska
+13.08.2018
+13.08.2018
+W TRAKCIE
+Tatry Wysokie
+500
+4080
+20
+
+ID 17
+2
+Moja wycieczka w lipcu2
+Rusinowa Polana
+Palenica Białczańska
+25.07.2018
+25.07.2018
+W TRAKCIE
+Tatry Wysokie
+1300
+2320
+16
+
+
+ID 19
+2
+Moja wycieczka w lipcu
+Rusinowa Polana
+Dolina Filipka
+21.07.2018
+21.07.2018
+POTWIERDZONA
+Tatry Wysokie
+1300
+2320
+32
+
+
+
+
+ID 23
+4
+Moja wycieczka w lipcu
+Rusinowa Polana
+Dolina Filipka
+21.07.2018
+21.07.2018
+W TRAKCIE
+Tatry Wysokie
+1300
+2320
+16
+
+
+ID 25
+4
+Moja wycieczka w lipcu
+Rusinowa Polana
+Dolina Filipka
+21.07.2018
+21.07.2018
+W TRAKCIE
+Tatry Wysokie
+1300
+2320
+16
+
+ID 26
+4
+Moja wycieczka w sierpniu
+Łysa Polana
+Palenica Białczańska
+13.08.2018
+13.08.2018
+NIEPOTWIERDZONA
+Tatry Wysokie
+500
+4080
+20
+
+ID 27
+4
+Moja wycieczka w lipcu2
+Rusinowa Polana
+Palenica Białczańska
+25.07.2018
+25.07.2018
+NIEPOTWIERDZONA
+Tatry Wysokie
+1300
+2320
+16
+
+ID 28
+4
+Dominicza Góra
+Dominicza Góra
+Z Rajbrontu
+31.10.2018
+31.10.2018
+W TRAKCIE
+Podgórze Wiśnickie
+680
+2310
+12
+
+ID 29
+4
+Moja ulubiona wycieczka
+Dzięgelów - Zamek
+Z Goleszowa
+01.01.2019
+01.01.2019
+NIEPOTWIERDZONA
+Beskid Śląski
+720
+1330
+12
+
+ID 28
+4
+Jasieniowa - z mężem
+Jasieniowa
+Z Goleszowa
+12.12.2018
+12.12.2018
+POTWIERDZONA
+Beskid Śląski
+680
+2310
+12

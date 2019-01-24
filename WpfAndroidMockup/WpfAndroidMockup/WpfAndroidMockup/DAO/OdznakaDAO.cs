@@ -39,7 +39,7 @@ namespace GOT_PTTK.DAO
                     Odznaka odznaka = new Odznaka();
                     odznaka.Id = long.Parse(temp[1]);
                     odznaka.IdTurysty = long.Parse(lines[i + 2]);
-                    odznaka.DataRozpoczecia = DateTime.Parse(lines[i + 3]);
+                    odznaka.DataRozpoczecia = DateTime.ParseExact(lines[i + 3], Utils.DATE_FORMAT, null);
 
                     string[] linesOdznaki = System.IO.File.ReadAllLines(odznakaPath);
                     string idNormy = "";
@@ -101,7 +101,7 @@ namespace GOT_PTTK.DAO
                     Odznaka odznaka = new Odznaka();
                     odznaka.Id = long.Parse(temp[1]);
                     odznaka.IdTurysty = long.Parse(lines[i + 2]);
-                    odznaka.DataRozpoczecia = DateTime.Parse(lines[i + 3]);
+                    odznaka.DataRozpoczecia = DateTime.ParseExact(lines[i + 3], Utils.DATE_FORMAT, null);
 
                     string[] linesOdznaki = System.IO.File.ReadAllLines(odznakaPath);
                     string idNormy = "";

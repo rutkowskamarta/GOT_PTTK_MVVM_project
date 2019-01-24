@@ -1,0 +1,14 @@
+//Nr pracownika
+//Imie
+//Nazwisko
+//Data zatrudnienia
+//MiastoTRW
+//RodzajPracownika
+
+ID 0
+Jan
+Abacki
+15.03.2015
+Zakopane
+TRW
+

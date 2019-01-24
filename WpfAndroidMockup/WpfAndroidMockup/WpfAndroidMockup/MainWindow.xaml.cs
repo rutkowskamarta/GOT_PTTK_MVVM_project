@@ -43,6 +43,8 @@ namespace WpfAndroidMockup
             odznakiViewModel.LoadWszystkieRozpoczeteCykle();
             PrzeslijOdznakeDoWeryfikacji.DataContext = odznakiViewModel;
             PrzeslijOdznakeDoWeryfikacji.odznakiViewModel = odznakiViewModel;
+
+            PrzeslijOdznakeDoWeryfikacji.PokazWidok();
             PrzeslijOdznakeDoWeryfikacji.Visibility = Visibility.Visible;
         }
 

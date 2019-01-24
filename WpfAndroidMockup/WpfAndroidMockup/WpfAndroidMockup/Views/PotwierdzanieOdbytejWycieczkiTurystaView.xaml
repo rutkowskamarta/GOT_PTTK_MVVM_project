@@ -54,7 +54,7 @@
                                         </Style>
                                     </TextBlock.Style>
                                 </TextBlock>
-                                
+
                             </StackPanel>
                         </DockPanel>
 
@@ -64,7 +64,7 @@
             </ListBox>
 
 
-            <Grid Name="AlertPrzeslijDoPrzodownikaGrid"  Background="#66B4A4A4" Visibility="Hidden" DataContext="{Binding CurrentWycieczka}">
+            <Grid Name="AlertPrzeslijDoPrzodownikaGrid"  Background="#66B4A4A4" Visibility="Hidden"  DataContext="{Binding CurrentWycieczka}">
                 <Rectangle Fill="#FFF7F5F5" RadiusX="20" RadiusY="20" HorizontalAlignment="Center" Height="325" Margin="50,45,50.2,0" Stroke="Black" VerticalAlignment="Top" Width="275"/>
                 <TextBlock Text="{Binding Nazwa}" Foreground="Black" HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Top" Margin="0,60,0,0" FontSize="15" FontWeight="Bold"/>
                 <TextBlock Text="{Binding DataRozpoczecia}" Foreground="Black" HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Top" Margin="0,80,0,0" FontSize="15" />
@@ -76,11 +76,26 @@
                        PODAJ NUMER PRZODOWNIKA
                 </TextBlock>
 
-                <Button Content="POWRÓT" Click="Button_powrot" FontSize="15" FontWeight="Bold" Background="LightGray" HorizontalAlignment="Right" Margin="0,300,90,0" VerticalAlignment="Top" Width="80" Height="35"/>
-                <Button Content="WYŚLIJ" Click="Button_wyslij" FontSize="15" FontWeight="Bold" Background="LightGray" HorizontalAlignment="Left" Margin="90,300,0,0" VerticalAlignment="Top" Width="80" Height="35"/>
+                <Button Content="POWRÓT" Click="Button_PowrotAlertWyslij" FontSize="15" FontWeight="Bold" Background="LightGray" HorizontalAlignment="Right" Margin="0,300,90,0" VerticalAlignment="Top" Width="80" Height="35"/>
+                <Button Content="WYŚLIJ" Click="Button_WybierzPrzodownika" FontSize="15" FontWeight="Bold" Background="LightGray" HorizontalAlignment="Left" Margin="90,300,0,0" VerticalAlignment="Top" Width="80" Height="35"/>
                 <TextBox Name="NrPrzodownika_textbox" HorizontalAlignment="Center" Height="30" Margin="0,255,0,0" BorderBrush="Black" TextAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
             </Grid>
-            
+
+            <Grid Name="AlertDanePrzodownikaGrid"  Background="#66B4A4A4" Visibility="Hidden"  DataContext="{Binding CurrentPrzodownik}">
+                <Rectangle Fill="#FFF7F5F5" RadiusX="20" RadiusY="20" HorizontalAlignment="Center" Height="235" Margin="50,45,50.2,0" Stroke="Black" VerticalAlignment="Top" Width="275"/>
+
+                <TextBlock TextWrapping="WrapWithOverflow" Margin="88,55,95,567" TextAlignment="Center">
+                       DANE PRZODOWNIKA O PODANYM NUMERZE:
+                </TextBlock>
+
+                <TextBlock Text="{Binding nrPrzodownika}" Foreground="Black" HorizontalAlignment="Left" TextAlignment="Center" VerticalAlignment="Top" Margin="70,90,0,0" FontSize="15" FontWeight="Bold" Width="235"/>
+                <TextBlock Text="{Binding Imie, StringFormat='Imię: {0}'}" Foreground="Black" HorizontalAlignment="Left" TextAlignment="Left" VerticalAlignment="Top" Margin="70,110,0,0" FontSize="15" Width="235" />
+                <TextBlock Text="{Binding Nazwisko, StringFormat='Nazwisko: {0}'}" Foreground="Black" HorizontalAlignment="Left" TextAlignment="Left" VerticalAlignment="Top" Margin="70,130,0,0" FontSize="15" Width="235" />
+                <TextBlock Text="{Binding ObszaryUprawnienToString, StringFormat='Uprawnienia: {0}'}" Foreground="Black" HorizontalAlignment="Left" TextAlignment="Left" VerticalAlignment="Top" Margin="70,150,0,0" FontSize="15" Height="20" Width="235" TextWrapping="Wrap" />
+
+                <Button Content="POWRÓT" Click="Button_PowrotAlertDane" FontSize="15" FontWeight="Bold" Background="LightGray" HorizontalAlignment="Right" Margin="0,230,70,0" VerticalAlignment="Top" Width="100" Height="35"/>
+                <Button Content="POTWIERDŹ" Click="Button_Wyslij" FontSize="15" FontWeight="Bold" Background="LightGray" HorizontalAlignment="Left" Margin="70,230,0,0" VerticalAlignment="Top" Width="100" Height="35"/>
+            </Grid>
 
             <Grid Name="BasicKomunikatGrid"  Background="#66B4A4A4" Visibility="Hidden">
                 <Rectangle Fill="#FFF7F5F5" RadiusX="20" RadiusY="20" HorizontalAlignment="Center" Height="130" Margin="0,170,0,0" Stroke="Black" VerticalAlignment="Top" Width="275"/>

@@ -1,0 +1,11 @@
+//Nr przodownika
+//Imie
+//Nazwisko
+
+ID 0
+Marta
+Rott
+
+ID 1
+Marta
+Rutkowska

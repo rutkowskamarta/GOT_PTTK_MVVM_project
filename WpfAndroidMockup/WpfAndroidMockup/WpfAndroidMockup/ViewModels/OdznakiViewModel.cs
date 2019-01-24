@@ -84,6 +84,9 @@ namespace WpfAndroidMockup.ViewModels
         {
             foreach (OdznakaModel item in odznakiContext.GetOdznakiNieDoWeryfikacji())
                 OdznakiObservableCollection.Add(item);
+            if(OdznakiObservableCollection.Count > 0)
+                aktualnaOdznaka = OdznakiObservableCollection[0];
+
         }
 
         /// <summary>

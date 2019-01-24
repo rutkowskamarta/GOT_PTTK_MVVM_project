@@ -37,6 +37,7 @@ namespace WpfAndroidMockup.Views
         public PrzegladanieOdznakiView()
         {
             InitializeComponent();
+
         }
 
         /// <summary>
@@ -54,38 +55,7 @@ namespace WpfAndroidMockup.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ListViewItem_OnPressed(object sender, MouseButtonEventArgs e)
-        {
-            ListBox listView = sender as ListBox;
-            if (listView.SelectedItem != null)
-            {
-                //zmienić na odznaka model
-                OdznakaModel selectedItem = (OdznakaModel)listView.SelectedItems[0];
-                odznakiViewModel.AktualnaOdznaka = selectedItem;
-                ChangeLayoutToOdznakaLayout();
-                SetPunktyTextColor();
-                ButtonAndTextSetVisibility();
-            }
-
-        }
-        
-        /// <summary>
-        /// Wyświetla informacje o wybranej z listys odznace
-        /// </summary>
-        private void ChangeLayoutToOdznakaLayout()
-        {
-            SelectedOdznakaGrid.Visibility = Visibility.Visible;
-        }
-
-        /// <summary>
-        /// Logika przycisku zamykania podglądu odznaki i powrotu do listy
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Button_CofnijDoWyboruOnClick(object sender, RoutedEventArgs e)
-        {
-            SelectedOdznakaGrid.Visibility = Visibility.Hidden;
-        }
+            
 
         /// <summary>
         /// Ustala kolor punktów w zależności od zdobycia odpowiedniej ich liczby
@@ -164,6 +134,23 @@ namespace WpfAndroidMockup.Views
         {
             BasicKomunikatGrid.Visibility = Visibility.Visible;
             Message.Text = wiadomosc;
+        }
+
+        /// <summary>
+        /// Ustawia, żeby wyswietlaly sie odpowiednie elementy i kolory na widoku
+        /// </summary>
+        public void PokazWidok()
+        {
+            if(odznakiViewModel.AktualnaOdznaka != null)
+            {
+                SetPunktyTextColor();
+                ButtonAndTextSetVisibility();
+            }
+            else
+            {
+                SelectedOdznakaGrid.Visibility = Visibility.Hidden;
+                WyswietlKomunikat("NIE MASZ ŻADNEGO ROZPOCZĘTEGO CYKLU ZDOBYWANIA ODZNAKI");
+            }
         }
     }
 }

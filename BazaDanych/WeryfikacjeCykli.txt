@@ -1,0 +1,36 @@
+//ID cyklu
+//Nr pracownika
+//Data zakonczenia
+
+ID 0
+0
+21.01.2016
+
+ID 1
+0
+NULL
+
+ID 2
+0
+21.08.2017
+
+ID 3
+0
+12.02.2018
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

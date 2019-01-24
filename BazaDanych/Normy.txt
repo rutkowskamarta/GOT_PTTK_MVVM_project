@@ -1,0 +1,19 @@
+//ID
+//Liczba Punktów 
+//Obszar górski
+//CzyDowolny
+
+ID 0
+15
+NULL
+True
+
+ID 1
+60
+NULL
+True
+
+ID 2
+120
+NULL
+True
