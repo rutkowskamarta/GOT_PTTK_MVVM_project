@@ -15,14 +15,10 @@ digraph "WpfAndroidMockup.MainWindow"
   Node6 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node7 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node7 [label="Window",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
-  Node8 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" PRZYKLADOWY_TURYSTA" ,fontname="Helvetica"];
-  Node8 [label="int",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
-  Node9 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _contentLoaded" ,fontname="Helvetica"];
-  Node9 [label="bool",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
-  Node10 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" WszystkieWycieczkiButton\nWyslijWycieczkeDoPotwierdzenia\nWyslijOdznakeDoWeryfikacji\nPotwierdzButton\nMainMenuGrid" ,fontname="Helvetica"];
-  Node10 [label="System",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
-  Node11 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" PRZYKLADOWY_PRZODOWNIK" ,fontname="Helvetica"];
-  Node11 [label="long",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
-  Node12 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" PotwierdzOdbyteWycieczki\nPrzeslijOdznakeDoWeryfikacji\nPrzeslijWycieczkeDoWeryfikacji\nObslugaWycieczekViewControl" ,fontname="Helvetica"];
-  Node12 [label="WpfAndroidMockup",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node8 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _contentLoaded" ,fontname="Helvetica"];
+  Node8 [label="bool",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node9 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" WszystkieWycieczkiButton\nWyslijWycieczkeDoPotwierdzenia\nWyslijOdznakeDoWeryfikacji\nPotwierdzButton\nMainMenuGrid" ,fontname="Helvetica"];
+  Node9 [label="System",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node10 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" PotwierdzOdbyteWycieczki\nPrzeslijOdznakeDoWeryfikacji\nPrzeslijWycieczkeDoWeryfikacji\nObslugaWycieczekViewControl" ,fontname="Helvetica"];
+  Node10 [label="WpfAndroidMockup",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
 }

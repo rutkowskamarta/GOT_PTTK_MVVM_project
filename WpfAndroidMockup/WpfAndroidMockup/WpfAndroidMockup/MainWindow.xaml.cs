@@ -1,19 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
+using GOT_PTTK.Utilities;
 using WpfAndroidMockup.ViewModels;
-using WpfAndroidMockup.Models;
 
 namespace WpfAndroidMockup
 {
@@ -22,28 +9,12 @@ namespace WpfAndroidMockup
     /// </summary>
     public partial class MainWindow : Window
     {
-        private const int PRZYKLADOWY_TURYSTA = 0;
-        private const long PRZYKLADOWY_PRZODOWNIK = 1;
-
         /// <summary>
-        /// Konstruktor nieparametryczny głównego widoku
+        /// Konstruktor nieparametryczny głwonego widoku
         /// </summary>
         public MainWindow()
         {
             InitializeComponent();
-            LoginUser(PRZYKLADOWY_TURYSTA, PRZYKLADOWY_PRZODOWNIK);
-        }
-        
-        /// <summary>
-        /// Metoda odpowiedzialna za zalogowanie przykładowego turysty i przodownika do systemu
-        /// </summary>
-        /// <param name="idTurysty"></param>
-        /// <param name="nrPrzodownika"></param>
-        private void LoginUser(int idTurysty, long nrPrzodownika)
-        {
-            DaneLogowania.IdZalogowanegoTurysty = idTurysty;
-            DaneLogowania.NrZalogowanegoPrzodownika = nrPrzodownika;
-
         }
         
         /// <summary>
@@ -76,14 +47,14 @@ namespace WpfAndroidMockup
         }
 
         /// <summary>
-        /// Logika dla przycisku odpowiedzialnego za wywołanie przypadku użycia potwierdzania jako przodownik wycieczki
+        /// Logika dla przycisku odpowiedzialnego za wywołanie przypadku użycia potwierdzania jako przodownik udziału w wycieczce
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Button_Potwierdz(object sender, RoutedEventArgs e)
         {
             WycieczkaViewModel tripViewModelObject = new WycieczkaViewModel();
-            tripViewModelObject.WczytajWycieczkiPrzodownikaDoPotwierdzenia(DaneLogowania.NrZalogowanegoPrzodownika);
+            tripViewModelObject.WczytajWycieczkiPrzodownikaDoPotwierdzenia(Utils.ID_ZALOGOWANEGO_PRZODOWNIKA);
             PotwierdzOdbyteWycieczki.DataContext = tripViewModelObject;
             PotwierdzOdbyteWycieczki.wycieczkaViewModel = tripViewModelObject;
             tripViewModelObject.CurrentView = PotwierdzOdbyteWycieczki;
@@ -92,7 +63,7 @@ namespace WpfAndroidMockup
         }
 
         /// <summary>
-        /// Logika dla przycisku odpowiedzialnego za wywołanie przypadku użycia wysyłania przodownikowi prośby o weryfikację wycieczki
+        /// Logika dla przycisku odpowiedzialnego za wywołanie przypadku użycia wysyłania przodownikowy prośby o weryfikację wycieczki
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

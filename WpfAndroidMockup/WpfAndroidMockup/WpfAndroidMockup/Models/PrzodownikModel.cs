@@ -1,23 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace WpfAndroidMockup.Models
+namespace GOT_PTTK.Models
 {
     /// <summary>
     /// Model Przodownika
     /// </summary>
     /// <seealso cref="System.ComponentModel.INotifyPropertyChanged" />
-    /// <seealso cref="System.IComparable{WpfAndroidMockup.Models.TurystaModel}" />
+    /// <seealso cref="System.IComparable{GOT_PTTK.Models.TurystaModel}" />
     class PrzodownikModel : INotifyPropertyChanged, IComparable<PrzodownikModel>
     {
+        private const string NR_PRZODOWNIKA_PROPERTY = "NrPrzodownika";
+        private const string IMIE_PROPERTY = "Imie";
+        private const string NAZWISKO_PROPERTY = "Nazwisko";
+        private const string OBSZARY_UPRAWNIEN_PROPERTY = "ObszaryUprawnien";
+
         private long nrPrzodownika;
         private string imie;
         private string nazwisko;
         private List<string> obszaryUprawnien;
+
+        #region Properties
 
         /// <summary>
         /// Akcesor i mutator nr przodownika.
@@ -36,7 +40,7 @@ namespace WpfAndroidMockup.Models
                 if (nrPrzodownika != value)
                 {
                     nrPrzodownika = value;
-                    RaisePropertyChanged("NrPrzodownika");
+                    RaisePropertyChanged(NR_PRZODOWNIKA_PROPERTY);
                 }
             }
         }
@@ -58,7 +62,7 @@ namespace WpfAndroidMockup.Models
                 if (imie != value)
                 {
                     imie = value;
-                    RaisePropertyChanged("Imie");
+                    RaisePropertyChanged(IMIE_PROPERTY);
                 }
             }
         }
@@ -80,7 +84,7 @@ namespace WpfAndroidMockup.Models
                 if (nazwisko != value)
                 {
                     nazwisko = value;
-                    RaisePropertyChanged("Nazwisko");
+                    RaisePropertyChanged(NAZWISKO_PROPERTY);
                 }
             }
         }
@@ -102,17 +106,13 @@ namespace WpfAndroidMockup.Models
                 if (obszaryUprawnien != value)
                 {
                     obszaryUprawnien = value;
-                    RaisePropertyChanged("ObszaryUprawnien");
+                    RaisePropertyChanged(OBSZARY_UPRAWNIEN_PROPERTY);
                 }
 
             }
         }
 
-
-        /// <summary>
-        /// Aktywuje sie gdy wartosc atrybutu sie zmieni.
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
+        #endregion
 
         /// <summary>
         /// Kostryktor klasy <see cref="PrzodownikModel"/>.
@@ -133,6 +133,23 @@ namespace WpfAndroidMockup.Models
         }
 
         /// <summary>
+        /// Porownuje instancje dwóch modeli po identyfikatorze i zwraca integer ktory identyfikuje wynik porownania
+        /// </summary>
+        /// <param name="other">Model porownywany</param>
+        /// <returns>
+        /// identyfikator porownania
+        /// </returns>
+        public int CompareTo(PrzodownikModel other)
+        {
+            return nrPrzodownika.CompareTo(other.nrPrzodownika);
+        }
+
+        /// <summary>
+        /// Aktywuje sie gdy wartosc atrybutu sie zmieni.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
         /// Zgłasza zmiane atrybutu.
         /// </summary>
         /// <param name="property">atrybut</param>
@@ -143,18 +160,5 @@ namespace WpfAndroidMockup.Models
                 PropertyChanged(this, new PropertyChangedEventArgs(property));
             }
         }
-
-        /// <summary>
-        /// Porownuje instancje dwóch obiektów i zwraca integer ktory identyfikuje wynik porownania
-        /// </summary>
-        /// <param name="other">Obiekt porownywany</param>
-        /// <returns>
-        /// identyfikator porownania
-        /// </returns>
-        public int CompareTo(PrzodownikModel other)
-        {
-            return nrPrzodownika.CompareTo(other.nrPrzodownika);
-        }
-
     }
 }

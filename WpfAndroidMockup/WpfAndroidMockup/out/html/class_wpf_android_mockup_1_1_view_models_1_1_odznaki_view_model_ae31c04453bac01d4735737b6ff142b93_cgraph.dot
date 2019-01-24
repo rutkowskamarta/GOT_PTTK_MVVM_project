@@ -6,5 +6,5 @@ digraph "WpfAndroidMockup.ViewModels.OdznakiViewModel.OdznakiViewModel"
   rankdir="LR";
   Node0 [label="WpfAndroidMockup.ViewModels.\lOdznakiViewModel.OdznakiViewModel",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
   Node0 -> Node1 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node1 [label="WpfAndroidMockup.Models.\lOdznakiContext.GetInstance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#a0328bf76f946868f953c65dc5703d6b3",tooltip="Zwraca instancję singletonu OdznakiContext. "];
+  Node1 [label="GOT_PTTK.Models.OdznakiContext.\lGetInstance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_o_t___p_t_t_k_1_1_models_1_1_odznaki_context.html#ab3431ede520f3827bf66732a5f411a38",tooltip="Zwraca instancję singletonu OdznakiContext. "];
 }

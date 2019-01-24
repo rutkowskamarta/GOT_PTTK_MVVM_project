@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WpfAndroidMockup.Models;
+using GOT_PTTK.Models;
 using WpfAndroidMockup.ViewModels;
 
 namespace WpfAndroidMockup.Views
@@ -22,6 +22,10 @@ namespace WpfAndroidMockup.Views
     /// </summary>
     public partial class PrzegladanieOdznakiView : UserControl
     {
+        private const string PRZESLANO_DO_WERYFIKACJI_STATE_STRING = "Przesłano do weryfikacji";
+        private const string ZA_MALO_PUNKTOW_STATE_STRING = "Za mało punktów, by przesłać do weryfikacji";
+        private const string POMYSLNIE_PRZESLANO_DO_WERYFIKACJI_STRING = "POMYŚLNIE PRZESŁANO DO WERYFIKACJI";
+
         /// <summary>
         /// View model odznaki
         /// </summary>
@@ -66,7 +70,7 @@ namespace WpfAndroidMockup.Views
         }
         
         /// <summary>
-        /// Wyświetla informacje o wybranej z listy odznace
+        /// Wyświetla informacje o wybranej z listys odznace
         /// </summary>
         private void ChangeLayoutToOdznakaLayout()
         {
@@ -105,9 +109,9 @@ namespace WpfAndroidMockup.Views
         /// </summary>
         private void ButtonAndTextSetVisibility()
         {
-            if (odznakiViewModel.AktualnaOdznaka.CzyPrzeslanaDoWeryfikacji)
+            if (odznakiViewModel.AktualnaOdznaka.NrPracownika == OdznakaModel.NR_PRACOWNIKA_DO_WERYFIKACJI)
             {
-                WeryfikacjaLabel.Content = "Przesłano do weryfikacji";
+                WeryfikacjaLabel.Content = PRZESLANO_DO_WERYFIKACJI_STATE_STRING;
                 WeryfikacjaLabel.Visibility = Visibility.Visible;
                 Weryfikuj_button.Visibility = Visibility.Hidden;
             }
@@ -117,7 +121,7 @@ namespace WpfAndroidMockup.Views
                 {
                     WeryfikacjaLabel.Visibility = Visibility.Visible;
                     Weryfikuj_button.Visibility = Visibility.Hidden;
-                    WeryfikacjaLabel.Content = "Za mało punktów, by przesłać do weryfikacji";
+                    WeryfikacjaLabel.Content = ZA_MALO_PUNKTOW_STATE_STRING;
 
                 }
                 else
@@ -148,8 +152,8 @@ namespace WpfAndroidMockup.Views
         /// <param name="e"></param>
         private void Button_przeslijDoWeryfikacji(object sender, RoutedEventArgs e)
         {
-            WyswietlKomunikat("POMYŚLNIE PRZESŁANO DO WERYFIKACJI");
-            odznakiViewModel.WyslijOdznakeDoWeryfikacji();
+            WyswietlKomunikat(POMYSLNIE_PRZESLANO_DO_WERYFIKACJI_STRING);
+            odznakiViewModel.WyslijAktualnaOdznakeDoWeryfikacji();
         }
 
         /// <summary>

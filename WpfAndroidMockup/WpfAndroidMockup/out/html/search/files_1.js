@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['danelogowania_2ecs',['DaneLogowania.cs',['../_dane_logowania_8cs.html',1,'']]]
+  ['dao_2ecs',['DAO.cs',['../_d_a_o_8cs.html',1,'']]]
 ];

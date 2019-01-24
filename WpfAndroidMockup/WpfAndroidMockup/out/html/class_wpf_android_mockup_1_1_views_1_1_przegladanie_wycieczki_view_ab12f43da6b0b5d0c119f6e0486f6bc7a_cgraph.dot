@@ -4,7 +4,7 @@ digraph "WpfAndroidMockup.Views.PrzegladanieWycieczkiView.ListViewItem_OnPressed
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node27 [label="WpfAndroidMockup.Views.Przegladanie\lWycieczkiView.ListViewItem_OnPressed",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-  Node27 -> Node28 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node28 [label="WpfAndroidMockup.ViewModels.\lWycieczkaViewModel.WczytajWycieczke",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_view_models_1_1_wycieczka_view_model.html#abdd72db58a8000e0d2699c05422f3e54",tooltip="Przypisuje aktualnej wycieczke odpowiednią wycieczkę "];
+  Node29 [label="WpfAndroidMockup.Views.Przegladanie\lWycieczkiView.ListViewItem_OnPressed",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node29 -> Node30 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node30 [label="WpfAndroidMockup.ViewModels.\lWycieczkaViewModel.WczytajWycieczke",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_view_models_1_1_wycieczka_view_model.html#abdd72db58a8000e0d2699c05422f3e54",tooltip="Przypisuje aktualnej wycieczke odpowiednią wycieczkę "];
 }

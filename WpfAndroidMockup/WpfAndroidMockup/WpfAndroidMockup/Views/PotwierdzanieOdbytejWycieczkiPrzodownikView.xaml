@@ -25,7 +25,7 @@
                         <Image HorizontalAlignment="Stretch" Height="40" VerticalAlignment="Top" Width="40" Margin="5,5,0,0" Source="/WpfAndroidMockup;component/Assets/a.png"/>
 
                         <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
-                            <TextBlock Text="{Binding DataWycieczki}" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0"/>
+                            <TextBlock Text="{Binding DataRozpoczecia}" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0"/>
                             <TextBlock Text="{Binding Nazwa}" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0"/>
                             <TextBlock Text="{Binding ObszarGorski}" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0"/>
                         </StackPanel>
@@ -60,7 +60,7 @@
 
             <TextBlock Text="{Binding DaneTurysty}" Foreground="Black" HorizontalAlignment="Right" TextAlignment="Right" VerticalAlignment="Top" Margin="0,40,70,0" FontSize="15" FontWeight="Bold"/>
             <TextBlock Text="{Binding Nazwa}" Foreground="Black" HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Top" Margin="0,60,0,0" FontSize="15" FontWeight="Bold"/>
-            <TextBlock Text="{Binding DataWycieczki}" Foreground="Black" HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Top" Margin="0,80,0,0" FontSize="15" />
+            <TextBlock Text="{Binding DataRozpoczecia}" Foreground="Black" HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Top" Margin="0,80,0,0" FontSize="15" />
             <TextBlock Text="{Binding ObszarGorski}" Foreground="Black" HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Top" Margin="0,200,0,0" FontSize="15" />
 
             <Image HorizontalAlignment="Center" Height="85" VerticalAlignment="Top" Margin="0,105,0,0" Source="/WpfAndroidMockup;component/Assets/a.png"/>
@@ -95,7 +95,7 @@
 
             <TextBlock Text="{Binding DaneTurysty}" Foreground="Black" HorizontalAlignment="Right" TextAlignment="Right" VerticalAlignment="Top" Margin="0,40,70,0" FontSize="15" FontWeight="Bold"/>
             <TextBlock Text="{Binding Nazwa}" Foreground="Black" HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Top" Margin="0,60,0,0" FontSize="15" FontWeight="Bold"/>
-            <TextBlock Text="{Binding DataWycieczki}" Foreground="Black" HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Top" Margin="0,80,0,0" FontSize="15" />
+            <TextBlock Text="{Binding DataRozpoczecia}" Foreground="Black" HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Top" Margin="0,80,0,0" FontSize="15" />
             <TextBlock Text="{Binding ObszarGorski}" Foreground="Black" HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Top" Margin="0,200,0,0" FontSize="15" />
         </Grid>
 

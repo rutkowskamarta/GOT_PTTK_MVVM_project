@@ -1,10 +1,8 @@
 var searchData=
 [
-  ['potwierdzaktualnawycieczke',['PotwierdzAktualnaWycieczke',['../class_wpf_android_mockup_1_1_view_models_1_1_wycieczka_view_model.html#af596383718c2111fedb24f056ae97a88',1,'WpfAndroidMockup::ViewModels::WycieczkaViewModel']]],
-  ['potwierdzanieodbytejwycieczkiprzodownikview',['PotwierdzanieOdbytejWycieczkiPrzodownikView',['../class_wpf_android_mockup_1_1_views_1_1_potwierdzanie_odbytej_wycieczki_przodownik_view.html#af4a43c318d92a6a308bc175020141fbd',1,'WpfAndroidMockup::Views::PotwierdzanieOdbytejWycieczkiPrzodownikView']]],
-  ['potwierdzanieodbytejwycieczkiturystaview',['PotwierdzanieOdbytejWycieczkiTurystaView',['../class_wpf_android_mockup_1_1_views_1_1_potwierdzanie_odbytej_wycieczki_turysta_view.html#abb8990be27e2d5efba81edf577f1e888',1,'WpfAndroidMockup::Views::PotwierdzanieOdbytejWycieczkiTurystaView']]],
-  ['przegladanieodznakiview',['PrzegladanieOdznakiView',['../class_wpf_android_mockup_1_1_views_1_1_przegladanie_odznaki_view.html#affbf70e8311ece2b458f3b28333dff7d',1,'WpfAndroidMockup::Views::PrzegladanieOdznakiView']]],
-  ['przegladaniewycieczkiview',['PrzegladanieWycieczkiView',['../class_wpf_android_mockup_1_1_views_1_1_przegladanie_wycieczki_view.html#a964ad22265c5eaf06292854faf9813d6',1,'WpfAndroidMockup::Views::PrzegladanieWycieczkiView']]],
-  ['przodownicycontext',['PrzodownicyContext',['../class_wpf_android_mockup_1_1_models_1_1_przodownicy_context.html#a54ad634ba1679cd6cce523c0ca59a625',1,'WpfAndroidMockup::Models::PrzodownicyContext']]],
-  ['przodownikmodel',['PrzodownikModel',['../class_wpf_android_mockup_1_1_models_1_1_przodownik_model.html#aacc65371f82fa6fc1eba08f964828c3e',1,'WpfAndroidMockup.Models.PrzodownikModel.PrzodownikModel()'],['../class_wpf_android_mockup_1_1_models_1_1_przodownik_model.html#ab408e7cc32e7e450b49b877296a19571',1,'WpfAndroidMockup.Models.PrzodownikModel.PrzodownikModel(long id)']]]
+  ['odrzucaktualnawycieczke',['OdrzucAktualnaWycieczke',['../class_wpf_android_mockup_1_1_view_models_1_1_wycieczka_view_model.html#af20b7355b3ef7c1aa457277609ccf56d',1,'WpfAndroidMockup::ViewModels::WycieczkaViewModel']]],
+  ['odznakadao',['OdznakaDAO',['../class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_odznaka_d_a_o.html#a24d305096cfecd41d2af03aa7150da33',1,'GOT_PTTK::DAO::OdznakaDAO']]],
+  ['odznakamodel',['OdznakaModel',['../class_g_o_t___p_t_t_k_1_1_models_1_1_odznaka_model.html#a2009470f1a66ad8d6af2aabe68476444',1,'GOT_PTTK::Models::OdznakaModel']]],
+  ['odznakicontext',['OdznakiContext',['../class_g_o_t___p_t_t_k_1_1_models_1_1_odznaki_context.html#a257339fc93b07ef6bf554ea997240083',1,'GOT_PTTK::Models::OdznakiContext']]],
+  ['odznakiviewmodel',['OdznakiViewModel',['../class_wpf_android_mockup_1_1_view_models_1_1_odznaki_view_model.html#ae31c04453bac01d4735737b6ff142b93',1,'WpfAndroidMockup::ViewModels::OdznakiViewModel']]]
 ];

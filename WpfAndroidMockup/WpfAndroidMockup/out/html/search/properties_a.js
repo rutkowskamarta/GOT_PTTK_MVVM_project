@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['trasa',['Trasa',['../class_wpf_android_mockup_1_1_models_1_1_wycieczka_model.html#a31dab1a40bfe85cb1677cd812f922878',1,'WpfAndroidMockup::Models::WycieczkaModel']]],
-  ['turysta',['Turysta',['../class_wpf_android_mockup_1_1_models_1_1_odznaka_model.html#a22b790955529ba7a050a5f76cf9d1e38',1,'WpfAndroidMockup.Models.OdznakaModel.Turysta()'],['../class_wpf_android_mockup_1_1_models_1_1_wycieczka_model.html#acf2b0fb29e290304fb1ad8888880338f',1,'WpfAndroidMockup.Models.WycieczkaModel.Turysta()']]]
+  ['trasa',['Trasa',['../class_g_o_t___p_t_t_k_1_1_models_1_1_wycieczka_model.html#a6b52fb4ae74a5a8bdb4279bf9245023e',1,'GOT_PTTK::Models::WycieczkaModel']]],
+  ['trwczycrw',['TRWczyCRW',['../class_g_o_t___p_t_t_k_1_1_models_1_1_pracownik_model.html#ad6b65e21daffde7a47c068b72041c9f6',1,'GOT_PTTK::Models::PracownikModel']]],
+  ['turysta',['Turysta',['../class_g_o_t___p_t_t_k_1_1_models_1_1_odznaka_model.html#af9e826f3ae542ab0cc1092484ee74ec8',1,'GOT_PTTK.Models.OdznakaModel.Turysta()'],['../class_g_o_t___p_t_t_k_1_1_models_1_1_wycieczka_model.html#a762ecb30850a1956eed9362f4f642fb6',1,'GOT_PTTK.Models.WycieczkaModel.Turysta()']]]
 ];

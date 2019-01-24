@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using WpfAndroidMockup.ViewModels;
-using WpfAndroidMockup.Models;
+using GOT_PTTK.Models;
 using System.Collections.ObjectModel;
 
 namespace WpfAndroidMockup.Views
@@ -24,6 +24,9 @@ namespace WpfAndroidMockup.Views
     /// </summary>
     public partial class PrzegladanieWycieczkiView : UserControl
     {
+        private const string NIE_MOZNA_USUNAC_WYCIECZKI_STRING = "NIE MOŻNA USUNĄĆ WYCIECZKI POTWIERDZONEJ PRZEZ PRZODOWNIKA";
+        private const string USUNIETO_WYCIECZKE_STRING_FORMAT = "POMYSLNIE USUNIETO WYCIECZKE {0}";
+
         /// <summary>
         /// View model wycieczki
         /// </summary>
@@ -65,7 +68,7 @@ namespace WpfAndroidMockup.Views
         }
 
         /// <summary>
-        /// Logika przycisku usuwania wybranej wycieczki
+        /// Logia przycisku usuwania wybranej wycieczki
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -73,7 +76,7 @@ namespace WpfAndroidMockup.Views
         {
             if (WycieczkaViewModel.CzyCurrentWycieczkaPotwierdzona())
             {
-                WyswietlKomunikat("NIE MOŻNA USUNĄĆ WYCIECZKI POTWIERDZONEJ PRZEZ PRZODOWNIKA");
+                WyswietlKomunikat(NIE_MOZNA_USUNAC_WYCIECZKI_STRING);
                 buttonOkBackGrid = BasicKomunikatGrid;
             }
             else
@@ -128,7 +131,7 @@ namespace WpfAndroidMockup.Views
         /// <param name="e"></param>
         private void Button_ZamknijKomunikat(object sender, RoutedEventArgs e)
         {
-            buttonOkBackGrid.Visibility = Visibility.Visible;
+            buttonOkBackGrid.Visibility = Visibility.Hidden;
             BasicKomunikatGrid.Visibility = Visibility.Hidden;
         }
 
@@ -149,11 +152,10 @@ namespace WpfAndroidMockup.Views
         /// <param name="e"></param>
         private void Button_Usun(object sender, RoutedEventArgs e)
         {
-            WyswietlKomunikat("POMYSLNIE USUNIETO WYCIECZKE " + WycieczkaViewModel.CurrentWycieczka.Nazwa);
+            WyswietlKomunikat(String.Format(USUNIETO_WYCIECZKE_STRING_FORMAT, WycieczkaViewModel.CurrentWycieczka.Nazwa));
             WycieczkaViewModel.UsunAktualnaWycieczke();
-            SelectedTripGrid.Visibility = Visibility.Hidden;
             CzyNaPewnoChceszUsunacWycieczkeGrid.Visibility = Visibility.Hidden;
-            buttonOkBackGrid = AllTripsGrid;
+            buttonOkBackGrid = SelectedTripGrid;
             WycieczkiListView.UpdateLayout();
             
         }

@@ -27,7 +27,7 @@
                             <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
                                 <TextBlock Text="{Binding Stopien}" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0"/>
                                 <TextBlock Text="{Binding Rodzaj}" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0"/>
-                                <TextBlock Text="{Binding DataRozpoczecia}" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0"/>
+                                <TextBlock Text="{Binding DataRozpoczecia, StringFormat=d}" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0"/>
                             </StackPanel>
 
                             <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="0,0,0,0">
@@ -58,7 +58,7 @@
             <TextBlock Text="Data rozpoczęcia cyklu" HorizontalAlignment="Left" Margin="25,405,0,0" VerticalAlignment="Top" FontSize="12" FontWeight="Bold" Foreground="White" Height="30"/>
             <TextBlock Text="Data zakończenia cyklu" HorizontalAlignment="Left" Margin="25,437,0,0" VerticalAlignment="Top" FontSize="12" FontWeight="Bold" Foreground="White" Height="30"/>
 
-            <TextBlock Text="{Binding DataRozpoczecia}" HorizontalAlignment="Right" TextAlignment="Right" Width="180" Margin="0,405,25.2,0" VerticalAlignment="Top" FontSize="12" Foreground="White" Height="30"/>
+            <TextBlock Text="{Binding DataRozpoczecia, StringFormat=d}" HorizontalAlignment="Right" TextAlignment="Right" Width="180" Margin="0,405,25.2,0" VerticalAlignment="Top" FontSize="12" Foreground="White" Height="30"/>
             <TextBlock Text="" HorizontalAlignment="Right" TextAlignment="Right" Width="180" Margin="0,437,25,0" VerticalAlignment="Top" FontSize="12" Foreground="White" Height="30"/>
 
             <TextBlock Text="{Binding Pkt}" x:Name="Punkty_text" TextAlignment="Right" HorizontalAlignment="Left" Margin="120,472,0,0" VerticalAlignment="Top" FontSize="25" Foreground="LightGreen" Width="67" Height="68"/>

@@ -4,7 +4,7 @@ digraph "WpfAndroidMockup.ViewModels.WycieczkaViewModel.CzyZalogowanyPrzodownikP
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node11 [label="WpfAndroidMockup.ViewModels.\lWycieczkaViewModel.CzyZalogowany\lPrzodownikPosiadaUprawnieniaNaCurrentWycieczke",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-  Node11 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node12 [label="WpfAndroidMockup.Models.\lPrzodownicyContext.CzyPosiada\lUprawnienia",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_models_1_1_przodownicy_context.html#a20b4fb30caedb852c8bba1f80b5fb967",tooltip="Sprawdza czy przodownik posiada uprawnienia. "];
+  Node20 [label="WpfAndroidMockup.ViewModels.\lWycieczkaViewModel.CzyZalogowany\lPrzodownikPosiadaUprawnieniaNaCurrentWycieczke",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node20 -> Node21 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node21 [label="GOT_PTTK.Models.Przodownicy\lContext.CzyPosiadaUprawnienia",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_o_t___p_t_t_k_1_1_models_1_1_przodownicy_context.html#a3e02e2b47c164e4b445d08401477a881",tooltip="Sprawdza czy przodownik posiada uprawnienia. "];
 }

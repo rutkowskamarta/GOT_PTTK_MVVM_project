@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfAndroidMockup.ViewModels;
-using WpfAndroidMockup.Models;
+using GOT_PTTK.Models;
 
 namespace WpfAndroidMockup.Views
 {
@@ -25,17 +25,20 @@ namespace WpfAndroidMockup.Views
         /// <summary>
         /// View model wycieczki
         /// </summary>
-        public WycieczkaViewModel wycieczkaViewModel;
         private const int WRONG_INPUT = -1;
+        private const string BRAK_WYCIECZEK_STRING = "BRAK WYCIECZEK DO POTWIERDZENIA";
+        private const string POMYSLNE_WYSLANIE_PROSBY_STRING = "POMYŚLNIE WYSŁANO PROŚBĘ O POTWIERDZENIE";
+        private const string NIEPOPRAWNY_PRZODOWNIK_STRING_FORMAT = "PRZODOWNIK NR {0} NIE ISTNIEJE W BAZIE";
+        public WycieczkaViewModel wycieczkaViewModel;
+
         Grid previousGridToClose;
 
         /// <summary>
-        /// Konstruktor nieparametryczny widoku
+        /// Konstruktor ineparametryczny widoku
         /// </summary>
         public PotwierdzanieOdbytejWycieczkiTurystaView()
         {
             InitializeComponent();
-            
         }
 
         /// <summary>
@@ -49,8 +52,11 @@ namespace WpfAndroidMockup.Views
             if (listView.SelectedItem != null)
             {
                 WycieczkaModel selectedItem = (WycieczkaModel)listView.SelectedItems[0];
-                wycieczkaViewModel.WczytajWycieczke(selectedItem);
-                WyswietlOknoWybieraniaPrzodownika();
+                if (selectedItem.Status != StatusyPotwierdzenia.WTRAKCIE && selectedItem.Status != StatusyPotwierdzenia.POTWIERDZONA)
+                {
+                    wycieczkaViewModel.WczytajWycieczke(selectedItem);
+                    WyswietlOknoWybieraniaPrzodownika();
+                }
             }
 
         }
@@ -80,7 +86,7 @@ namespace WpfAndroidMockup.Views
         {
             if(wycieczkaViewModel.WycieczkiObservableCollection.Count == 0)
             {
-                WyswietlKomunikat("BRAK WYCIECZEK DO POTWIERDZENIA");
+                WyswietlKomunikat(BRAK_WYCIECZEK_STRING);
             }
         }
 
@@ -95,7 +101,7 @@ namespace WpfAndroidMockup.Views
         }
 
         /// <summary>
-        /// Logika przycisku zamykającego podstawowy komunikat
+        /// Logika przycisku zamykającego podtawowy komunikat
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -129,21 +135,19 @@ namespace WpfAndroidMockup.Views
 
             if(nrPrzodownika == WRONG_INPUT || !wycieczkaViewModel.CzyPrzodownikONumerzeIstnieje(nrPrzodownika))
             {
-                WyswietlKomunikat("PRZODOWNIK NR " + NrPrzodownika_textbox.Text + " NIE ISTNIEJE W BAZIE");
+                WyswietlKomunikat(String.Format(NIEPOPRAWNY_PRZODOWNIK_STRING_FORMAT, NrPrzodownika_textbox.Text));
             }
             else
             {
                 previousGridToClose = AlertPrzeslijDoPrzodownikaGrid;
                 wycieczkaViewModel.WyslijWycieczkeDoPotwierdzenia(nrPrzodownika);
-                WyswietlKomunikat("POMYŚLNIE WYSŁANO PROŚBĘ O POTWIERDZENIE");
-
-                
+                WyswietlKomunikat(POMYSLNE_WYSLANIE_PROSBY_STRING);
             }
             
         }
 
         /// <summary>
-        /// Konwertuje tekst wprowadzony do okienka na typ long
+        /// Konwertuje tekst wprowadzony do okienka na long
         /// </summary>
         /// <returns>skonwerotwany tekst</returns>
         private long ConvertTextFromTextBox()

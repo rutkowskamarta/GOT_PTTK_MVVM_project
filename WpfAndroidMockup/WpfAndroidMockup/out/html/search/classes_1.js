@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['danelogowania',['DaneLogowania',['../class_wpf_android_mockup_1_1_models_1_1_dane_logowania.html',1,'WpfAndroidMockup::Models']]]
+  ['generatedinternaltypehelper',['GeneratedInternalTypeHelper',['../class_xaml_generated_namespace_1_1_generated_internal_type_helper.html',1,'XamlGeneratedNamespace']]]
 ];

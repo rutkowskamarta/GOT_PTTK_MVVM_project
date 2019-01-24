@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['usun',['Usun',['../class_wpf_android_mockup_1_1_models_1_1_wycieczki_context.html#ae04b49a7413a981898c4d84daa66f76b',1,'WpfAndroidMockup::Models::WycieczkiContext']]],
-  ['usunaktualnawycieczke',['UsunAktualnaWycieczke',['../class_wpf_android_mockup_1_1_view_models_1_1_wycieczka_view_model.html#abc1caa26d78d675a2d4e4cc201ff2cb7',1,'WpfAndroidMockup::ViewModels::WycieczkaViewModel']]],
-  ['usunobecnawycieczkezwyswietlania',['UsunObecnaWycieczkeZWyswietlania',['../class_wpf_android_mockup_1_1_view_models_1_1_wycieczka_view_model.html#a33ba42c9b36b1dd4cd740d85a07de8f6',1,'WpfAndroidMockup::ViewModels::WycieczkaViewModel']]],
-  ['usunwycieczke',['UsunWycieczke',['../class_wpf_android_mockup_1_1_models_1_1_odznaka_model.html#a0d2f74e38a911651f0f19f2ca4796029',1,'WpfAndroidMockup::Models::OdznakaModel']]]
+  ['turyscicontext',['TurysciContext',['../class_g_o_t___p_t_t_k_1_1_models_1_1_turysci_context.html#ab3f47c02b47cf109be610afc14a85950',1,'GOT_PTTK::Models::TurysciContext']]],
+  ['turystadao',['TurystaDAO',['../class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_turysta_d_a_o.html#aa5c5c914ffa1cdb6c8319cb3914709d5',1,'GOT_PTTK::DAO::TurystaDAO']]]
 ];

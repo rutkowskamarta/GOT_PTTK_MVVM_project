@@ -5,7 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WpfAndroidMockup.Models;
+using GOT_PTTK.Models;
 
 namespace WpfAndroidMockup.ViewModels
 {
@@ -18,9 +18,18 @@ namespace WpfAndroidMockup.ViewModels
         /// Lista modeli odznaki
         /// </summary>
         public ObservableCollection<OdznakaModel> OdznakiObservableCollection { get; set; }
-        
+
+        private const string AKTUALNA_ODZNAKA_PROPERTY = "AktualnaOdznaka";
+        private const string AKTUALNA_WYCIECZKA_PROPERTY = "AktualnaWycieczka";
+
+        private OdznakiContext odznakiContext;
+        private OdznakaModel aktualnaOdznaka;
+        private WycieczkaModel aktualnaWycieczka;
+
+        #region Properties
+
         /// <summary>
-        /// Akcesor i mutator aktualnie obsługiwanej odznaki
+        /// Akcesor i mutator aktualnej odznaki
         /// </summary>
         public OdznakaModel AktualnaOdznaka
         {
@@ -33,13 +42,13 @@ namespace WpfAndroidMockup.ViewModels
                 if (aktualnaOdznaka != value)
                 {
                     aktualnaOdznaka = value;
-                    RaisePropertyChanged("AktualnaOdznaka");
+                    RaisePropertyChanged(AKTUALNA_ODZNAKA_PROPERTY);
                 }
             }
         }
 
         /// <summary>
-        /// Akcesor i mutator aktualnie obsługiwanej wycieczki
+        /// Akcesor i mutato aktualnej wycieczki
         /// </summary>
         public WycieczkaModel AktualnaWycieczka
         {
@@ -52,14 +61,12 @@ namespace WpfAndroidMockup.ViewModels
                 if (aktualnaWycieczka != value)
                 {
                     aktualnaWycieczka = value;
-                    RaisePropertyChanged("AktualnaWycieczka");
+                    RaisePropertyChanged(AKTUALNA_WYCIECZKA_PROPERTY);
                 }
             }
         }
 
-        private OdznakiContext odznakiContext;
-        private OdznakaModel aktualnaOdznaka;
-        private WycieczkaModel aktualnaWycieczka;
+        #endregion
 
         /// <summary>
         /// Konstruktor nieparametryczny klasy odznaka view model
@@ -75,26 +82,8 @@ namespace WpfAndroidMockup.ViewModels
         /// </summary>
         public void LoadWszystkieRozpoczeteCykle()
         {
-            foreach (OdznakaModel item in odznakiContext.GetOdznakiNiezaakcpetowane())
+            foreach (OdznakaModel item in odznakiContext.GetOdznakiNieDoWeryfikacji())
                 OdznakiObservableCollection.Add(item);
-        }
-
-        /// <summary>
-        ///Wydarzenie potrzebne do reakcju na zmianę atrybutu
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-
-        /// <summary>
-        /// Reaguje na zmiane atrybutu
-        /// </summary>
-        /// <param name="property">atrybut</param>
-        private void RaisePropertyChanged(string property)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(property));
-            }
         }
 
         /// <summary>
@@ -118,10 +107,28 @@ namespace WpfAndroidMockup.ViewModels
         /// <summary>
         /// przesyła odznakę do weryfikacji
         /// </summary>
-       public void WyslijOdznakeDoWeryfikacji()
+        public void WyslijAktualnaOdznakeDoWeryfikacji()
         {
-            aktualnaOdznaka.CzyPrzeslanaDoWeryfikacji = true;
             odznakiContext.ZmienStatus(aktualnaOdznaka.Id, StatusOdznaki.DOWERYFIKACJI);
+            aktualnaOdznaka.NrPracownika = OdznakaModel.NR_PRACOWNIKA_DO_WERYFIKACJI;
+        }
+
+        /// <summary>
+        ///Wydarzenie potrzebne do reakcji na zmianę atrybutu
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+
+        /// <summary>
+        /// Reaguje na zmiane atrybutu
+        /// </summary>
+        /// <param name="property">atrybut</param>
+        private void RaisePropertyChanged(string property)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(property));
+            }
         }
     }
 }

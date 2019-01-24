@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfAndroidMockup.ViewModels;
-using WpfAndroidMockup.Models;
+using GOT_PTTK.Models;
 
 namespace WpfAndroidMockup.Views
 {
@@ -22,6 +22,11 @@ namespace WpfAndroidMockup.Views
     /// </summary>
     public partial class PotwierdzanieOdbytejWycieczkiPrzodownikView : UserControl
     {
+        private const string BRAK_WYCIECZEK_STRING = "BRAK WYCIECZEK DO POTWIERDZENIA";
+        private const string BRAK_UPRAWNIEN_STRING = "NIE POSIADASZ UPRAWNIEŃ NA TEN OBSZAR GÓRSKI";
+        private const string POMYSLNE_USUNIECIE_WYCIECZKI_STRING = "POMYŚLNIE POTWIERDZONO WYCIECZKĘ";
+        private const string ODRZUCENIE_WYCIECZKI_STRING = "POMYŚLNIE ODRZUCONO WYCIECZKĘ";
+
         /// <summary>
         /// View model wycieczki
         /// </summary>
@@ -43,7 +48,7 @@ namespace WpfAndroidMockup.Views
         {
             if (wycieczkaViewModel.WycieczkiObservableCollection.Count == 0)
             {
-                WyswietlKomunikat("BRAK WYCIECZEK DO POTWIERDZENIA");
+                WyswietlKomunikat(BRAK_WYCIECZEK_STRING);
             }
         }
 
@@ -73,7 +78,7 @@ namespace WpfAndroidMockup.Views
         }
 
         /// <summary>
-        /// Wyświetla podstawowy komunikat
+        /// Wyświetla podstawowy komunika
         /// </summary>
         /// <param name="wiadomosc"></param>
         private void WyswietlKomunikat(string wiadomosc)
@@ -83,7 +88,7 @@ namespace WpfAndroidMockup.Views
         }
 
         /// <summary>
-        /// odpowiada za logikę przycisku zamykającego podstawowy komunikat
+        /// odpowiada za logikę przycisku zamykającegopodstawowy komunikat
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -107,7 +112,7 @@ namespace WpfAndroidMockup.Views
         }
 
         /// <summary>
-        /// Logika przycisku, który zamyka okno uczestnictwa 
+        /// Logika przyciski, który zamyka okno uczestnictwa 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -123,7 +128,7 @@ namespace WpfAndroidMockup.Views
         /// <param name="e"></param>
         private void Button_potwierdz(object sender, RoutedEventArgs e)
         {
-            WyswietlKomunikat("POMYŚLNIE POTWIERDZONO WYCIECZKĘ");
+            WyswietlKomunikat(POMYSLNE_USUNIECIE_WYCIECZKI_STRING);
             AlertCzyPotwierdzaPrzodownikGrid.Visibility = Visibility.Hidden;
             wycieczkaViewModel.PotwierdzAktualnaWycieczke();
             previousGridToClose = AlertCzyUstestniczylPrzodownikGrid;
@@ -145,10 +150,10 @@ namespace WpfAndroidMockup.Views
             }
             else
             {
-                WyswietlKomunikat("NIE POSIADASZ UPRAWNIEŃ NA TEN OBSZAR GÓRSKI");
+                WyswietlKomunikat(BRAK_UPRAWNIEN_STRING);
                 previousGridToClose = AlertCzyUstestniczylPrzodownikGrid;
                 wycieczkaViewModel.OdrzucAktualnaWycieczke();
-
+                wycieczkaViewModel.UsunObecnaWycieczkeZWyswietlania();
             }
         }
 
@@ -160,7 +165,7 @@ namespace WpfAndroidMockup.Views
         /// <param name="e"></param>
         private void Button_odrzuc(object sender, RoutedEventArgs e)
         {
-            WyswietlKomunikat("POMYŚLNIE ODRZUCONO WYCIECZKĘ");
+            WyswietlKomunikat(ODRZUCENIE_WYCIECZKI_STRING);
             wycieczkaViewModel.OdrzucAktualnaWycieczke();
             previousGridToClose = AlertCzyPotwierdzaPrzodownikGrid;
             wycieczkaViewModel.UsunObecnaWycieczkeZWyswietlania();

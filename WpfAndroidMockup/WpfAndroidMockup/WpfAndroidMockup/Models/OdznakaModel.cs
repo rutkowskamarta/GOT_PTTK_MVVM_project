@@ -1,30 +1,41 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace WpfAndroidMockup.Models
+namespace GOT_PTTK.Models
 {
     /// <summary>
     /// Model odznaki
     /// </summary>
     /// <seealso cref="System.ComponentModel.INotifyPropertyChanged" />
-    public class OdznakaModel : INotifyPropertyChanged
+    public class OdznakaModel : INotifyPropertyChanged, IComparable<OdznakaModel>
     {
+        public const long NR_PRACOWNIKA_BEZ_WERYFIKACJI = -1;
+        public const long NR_PRACOWNIKA_DO_WERYFIKACJI = -2;
+
+        public const string PUNKTY_PROPERTY = "Pkt";
+
+        private const string ID_PROPERTY = "Id";
+        private const string STOPIEN_PROPERTY = "Stopien";
+        private const string RODZAJ_PROPERTY = "Rodzaj";
+        private const string IMG_PATH_PROPERTY = "ImgPath";
+        private const string MIN_PUNKTY_PROPERTY = "MinPkt";
+        private const string DATA_ROZPOCZECIA_PROPERTY = "DataRozpoczecia";
+        private const string NR_PRACOWNIKA_PROPERTY = "NrPracownika";
+        private const string CZY_WYSLANA_DO_WERYFIKACJI_PROPERTY = "CzyWyslanaDoWeryfikacji";
+        private const string TURYSTA_PROPERTY = "Turysta";
+
         private long id;
+        private TurystaModel turysta;
         private string stopien;
         private string rodzaj;
         private ObservableCollection<WycieczkaModel> wycieczki;
-        private bool czyZweryfikowana;
         private string imgPath;
         private int minPkt;
-        private int pkt;
         private DateTime dataRozpoczecia;
-        private DateTime dataZakonczenia;
-        private bool czyPrzeslanaDoWeryfikacji;
+        private long nrPracownika;
+
+        #region Properties
 
         /// <summary>
         /// akcesor i mutator dla identyfikatora.
@@ -43,7 +54,7 @@ namespace WpfAndroidMockup.Models
                 if (id != value)
                 {
                     id = value;
-                    RaisePropertyChanged("Id");
+                    RaisePropertyChanged(ID_PROPERTY);
                 }
             }
         }
@@ -65,7 +76,7 @@ namespace WpfAndroidMockup.Models
                 if (stopien != value)
                 {
                     stopien = value;
-                    RaisePropertyChanged("Stopien");
+                    RaisePropertyChanged(STOPIEN_PROPERTY);
                 }
             }
         }
@@ -87,8 +98,22 @@ namespace WpfAndroidMockup.Models
                 if (rodzaj != value)
                 {
                     rodzaj = value;
-                    RaisePropertyChanged("Rodzaj");
+                    RaisePropertyChanged(RODZAJ_PROPERTY);
                 }
+            }
+        }
+
+        /// <summary>
+        /// Akcesor i mutator wskazujący czy odznaka została wysłana do weryfikacji.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> jeśli [wysłana do weryfikacji]; w przeciwnym wypadku, <c>false</c>.
+        /// </value>
+        public bool CzyWyslanaDoWeryfikacji
+        {
+            get
+            {
+                return NrPracownika == NR_PRACOWNIKA_DO_WERYFIKACJI;
             }
         }
 
@@ -102,15 +127,26 @@ namespace WpfAndroidMockup.Models
         {
             get
             {
-                return czyZweryfikowana;
-            }
-            set
-            {
-                if (czyZweryfikowana != value)
+                int licznikNiezweryfikowanychWycieczek = 0;
+                foreach (WycieczkaModel wycieczka in Wycieczki)
                 {
-                    czyZweryfikowana = value;
-                    RaisePropertyChanged("CzyZweryfikowana");
+                    if (wycieczka.StatusWeryfikacji == StatusWeryfikacjiWycieczki.NIEZWERYFIKOWANA)
+                    {
+                        licznikNiezweryfikowanychWycieczek++;
+                    }
                 }
+                return licznikNiezweryfikowanychWycieczek == 0;
+            }
+        }
+
+        /// <summary>
+        /// Akcesor wskazujący czy odznaka została przyznana
+        /// </summary>
+        public bool CzyPrzyznana
+        {
+            get
+            {
+                return CzyZweryfikowana && (Pkt > MinPkt);
             }
         }
 
@@ -131,7 +167,7 @@ namespace WpfAndroidMockup.Models
                 if (imgPath != value)
                 {
                     imgPath = value;
-                    RaisePropertyChanged("ImgPath");
+                    RaisePropertyChanged(IMG_PATH_PROPERTY);
                 }
             }
         }
@@ -146,14 +182,20 @@ namespace WpfAndroidMockup.Models
         {
             get
             {
-                return pkt;
+                int suma = 0;
+                foreach (WycieczkaModel wycieczka in wycieczki)
+                {
+                    if (wycieczka.Status == StatusyPotwierdzenia.POTWIERDZONA && wycieczka.StatusWeryfikacji != StatusWeryfikacjiWycieczki.ODRZUCONA)
+                        suma += wycieczka.Punktacja;
+                }
+                return suma;
             }
             set
             {
-                if (pkt != value)
+                if (minPkt != value)
                 {
-                    pkt = value;
-                    RaisePropertyChanged("Pkt");
+                    minPkt = value;
+                    RaisePropertyChanged(PUNKTY_PROPERTY);
                 }
             }
         }
@@ -175,7 +217,7 @@ namespace WpfAndroidMockup.Models
                 if (minPkt != value)
                 {
                     minPkt = value;
-                    RaisePropertyChanged("MinPkt");
+                    RaisePropertyChanged(MIN_PUNKTY_PROPERTY);
                 }
             }
         }
@@ -197,29 +239,30 @@ namespace WpfAndroidMockup.Models
                 if (dataRozpoczecia != value)
                 {
                     dataRozpoczecia = value;
-                    RaisePropertyChanged("DataRozpoczecia");
+                    RaisePropertyChanged(DATA_ROZPOCZECIA_PROPERTY);
                 }
             }
         }
 
         /// <summary>
-        /// Akcesor i mutator daty zakończenia cyklu odznaki
+        /// Akcesor i mutator numeru pracownika, powiązanego z przyznaniem zdobycia odznaki
         /// </summary>
         /// <value>
-        /// Data zakonczenia cyklu odznaki
+        /// Numer pracownika
         /// </value>
-        public DateTime DataZakonczenia
+        public long NrPracownika
         {
             get
             {
-                return dataZakonczenia;
+                return nrPracownika;
             }
             set
             {
-                if (dataZakonczenia != value)
+                if (nrPracownika != value)
                 {
-                    dataZakonczenia = value;
-                    RaisePropertyChanged("DataZakonczenia");
+                    nrPracownika = value;
+                    RaisePropertyChanged(NR_PRACOWNIKA_PROPERTY);
+                    RaisePropertyChanged(CZY_WYSLANA_DO_WERYFIKACJI_PROPERTY);
                 }
             }
         }
@@ -239,66 +282,32 @@ namespace WpfAndroidMockup.Models
         }
 
         /// <summary>
-        /// Akcesor turysty, posiadacza odznaki.
+        /// Akcesor turysty
         /// </summary>
         /// <value>
-        /// Turysta, posiadach odznaki
+        /// Turysta, odbywający wycieczki na odznakę
         /// </value>
-        public TurystaModel Turysta { get; }
-
-        /// <summary>
-        /// Konstruktor parametryczny klasy <see cref="OdznakaModel"/>
-        /// </summary>
-        /// <param name="turysta"></param>
-        public OdznakaModel(ref TurystaModel turysta)
-        {
-            Turysta = turysta;
-            wycieczki = new ObservableCollection<WycieczkaModel>();
-
-        }
-
-        /// <summary>
-        /// Akcesor i mutator statusu odznaki
-        /// </summary>
-        /// <value>
-        /// status odznaki jako napis
-        /// </value>
-        public string StatusString
+        public TurystaModel Turysta
         {
             get
             {
-                if (!CzyZweryfikowana)
-                {
-                    return "NIEZWERYFIKOWANA";
-                }
-                else
-                {
-                    return "ZWERYFIKOWANA";
-                }
-            }
-            
-        }
-
-        /// <summary>
-        /// ustala i odczytuje czy odznaka została przesłana do weryfikacji.
-        /// </summary>
-        /// <value>
-        ///   <c>true</c> jeśli przeslana do weryfikacji; w przeciwnym przypadku, <c>false</c>.
-        /// </value>
-        public bool CzyPrzeslanaDoWeryfikacji
-        {
-            get
-            {
-                return czyPrzeslanaDoWeryfikacji;
+                return turysta;
             }
             set
             {
-                if (czyPrzeslanaDoWeryfikacji != value)
+                if (turysta != value)
                 {
-                    czyPrzeslanaDoWeryfikacji = value;
-                    RaisePropertyChanged("CzyPrzeslanaDoWeryfikacji");
+                    turysta = value;
+                    RaisePropertyChanged(TURYSTA_PROPERTY);
                 }
             }
+        }
+
+        #endregion
+
+        public OdznakaModel()
+        {
+            wycieczki = new ObservableCollection<WycieczkaModel>();
         }
 
         /// <summary>
@@ -320,7 +329,26 @@ namespace WpfAndroidMockup.Models
         }
 
         /// <summary>
-        /// Aktywuje sie gdy wartosc atrybutu sie zmieni.
+        /// Sprawdza czy warunki są spełnione
+        /// </summary>
+        /// <returns>prawda- spelnione</returns>
+        private bool CzyWarunkiSpelnione()
+        {
+            return Pkt >= MinPkt;
+        }
+
+        /// <summary>
+        /// Komparator porównujący Id odznak
+        /// </summary>
+        /// <param name="other">model odznaki do porównania</param>
+        /// <returns></returns>
+        public int CompareTo(OdznakaModel other)
+        {
+            return Id.CompareTo(other.Id);
+        }
+
+        /// <summary>
+        /// Zdarzenie, aktywuje sie gdy wartosc atrybutu sie zmieni.
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -335,15 +363,5 @@ namespace WpfAndroidMockup.Models
                 PropertyChanged(this, new PropertyChangedEventArgs(property));
             }
         }
-
-        /// <summary>
-        /// Sprawdza czy warunki są spełnione
-        /// </summary>
-        /// <returns>prawda- spelnione</returns>
-        private bool CzyWarunkiSpelnione()
-        {
-            return Pkt >= MinPkt;
-        }
-
     }
 }

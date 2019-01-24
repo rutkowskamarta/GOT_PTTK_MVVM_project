@@ -4,9 +4,9 @@ digraph "WpfAndroidMockup.ViewModels.WycieczkaViewModel.WczytajNiepotwierdzoneWy
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node41 [label="WpfAndroidMockup.ViewModels.\lWycieczkaViewModel.WczytajNiepotwierdzone\lWycieczkiTurysty",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-  Node41 -> Node42 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node42 [label="WpfAndroidMockup.MainWindow.\lButton_WyslijDoPotwierdzenia",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_main_window.html#a3a4bdd6795c2f75a3ae0df3b858268a3",tooltip="Logika dla przycisku odpowiedzialnego za wywołanie przypadku użycia wysyłania przodownikowy prośby o ..."];
-  Node42 -> Node43 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node43 [label="WpfAndroidMockup.MainWindow.\lConnect",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_main_window.html#adcfba8fb3f0c36593aed929c6aefa4dd"];
+  Node53 [label="WpfAndroidMockup.ViewModels.\lWycieczkaViewModel.WczytajNiepotwierdzone\lWycieczkiTurysty",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node53 -> Node54 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node54 [label="WpfAndroidMockup.MainWindow.\lButton_WyslijDoPotwierdzenia",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_main_window.html#a3a4bdd6795c2f75a3ae0df3b858268a3",tooltip="Logika dla przycisku odpowiedzialnego za wywołanie przypadku użycia wysyłania przodownikowy prośby o ..."];
+  Node54 -> Node55 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node55 [label="WpfAndroidMockup.MainWindow.\lConnect",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wpf_android_mockup_1_1_main_window.html#adcfba8fb3f0c36593aed929c6aefa4dd"];
 }

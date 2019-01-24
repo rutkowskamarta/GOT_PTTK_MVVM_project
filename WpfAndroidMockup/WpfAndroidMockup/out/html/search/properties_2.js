@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['daneturysty',['DaneTurysty',['../class_wpf_android_mockup_1_1_models_1_1_wycieczka_model.html#a802f39b67d7545202323dc2cfb0eb374',1,'WpfAndroidMockup::Models::WycieczkaModel']]],
-  ['datarozpoczecia',['DataRozpoczecia',['../class_wpf_android_mockup_1_1_models_1_1_odznaka_model.html#ac5d6c8d2a183e61b24464d7b07433cf2',1,'WpfAndroidMockup.Models.OdznakaModel.DataRozpoczecia()'],['../class_wpf_android_mockup_1_1_models_1_1_wycieczka_model.html#abc01a221b3a5eb4c78886d6b43e9b024',1,'WpfAndroidMockup.Models.WycieczkaModel.DataRozpoczecia()']]],
-  ['datawycieczki',['DataWycieczki',['../class_wpf_android_mockup_1_1_models_1_1_wycieczka_model.html#aa380bc71b507df4b967546dee09463f2',1,'WpfAndroidMockup::Models::WycieczkaModel']]],
-  ['datazakonczenia',['DataZakonczenia',['../class_wpf_android_mockup_1_1_models_1_1_odznaka_model.html#a97c3abadfbf80885021235483abfddb0',1,'WpfAndroidMockup.Models.OdznakaModel.DataZakonczenia()'],['../class_wpf_android_mockup_1_1_models_1_1_wycieczka_model.html#a1c361e6c7016658dcd52bb6a19c4a5db',1,'WpfAndroidMockup.Models.WycieczkaModel.DataZakonczenia()']]],
-  ['dlugosc',['Dlugosc',['../class_wpf_android_mockup_1_1_models_1_1_wycieczka_model.html#aa215856a88cef42fe5f9f5d41f243ffd',1,'WpfAndroidMockup::Models::WycieczkaModel']]]
+  ['datarozpoczecia',['DataRozpoczecia',['../class_g_o_t___p_t_t_k_1_1_models_1_1_odznaka_model.html#aef68becfecc62bdf293b5fce83618f92',1,'GOT_PTTK.Models.OdznakaModel.DataRozpoczecia()'],['../class_g_o_t___p_t_t_k_1_1_models_1_1_wycieczka_model.html#a7e254bb61fab2146d5faac84574c9544',1,'GOT_PTTK.Models.WycieczkaModel.DataRozpoczecia()']]],
+  ['datazakonczenia',['DataZakonczenia',['../class_g_o_t___p_t_t_k_1_1_models_1_1_wycieczka_model.html#a86d95231b039251b66a489766dde6512',1,'GOT_PTTK::Models::WycieczkaModel']]],
+  ['datazatrudnienia',['DataZatrudnienia',['../class_g_o_t___p_t_t_k_1_1_models_1_1_pracownik_model.html#ac88d63b6e701910834af4f7b68a1d162',1,'GOT_PTTK::Models::PracownikModel']]],
+  ['dlugosc',['Dlugosc',['../class_g_o_t___p_t_t_k_1_1_models_1_1_wycieczka_model.html#a994ba5f9f305c9389e33b812c57be4a2',1,'GOT_PTTK::Models::WycieczkaModel']]]
 ];

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['icomparable',['IComparable',['../class_i_comparable.html',1,'']]],
-  ['inotifypropertychanged',['INotifyPropertyChanged',['../class_i_notify_property_changed.html',1,'']]]
+  ['mainwindow',['MainWindow',['../class_wpf_android_mockup_1_1_main_window.html',1,'WpfAndroidMockup']]]
 ];

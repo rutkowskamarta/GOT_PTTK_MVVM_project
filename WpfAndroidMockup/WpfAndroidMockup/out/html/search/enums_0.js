@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['statusodznaki',['StatusOdznaki',['../namespace_wpf_android_mockup_1_1_models.html#a0565ded97e9b54ba5d074f38214643f4',1,'WpfAndroidMockup::Models']]],
-  ['statusypotwierdzenia',['StatusyPotwierdzenia',['../namespace_wpf_android_mockup_1_1_models.html#a6a74a4ff066b0086682241c999b3d499',1,'WpfAndroidMockup::Models']]]
+  ['statusodznaki',['StatusOdznaki',['../namespace_g_o_t___p_t_t_k_1_1_models.html#ac628acea0c74d483c29edd8f3d4219bf',1,'GOT_PTTK::Models']]],
+  ['statusweryfikacjiwycieczki',['StatusWeryfikacjiWycieczki',['../namespace_g_o_t___p_t_t_k_1_1_models.html#ae6a90ad6644d7a7348c772797f58e372',1,'GOT_PTTK::Models']]],
+  ['statusypotwierdzenia',['StatusyPotwierdzenia',['../namespace_g_o_t___p_t_t_k_1_1_models.html#af7862904465fc121a0e9e104fbd52ae7',1,'GOT_PTTK::Models']]]
 ];

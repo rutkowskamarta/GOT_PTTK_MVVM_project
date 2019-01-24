@@ -1,12 +1,8 @@
 var searchData=
 [
-  ['pkt',['pkt',['../class_wpf_android_mockup_1_1_models_1_1_odznaka_model.html#ad550b1a6a193415637c8a55528c15978',1,'WpfAndroidMockup::Models::OdznakaModel']]],
-  ['popularna_5fimg_5fpath',['POPULARNA_IMG_PATH',['../class_wpf_android_mockup_1_1_models_1_1_odznaki_context.html#aafc3d15497ab7f06077fd3ef8cc5474d',1,'WpfAndroidMockup::Models::OdznakiContext']]],
-  ['previousgridtoclose',['previousGridToClose',['../class_wpf_android_mockup_1_1_views_1_1_potwierdzanie_odbytej_wycieczki_przodownik_view.html#aa42abae5a1941b1740b504c6cfd930fd',1,'WpfAndroidMockup.Views.PotwierdzanieOdbytejWycieczkiPrzodownikView.previousGridToClose()'],['../class_wpf_android_mockup_1_1_views_1_1_potwierdzanie_odbytej_wycieczki_turysta_view.html#a0e7df760ab1c61fbf1e1e88683ade5ea',1,'WpfAndroidMockup.Views.PotwierdzanieOdbytejWycieczkiTurystaView.previousGridToClose()']]],
-  ['przodownicycontext',['przodownicyContext',['../class_wpf_android_mockup_1_1_view_models_1_1_wycieczka_view_model.html#ae87aec3b75ca131fbbf4b0bdfa20b54b',1,'WpfAndroidMockup::ViewModels::WycieczkaViewModel']]],
-  ['przodownicydisct',['przodownicyDisct',['../class_wpf_android_mockup_1_1_models_1_1_przodownicy_context.html#acbc39cada99b280e75b4c7a3b57b02cd',1,'WpfAndroidMockup::Models::PrzodownicyContext']]],
-  ['przykladowy_5fprzodownik',['PRZYKLADOWY_PRZODOWNIK',['../class_wpf_android_mockup_1_1_main_window.html#a9b1ff3ec81738a637d8149268af8915a',1,'WpfAndroidMockup::MainWindow']]],
-  ['przykladowy_5fturysta',['PRZYKLADOWY_TURYSTA',['../class_wpf_android_mockup_1_1_main_window.html#af39da404c495b1800d5bd0a81a348e49',1,'WpfAndroidMockup::MainWindow']]],
-  ['punktacja',['punktacja',['../class_wpf_android_mockup_1_1_models_1_1_wycieczka_model.html#a9e9201aa3dcb9adbbeee309792c86d70',1,'WpfAndroidMockup::Models::WycieczkaModel']]],
-  ['punktpoczatkowy',['punktPoczatkowy',['../class_wpf_android_mockup_1_1_models_1_1_wycieczka_model.html#a57aca39e064a6f87e7a17bc74ca11c8b',1,'WpfAndroidMockup::Models::WycieczkaModel']]]
+  ['mala_5fbrazowa_5fimg_5fpath',['MALA_BRAZOWA_IMG_PATH',['../class_g_o_t___p_t_t_k_1_1_models_1_1_odznaki_context.html#ab60b01beaabfa8b4a8563f19313099c1',1,'GOT_PTTK::Models::OdznakiContext']]],
+  ['miasto_5ftrw_5fproperty',['MIASTO_TRW_PROPERTY',['../class_g_o_t___p_t_t_k_1_1_models_1_1_pracownik_model.html#ab2fee41949ae4477609d0b556ef8fc5f',1,'GOT_PTTK::Models::PracownikModel']]],
+  ['miastotrw',['MiastoTRW',['../class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_pracownik.html#ac4211e105289775fcf66d3775bf3e9aa',1,'GOT_PTTK.DAO.Pracownik.MiastoTRW()'],['../class_g_o_t___p_t_t_k_1_1_models_1_1_pracownik_model.html#ae63a0f41cb7c458287b27597e791671d',1,'GOT_PTTK.Models.PracownikModel.miastoTRW()']]],
+  ['min_5fpunkty_5fproperty',['MIN_PUNKTY_PROPERTY',['../class_g_o_t___p_t_t_k_1_1_models_1_1_odznaka_model.html#abb29b574777cf6e24b66887d25be41ea',1,'GOT_PTTK::Models::OdznakaModel']]],
+  ['minpkt',['minPkt',['../class_g_o_t___p_t_t_k_1_1_models_1_1_odznaka_model.html#a2ceef0e84f286971ba057f5c8ecd2f3d',1,'GOT_PTTK.Models.OdznakaModel.minPkt()'],['../class_g_o_t___p_t_t_k_1_1_d_a_o_1_1_odznaka.html#a31ca13a707ea78500618ed596feba6a4',1,'GOT_PTTK.DAO.Odznaka.MinPkt()']]]
 ];

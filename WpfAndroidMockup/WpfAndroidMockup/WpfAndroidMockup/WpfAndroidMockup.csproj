@@ -58,14 +58,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Models\DaneLogowania.cs" />
+    <Compile Include="DAO\DAO.cs" />
+    <Compile Include="DAO\DatabaseObjects\Odznaka.cs" />
+    <Compile Include="DAO\OdznakaDAO.cs" />
+    <Compile Include="DAO\DatabaseObjects\Pracownik.cs" />
+    <Compile Include="DAO\PracownikDAO.cs" />
+    <Compile Include="DAO\DatabaseObjects\Przodownik.cs" />
+    <Compile Include="DAO\PrzodownikDAO.cs" />
+    <Compile Include="DAO\DatabaseObjects\Turysta.cs" />
+    <Compile Include="DAO\TurystaDAO.cs" />
+    <Compile Include="DAO\DatabaseObjects\Wycieczka.cs" />
+    <Compile Include="DAO\WycieczkaDAO.cs" />
+    <Compile Include="Models\Context\PracownicyContext.cs" />
+    <Compile Include="Models\PracownikModel.cs" />
+    <Compile Include="Utils\Utils.cs" />
     <Compile Include="Models\OdznakaModel.cs" />
-    <Compile Include="Models\OdznakiContext.cs" />
-    <Compile Include="Models\PrzodownicyContext.cs" />
+    <Compile Include="Models\Context\OdznakiContext.cs" />
+    <Compile Include="Models\Context\PrzodownicyContext.cs" />
     <Compile Include="Models\PrzodownikModel.cs" />
-    <Compile Include="Models\TurysciContext.cs" />
+    <Compile Include="Models\Context\TurysciContext.cs" />
     <Compile Include="Models\TurystaModel.cs" />
-    <Compile Include="Models\WycieczkiContext.cs" />
+    <Compile Include="Models\Context\WycieczkiContext.cs" />
     <Compile Include="ViewModels\OdznakiViewModel.cs" />
     <Compile Include="ViewModels\WycieczkaViewModel.cs" />
     <Compile Include="Views\PotwierdzanieOdbytejWycieczkiPrzodownikView.xaml.cs">
